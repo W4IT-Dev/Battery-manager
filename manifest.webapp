@@ -1,0 +1,23 @@
+{
+  "version": "0.0.2.1",
+  "name": "batterymanager",
+  "description": "manange ur battery",
+  "type": "web",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/icon.png",
+    "112": "/icon.png"
+  },
+  "developer": {
+    "name": "W4IT Dev",
+    "url": "http://w4it-dev.github.io/website"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Battery Manager",
+      "subtitle": "mamange ur battery",
+      "description": "views info, set alarm if level goes above or under level"
+    }
+  },
+  "default_locale": "en-US"
+}
