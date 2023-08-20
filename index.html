@@ -11,12 +11,41 @@
 </head>
 
 <body>
-<img src="/100.png" alt="100%">
-<p>100%</p>
-<p id="discharg"></p>
-<p id="charg"></p>
+    <div id="battery">
+        <div id="level">
+            <div id="container">
+                <div id="progress"></div>
+            </div>
+            <p>0%</p>
+        </div>
+        <hr>
+        <div id="info">
+            <div tabindex="0" class="nav">
+                <span>Discharge time:</span>
+                <span id="discharge">110min</span>
+            </div>
+            <div tabindex="1" class="nav">
+                <span>Charge time:</span>
+                <span id="charge">10min</span>
+            </div>
+            <!-- <div id="temperatur">
+                <span>Temperatur:</span>
+                <span>30°</span>
+            </div> -->
+            <div tabindex="2" id="max-charge" class="nav">
+                <label for="max-charge">Max Charge</label> <input type="number" value="82">
+            </div>
+            <div tabindex="3" id="min-level" class="nav">
+                <label for="min-charge">Min Charge</label> <input type="number" value="35">
+            </div>
+        </div>
+    </div>
+    <!-- <img src="/100.png" alt="100%">
+<div>100%</div>
+<div id="discharg"></div>
+<div id="charg"></div> -->
 
-<!-- https://www.vecteezy.com/png/9394734-battery-charge-png-transparent -->
+    <!-- https://www.vecteezy.com/png/9394734-battery-charge-png-transparent -->
 </body>
 
 </html>

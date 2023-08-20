@@ -1,7 +1,6 @@
 document.body.focus();
-let alarm = new Audio("/alarm.mp3")
-let wakelock = navigator.requestWakeLock('screen');
-wakelock.lock();
+let alarm = new Audio("/alarm.mp3");
+let alarming = false;
 navigator.getBattery().then(function (battery) {
     function updateAllBatteryInfo() {
         updateChargeInfo();
@@ -15,53 +14,72 @@ navigator.getBattery().then(function (battery) {
         updateChargeInfo();
     });
     function updateChargeInfo() {
-        console.log("Battery charging? "
-            + (battery.charging ? "Yes" : "No"));
+        a = document.querySelector('#container');
+        battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
     }
 
     battery.addEventListener('levelchange', function () {
         updateLevelInfo();
     });
     function updateLevelInfo() {
-        console.log("Battery level: "
-            + battery.level * 100 + "%");
-        if (battery.level >= .85 || battery.level <= .30) { alarm.play(); }
-        if (battery.level > .75) return document.querySelector('img').src = "/100.png"
-        if (battery.level > .50) return document.querySelector('img').src = "/75.png"
-        if (battery.level > .25) return document.querySelector('img').src = "/50.png"
-        if (battery.level > .10) return document.querySelector('img').src = "/25.png"
-        if (battery.level <= .10) return document.querySelector('img').src = "/10.png"
+        document.querySelector('#level #progress').style.width = battery.level * 100 + "px"
+        document.querySelector('#level p').innerText = battery.level * 100 + "%"
     }
 
     battery.addEventListener('chargingtimechange', function () {
         updateChargingInfo();
     });
     function updateChargingInfo() {
-        console.log("Battery charging time: "
-            + battery.chargingTime / 60 + " minutes");
-            document.querySelector('#charg').innerText = "Battery charging time: "
-            + battery.chargingTime / 60 + " minutes"
+        if (battery.dischargingTime != Infinity) {
+            document.querySelector('#charge').parentNode.style.display = "flex"
+            document.querySelector('#charge').innerText = battery.dischargingTime / 60 + " min"
+            console.log(battery.dischargingTime / 60 + " min")
+            document.querySelector('#charge').parentNode.classList.add('nav')
+        } else document.querySelector('#charge').parentNode.style.display = "none", document.querySelector('#charge').parentNode.classList.remove('nav')
     }
 
     battery.addEventListener('dischargingtimechange', function () {
         updateDischargingInfo();
     });
     function updateDischargingInfo() {
-        console.log("Battery discharging time: "
-            + battery.dischargingTime / 60 + " minutes");
-            document.querySelector('#discharg').innerText = "Battery discharging time: "
-            + battery.dischargingTime / 60 + " minutes"
+        if (battery.dischargingTime != Infinity) {
+            document.querySelector('#discharge').parentNode.style.display = "flex"
+            document.querySelector('#discharge').innerText = battery.dischargingTime / 60 + " min"
+            console.log(battery.dischargingTime / 60 + " min")
+            document.querySelector('#discharge').parentNode.classList.add('nav')
+        } else document.querySelector('#discharge').parentNode.style.display = "none", document.querySelector('#discharge').parentNode.classList.remove('nav')
     }
 
 });
-
+// let wakelock = navigator.requestWakeLock('screen');
+document.addEventListener('keydown', () => {
+    if (alarming) alarm.pause(), alarming = false;
+})
 getKaiAd({
     publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
     app: 'batterymanager',
-    onerror: err => console.error('Custom catch:', err),
+    test: 1,
+    onerror: err => console.error('error getting ad: ', err),
     onready: ad => {
-        // Ad is ready to be displayed
-        // calling 'display' will display the ad
         ad.call('display')
     }
+})
+
+
+
+function nav(move) {
+
+    let currentIndex = document.activeElement;
+    const items = document.querySelectorAll('.nav')
+
+    // console.log
+    let currentElemIdx = [...items].indexOf(currentIndex);
+    const next = currentElemIdx + move;
+    const targetElement = items[next];
+    if (targetElement) targetElement.focus();
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key == "ArrowUp") nav(-1)
+    if (e.key == "ArrowDown") nav(1)
 })

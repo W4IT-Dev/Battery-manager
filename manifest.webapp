@@ -1,8 +1,8 @@
 {
-  "version": "0.0.2.1",
+  "version": "0.0.7.0",
   "name": "batterymanager",
-  "description": "manange ur battery",
-  "type": "web",
+  "description": "Manage your battery",
+  "type": "certified",
   "launch_path": "/index.html",
   "icons": {
     "56": "/icon.png",
@@ -15,8 +15,8 @@
   "locales": {
     "en-US": {
       "name": "Battery Manager",
-      "subtitle": "mamange ur battery",
-      "description": "views info, set alarm if level goes above or under level"
+      "subtitle": "Manage your battery",
+      "description": "View battery information and set an alarm if your battey level goes above a specifc percentage."
     }
   },
   "default_locale": "en-US"
