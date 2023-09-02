@@ -7,7 +7,7 @@ navigator.getBattery().then(function (battery) {
         updateLevelInfo();
         updateChargingInfo();
         updateDischargingInfo();
-        document.querySelector('#temperature').innerText = battery.temperature;
+        document.querySelector('#temperature').innerText = battery.temperature + '°';
 
     }
     updateAllBatteryInfo();
@@ -67,7 +67,19 @@ getKaiAd({
     }
 })
 
-
+let divs = document.querySelectorAll('#info .nav, #info * .nav')
+for (let i = 0; i < divs.length; i++) {
+    let a;
+    divs[i].addEventListener('focus', () => {
+        a = setTimeout(() => {
+            document.querySelectorAll('.div')[i].classList.add('showinfo')
+        }, 1000)
+    })
+    divs[i].addEventListener('blur', () => {
+        clearTimeout(a);
+        document.querySelectorAll('.div')[i].classList.remove('showinfo')
+    })
+}
 
 function nav(move) {
     let currentIndex = document.activeElement;

@@ -9,8 +9,8 @@ body {
 }
 
 #battery {
-    margin: 5% 5%;
-    padding: 5% 0%;
+    margin: 2.5% 5%;
+    padding: 4% 0 2% 0;
     background-color: rgb(20, 20, 20);
     border-radius: 10px;
     transition: all 1s;
@@ -71,17 +71,20 @@ body {
 /*INFO*/
 
 #battery #info div {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: 30px;
-    padding: 2px 5px;
+    padding: 1px 5px;
+    white-space: nowrap;
 }
 
-#battery #info div:focus,
-#battery #info div:has(input:focus) {
+#battery #info div:focus {
     background-color: rgb(35, 35, 35)
 }
+
+/*#battery #info div:has(input:focus)*/
 
 #battery #info div :nth-child(2) {
     color: #e8e8e8;
@@ -93,10 +96,64 @@ body {
     background-color: rgb(28, 28, 28);
     border: none;
     height: 22px;
-    font-size: 18px;
+    font-size: 17px;
 }
 
+/*Explantion*/
+#info .div::after,
+#info .dischargediv::after,
+#info .chargediv::after {
+    content: 'Hello world';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0px;
+    width: 216px;
+    background-color: rgb(15, 15, 15);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 100;
+    overflow: hidden;
+    transition: height .5s;
+}
 
+#info .maxdiv::after,
+#info .mindiv::after,
+#info .tempdiv::after {
+    top: 0;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(-100%);
+}
+
+#info div.showinfo::after {
+    height: 70px;
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.dischargediv::after {
+    content: 'Estiamted time the phone reaches 0%.' !important;
+}
+
+.chargediv::after {
+    content: 'Estiamted time the phone is full charged.' !important;
+}
+
+.tempdiv::after {
+    content: 'Estiamted temperatur of the battery in celcius.' !important;
+}
+
+.maxdiv::after {
+    content: 'Battery level to give alarm if its over that' !important;
+}
+
+.mindiv::after {
+    content: 'Battery level to give alarm if its under that' !important;
+}
 
 * {
     outline: 0px solid red;
