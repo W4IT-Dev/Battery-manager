@@ -10,12 +10,13 @@ body {
 
 #battery {
     margin: 5% 5%;
-    padding: 5%;
+    padding: 5% 0%;
     background-color: rgb(20, 20, 20);
     border-radius: 10px;
     transition: all 1s;
 }
 
+/*LEVEL*/
 #battery #level {
     line-height: 0;
     display: flex;
@@ -67,19 +68,19 @@ body {
     transition: width 1s;
 }
 
-#battery #info {
-    width: inherit;
-}
+/*INFO*/
 
 #battery #info div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: 30px;
+    padding: 2px 5px;
 }
 
-#battery #info div:focus {
-    background-color: red;
+#battery #info div:focus,
+#battery #info div:has(input:focus) {
+    background-color: rgb(35, 35, 35)
 }
 
 #battery #info div :nth-child(2) {
@@ -90,6 +91,9 @@ body {
     width: 30px;
     text-align: center;
     background-color: rgb(28, 28, 28);
+    border: none;
+    height: 22px;
+    font-size: 18px;
 }
 
 
