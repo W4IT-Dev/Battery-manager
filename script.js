@@ -12,6 +12,8 @@ navigator.getBattery().then(function (battery) {
     }
     updateAllBatteryInfo();
 
+
+    //events
     battery.addEventListener('chargingchange', function () {
         updateChargeInfo();
     });
@@ -28,25 +30,25 @@ navigator.getBattery().then(function (battery) {
         updateDischargingInfo();
     });
 
-    console.log(document.querySelector('#max-charge').value, document.querySelector('#min-level').value)
+    //functions
     function updateChargeInfo() {
         a = document.querySelector('#container');
         battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
     }
     function updateLevelInfo() {
-        if (battery.level >= document.querySelector('#max-charge').value || battery.level <= document.querySelector('#min-level').value) alarm.play();
+        if (battery.level >= document.querySelector('#max-charge').value / 100 && battery.charging || battery.level <= document.querySelector('#min-level').value / 100) alarm.play();
         document.querySelector('#level #progress').style.width = battery.level * 100 + "px";
         document.querySelector('#level p').innerText = parseInt(battery.level * 100) + "%";
     }
     function updateChargingInfo() {
-        if (battery.chargingTime != Infinity) {
+        if (battery.chargingTime !== Infinity) {
             document.querySelector('#charge').parentNode.style.display = "flex"
             document.querySelector('#charge').innerText = parseInt(battery.chargingTime / 60) + " min"
             document.querySelector('#charge').parentNode.classList.add('nav')
         } else document.querySelector('#charge').parentNode.style.display = "none", document.querySelector('#charge').parentNode.classList.remove('nav')
     }
     function updateDischargingInfo() {
-        if (battery.dischargingTime != Infinity) {
+        if (battery.dischargingTime !== Infinity) {
             document.querySelector('#discharge').parentNode.style.display = "flex"
             document.querySelector('#discharge').innerText = parseInt(battery.dischargingTime / 60) + " min"
             document.querySelector('#discharge').parentNode.classList.add('nav')
@@ -54,7 +56,12 @@ navigator.getBattery().then(function (battery) {
     }
 
 });
-document.addEventListener('keydown', () => {
+document.addEventListener('keydown', (e) => {
+    if (e.key.includes('Arrow')) e.preventDefault();
+    if (document.activeElement.id == "max-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
+    if (document.activeElement.id == "max-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
+    if (document.activeElement.id == "min-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
+    if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
     if (alarming) alarm.pause(), alarming = false;
 })
 getKaiAd({
