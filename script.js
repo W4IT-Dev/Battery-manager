@@ -1,7 +1,7 @@
 document.body.focus();
 let alarm = new Audio("/alarm.mp3");
 let alarming = false;
-navigator.getBattery().then(function (battery) {
+if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     function updateAllBatteryInfo() {
         updateChargeInfo();
         updateLevelInfo();
@@ -11,8 +11,6 @@ navigator.getBattery().then(function (battery) {
 
     }
     updateAllBatteryInfo();
-
-
     //events
     battery.addEventListener('chargingchange', function () {
         updateChargeInfo();
@@ -36,7 +34,7 @@ navigator.getBattery().then(function (battery) {
         battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
     }
     function updateLevelInfo() {
-        if (battery.level >= document.querySelector('#max-charge').value / 100 && battery.charging || battery.level <= document.querySelector('#min-level').value / 100) alarm.play();
+        if (battery.level >= document.querySelector('#max-charge').value / 100 && battery.charging || battery.level <= document.querySelector('#min-charge').value / 100) alarm.play();
         document.querySelector('#level #progress').style.width = battery.level * 100 + "px";
         document.querySelector('#level p').innerText = parseInt(battery.level * 100) + "%";
     }
@@ -86,6 +84,9 @@ for (let i = 0; i < divs.length; i++) {
         clearTimeout(a);
         document.querySelectorAll('.div')[i].classList.remove('showinfo')
     })
+    divs[i].addEventListener('keydown', e => {
+        if (e.key == "Enter") document.querySelectorAll('.div')[i].classList.remove('showinfo')
+    })
 }
 
 function nav(move) {
@@ -96,10 +97,13 @@ function nav(move) {
     let currentElemIdx = [...items].indexOf(currentIndex);
     const next = currentElemIdx + move;
     const targetElement = items[next];
-    if (targetElement) targetElement.focus();
+    if (move < 0 && !document.activeElement.classList.contains('nav')) return items[items.length - 1].focus();
+    if (targetElement) { targetElement.focus(); } else document.activeElement.blur();
 }
 
 document.addEventListener('keydown', e => {
+    e.preventDefault();
     if (e.key == "ArrowUp") nav(-1)
-    if (e.key == "ArrowDown") nav(1)
+    if (e.key == "ArrowDown") nav(1);
+    if(e.key == "ArrowRight") document.querySelector('.active').classList.remove('active'), document.querySelector('#slider div').classList.add('active')
 })
