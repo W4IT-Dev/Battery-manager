@@ -12,6 +12,7 @@ View battery information such as health, temperatur charging- and discharging ti
 <br>
 
 ### Screenshot(s):
-![Screen Shot 2023-09-02 at 17 16 02](https://github.com/W4IT-Dev/Battery-manager/assets/110252354/0279bd72-1780-42d1-8abf-14ed298093be)
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/3d618fb2-8418-40da-9607-27ee0057c21b" height="294px">
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/3cd2a3d7-ab2f-4c96-86a8-08783d6474f9" height="294px">
 
 (temperatur works on kaios devices)
