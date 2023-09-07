@@ -35,7 +35,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     }
     function updateLevelInfo() {
         if (battery.level >= document.querySelector('#max-charge').value / 100 && battery.charging || battery.level <= document.querySelector('#min-charge').value / 100) alarm.play();
-        document.querySelector('#level #progress').style.width = battery.level * 100 + "px";
+        document.querySelector('#level #progress').style.width = 100 - battery.level * 100 + "px";
         document.querySelector('#level p').innerText = parseInt(battery.level * 100) + "%";
     }
     function updateChargingInfo() {
@@ -105,5 +105,5 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (e.key == "ArrowUp") nav(-1)
     if (e.key == "ArrowDown") nav(1);
-    if(e.key == "ArrowRight") document.querySelector('.active').classList.remove('active'), document.querySelector('#slider div').classList.add('active')
+    if (e.key == "ArrowRight") document.querySelector('.active').classList.remove('active'), document.querySelector('#slider div').classList.add('active')
 })
