@@ -54,7 +54,7 @@ function nav(move) {
 }
 
 document.addEventListener('keydown', e => {
-    if(e.key.includes('Arrow') e.preventDefault();
+    if(e.key.includes('Arrow')) e.preventDefault();
     if (e.key == "ArrowUp") nav(-1)
     if (e.key == "ArrowDown") nav(1);
     if (e.key == "ArrowRight") document.querySelector('.active').classList.remove('active'), document.querySelector('#slider div').classList.add('active')
