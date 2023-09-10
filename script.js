@@ -1,59 +1,7 @@
 document.body.focus();
 let alarm = new Audio("/alarm.mp3");
 let alarming = false;
-if (navigator.getBattery) navigator.getBattery().then(function (battery) {
-    function updateAllBatteryInfo() {
-        updateChargeInfo();
-        updateLevelInfo();
-        updateChargingInfo();
-        updateDischargingInfo();
-        document.querySelector('#temperature').innerText = battery.temperature + '°';
 
-    }
-    updateAllBatteryInfo();
-    //events
-    battery.addEventListener('chargingchange', function () {
-        updateChargeInfo();
-    });
-
-    battery.addEventListener('levelchange', function () {
-        updateLevelInfo();
-    });
-
-    battery.addEventListener('chargingtimechange', function () {
-        updateChargingInfo();
-    });
-
-    battery.addEventListener('dischargingtimechange', function () {
-        updateDischargingInfo();
-    });
-
-    //functions
-    function updateChargeInfo() {
-        a = document.querySelector('#container');
-        battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
-    }
-    function updateLevelInfo() {
-        if (battery.level >= document.querySelector('#max-charge').value / 100 && battery.charging || battery.level <= document.querySelector('#min-charge').value / 100) alarm.play();
-        document.querySelector('#level #progress').style.width = 100 - battery.level * 100 + "px";
-        document.querySelector('#level p').innerText = parseInt(battery.level * 100) + "%";
-    }
-    function updateChargingInfo() {
-        if (battery.chargingTime !== Infinity) {
-            document.querySelector('#charge').parentNode.style.display = "flex"
-            document.querySelector('#charge').innerText = parseInt(battery.chargingTime / 60) + " min"
-            document.querySelector('#charge').parentNode.classList.add('nav')
-        } else document.querySelector('#charge').parentNode.style.display = "none", document.querySelector('#charge').parentNode.classList.remove('nav')
-    }
-    function updateDischargingInfo() {
-        if (battery.dischargingTime !== Infinity) {
-            document.querySelector('#discharge').parentNode.style.display = "flex"
-            document.querySelector('#discharge').innerText = parseInt(battery.dischargingTime / 60) + " min"
-            document.querySelector('#discharge').parentNode.classList.add('nav')
-        } else document.querySelector('#discharge').parentNode.style.display = "none", document.querySelector('#discharge').parentNode.classList.remove('nav')
-    }
-
-});
 document.addEventListener('keydown', (e) => {
     if (e.key.includes('Arrow')) e.preventDefault();
     if (document.activeElement.id == "max-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
@@ -76,11 +24,15 @@ let divs = document.querySelectorAll('#info .nav, #info * .nav')
 for (let i = 0; i < divs.length; i++) {
     let a;
     divs[i].addEventListener('focus', () => {
+        if(divs[i].classList.contains('div')) divs[i].classList.add('focus')
+        else divs[i].parentNode.parentNode.classList.add('focus')
         a = setTimeout(() => {
             document.querySelectorAll('.div')[i].classList.add('showinfo')
         }, 1000)
     })
     divs[i].addEventListener('blur', () => {
+        if(divs[i].classList.contains('div')) divs[i].classList.remove('focus')
+        else divs[i].parentNode.parentNode.classList.remove('focus')
         clearTimeout(a);
         document.querySelectorAll('.div')[i].classList.remove('showinfo')
     })

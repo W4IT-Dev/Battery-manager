@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="DOM.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="battery.js" defer></script>
     <script src="kaiads.v5.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +14,6 @@
     <div id="battery">
         <div id="level">
             <div id="container">
-                <div id="gradient"></div>
                 <div id="progress"></div>
             </div>
             <p>unkown%</p>
@@ -34,8 +35,8 @@
             <div class="maxdiv div">
                 <label for="number-input">Max Charge</label>
                 <div class="number-input">
-                    <div><img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAEAQAAAA5p3UDAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCzwAAAAd0SU1FB+cJAxE1OqHpnkYAAAOJSURBVHja7d3NThNRGMbxdyhzASJpGvQ62GBYeAeQIGElN6AJ1AuQLSYsvAL5CBRj990IxHuhW3RnLHMeF7WJH0BsO3POwPv/bdiVeXmeMzNlkjlmqIw0Nydtb0tnZ1K/L/34Mfx5caHw5o3C/HzqY0RFFF6/lq6udKdv36R2W8qy1MeLkijkubS/r7F0Ogqzs6mPHVOSGg3p5GS88Efev099/JjCdOGPPH+eeg5MQCHPFbrd6cKXpC9fUs+CMZWz8kdCkJ48ST0T/lN5K//3DqytxZxhJvUf8b5SyHOzTsey1dVSPzhbWIg5B189JiA1GmYHB2Ylh29mpqKIOQsFGJNCnpsqWPkjWb+fekbcotwbvptcX/Pv4Zqq5IbvH71e6jlxgzjhh6CwuJh6Vvyl+tP+yNu3qWfFX+KsfEk6OpJm+EpeJ/FW/ukpTwJrhvAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwndsGP6nT9WHf3Q0fLc/akXh3TtWvlMKz56x8h0b7qNL+C5JrdZwa7SqcNqvNYW1NVZ+vcR9R31W1aaIHz+aNjezLO6OWw9B5E0KpNQD409xC6DLy2o++MULyz584BJQcwrNplQU3AQ6pvD5c3UF4Gaw9qSlpWoLQAlqT2F3t/oScDmoLR4G4VcJjo85EzhGCUAJQAlglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABmppDncd5oengoZVnqeXGDeGeCnZ3Us+IWcc4EISgsLqaeFbeIU4JeL/WcuEP1l4OiUGg2U8+JO1R/JlhZiTlP5F3D7r9sZjAwW183Ozmp5jc8fRpzHgowgSwrCtPLl2bdbukfHvnrIAWYUDYzGJg2NsovQb+fejaModwbw6KQWq3UM2FMpd0YhvPz1LNgQqWUICwvp54DU5jqchD29lIfP0owPBPs74+X/vExTwQfGOnVK+nq6u7gv36VtrZ4EvhASY8eSVtbw/2SLy+l79+lfl86O5Pabenx49TH+BPOcYDgjWhqQwAAAABJRU5ErkJggg=="
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAEAQAAAA5p3UDAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCzwAAAAd0SU1FB+cJAxE1OqHpnkYAAAOJSURBVHja7d3NThNRGMbxdyhzASJpGvQ62GBYeAeQIGElN6AJ1AuQLSYsvAL5CBRj990IxHuhW3RnLHMeF7WJH0BsO3POwPv/bdiVeXmeMzNlkjlmqIw0Nydtb0tnZ1K/L/34Mfx5caHw5o3C/HzqY0RFFF6/lq6udKdv36R2W8qy1MeLkijkubS/r7F0Ogqzs6mPHVOSGg3p5GS88Efev099/JjCdOGPPH+eeg5MQCHPFbrd6cKXpC9fUs+CMZWz8kdCkJ48ST0T/lN5K//3DqytxZxhJvUf8b5SyHOzTsey1dVSPzhbWIg5B189JiA1GmYHB2Ylh29mpqKIOQsFGJNCnpsqWPkjWb+fekbcotwbvptcX/Pv4Zqq5IbvH71e6jlxgzjhh6CwuJh6Vvyl+tP+yNu3qWfFX+KsfEk6OpJm+EpeJ/FW/ukpTwJrhvAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwndsGP6nT9WHf3Q0fLc/akXh3TtWvlMKz56x8h0b7qNL+C5JrdZwa7SqcNqvNYW1NVZ+vcR9R31W1aaIHz+aNjezLO6OWw9B5E0KpNQD409xC6DLy2o++MULyz584BJQcwrNplQU3AQ6pvD5c3UF4Gaw9qSlpWoLQAlqT2F3t/oScDmoLR4G4VcJjo85EzhGCUAJQAlglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABmppDncd5oengoZVnqeXGDeGeCnZ3Us+IWcc4EISgsLqaeFbeIU4JeL/WcuEP1l4OiUGg2U8+JO1R/JlhZiTlP5F3D7r9sZjAwW183Ozmp5jc8fRpzHgowgSwrCtPLl2bdbukfHvnrIAWYUDYzGJg2NsovQb+fejaModwbw6KQWq3UM2FMpd0YhvPz1LNgQqWUICwvp54DU5jqchD29lIfP0owPBPs74+X/vExTwQfGOnVK+nq6u7gv36VtrZ4EvhASY8eSVtbw/2SLy+l79+lfl86O5Pabenx49TH+BPOcYDgjWhqQwAAAABJRU5ErkJggg=="
                             alt="<" height="12px">
                     </div>
                     <input min="0" max="100" name="number-input" value="82" type="number" id="max-charge" class="nav"
@@ -63,13 +64,13 @@
             </div>
         </div>
     </div>
-    <div id="slider">
+    <!-- <div id="slider">
         <div>Info</div>
         <div>Alarm</div>
         <div>Usage</div>
         <div class="active">Tips</div>
         <div>Settings</div>
-    </div>
+    </div> -->
 
 </body>
 

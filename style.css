@@ -89,21 +89,13 @@ hr {
     transform: translateY(-50%);
 }
 
-#gradient {
-    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 10%, rgba(255, 87, 51, 1) 20%, rgba(255, 195, 0, 1) 30%, rgba(0, 170, 0, 1) 40%, rgba(0, 221, 0, 1) 50%, rgba(27, 246, 0, 1) 82%, rgba(0, 170, 0, 1) 100%);
-    position: absolute;
-    height: 40px;
-    width: 100px;
-}
-
 #progress {
     position: absolute;
     top: 2px;
     height: 40px;
     width: 100px;
-    right: 2px;
-    background-color: rgb(10, 10, 10);
-    transition: width 1s;
+    background-color: white;
+    transition: all 1s;
 }
 
 /*INFO*/
@@ -119,11 +111,11 @@ hr {
     transition: background-color .15s;
 }
 
-#battery #info div:focus-within {
+#battery #info div.focus {
     background-color: rgb(38, 38, 38);
 }
 
-#battery #info div:focus-within input {
+#battery #info div.focus input {
     background-color: rgb(31, 31, 31);
 }
 
