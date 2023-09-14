@@ -1,6 +1,5 @@
 document.body.focus();
 let alarm = new Audio("/alarm.mp3");
-let alarming = false;
 
 document.addEventListener('keydown', (e) => {
     if (e.key.includes('Arrow')) e.preventDefault();
@@ -8,7 +7,7 @@ document.addEventListener('keydown', (e) => {
     if (document.activeElement.id == "max-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
     if (document.activeElement.id == "min-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
     if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
-    if (alarming) alarm.pause(), alarming = false;
+    if (!alarm.paused) alarm.pause()
 })
 getKaiAd({
     publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',

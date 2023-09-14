@@ -176,23 +176,23 @@ hr {
 }
 
 .dischargediv::after {
-    content: 'Estiamted time the phone reaches 0%.' !important;
+    content: 'Estimated time until battery is fully depleted.' !important;
 }
 
 .chargediv::after {
-    content: 'Estiamted time the phone is full charged.' !important;
+    content: 'Estimated time to fully charge your device.' !important;
 }
 
 .tempdiv::after {
-    content: 'Estimated temperature of the battery in celcius.' !important;
+    content: 'Estimated temperature of the battery in Celsius.' !important;
 }
 
 .maxdiv::after {
-    content: 'Battery level to give alarm if its over that' !important;
+    content: 'Alarm triggers when battery exceeds this level.' !important;
 }
 
 .mindiv::after {
-    content: 'Battery level to give alarm if its under that' !important;
+    content: 'Alarm activates if battery drops below this level.' !important;
 }
 
 .number-input {
