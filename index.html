@@ -33,44 +33,29 @@
                 <span id="temperature">unknown</span>
             </div>
             <div class="maxdiv div">
-                <label for="number-input">Max Charge</label>
-                <div class="number-input">
-                    <div>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAEAQAAAA5p3UDAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCzwAAAAd0SU1FB+cJAxE1OqHpnkYAAAOJSURBVHja7d3NThNRGMbxdyhzASJpGvQ62GBYeAeQIGElN6AJ1AuQLSYsvAL5CBRj990IxHuhW3RnLHMeF7WJH0BsO3POwPv/bdiVeXmeMzNlkjlmqIw0Nydtb0tnZ1K/L/34Mfx5caHw5o3C/HzqY0RFFF6/lq6udKdv36R2W8qy1MeLkijkubS/r7F0Ogqzs6mPHVOSGg3p5GS88Efev099/JjCdOGPPH+eeg5MQCHPFbrd6cKXpC9fUs+CMZWz8kdCkJ48ST0T/lN5K//3DqytxZxhJvUf8b5SyHOzTsey1dVSPzhbWIg5B189JiA1GmYHB2Ylh29mpqKIOQsFGJNCnpsqWPkjWb+fekbcotwbvptcX/Pv4Zqq5IbvH71e6jlxgzjhh6CwuJh6Vvyl+tP+yNu3qWfFX+KsfEk6OpJm+EpeJ/FW/ukpTwJrhvAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwndsGP6nT9WHf3Q0fLc/akXh3TtWvlMKz56x8h0b7qNL+C5JrdZwa7SqcNqvNYW1NVZ+vcR9R31W1aaIHz+aNjezLO6OWw9B5E0KpNQD409xC6DLy2o++MULyz584BJQcwrNplQU3AQ6pvD5c3UF4Gaw9qSlpWoLQAlqT2F3t/oScDmoLR4G4VcJjo85EzhGCUAJQAlglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABmppDncd5oengoZVnqeXGDeGeCnZ3Us+IWcc4EISgsLqaeFbeIU4JeL/WcuEP1l4OiUGg2U8+JO1R/JlhZiTlP5F3D7r9sZjAwW183Ozmp5jc8fRpzHgowgSwrCtPLl2bdbukfHvnrIAWYUDYzGJg2NsovQb+fejaModwbw6KQWq3UM2FMpd0YhvPz1LNgQqWUICwvp54DU5jqchD29lIfP0owPBPs74+X/vExTwQfGOnVK+nq6u7gv36VtrZ4EvhASY8eSVtbw/2SLy+l79+lfl86O5Pabenx49TH+BPOcYDgjWhqQwAAAABJRU5ErkJggg=="
-                            alt="<" height="12px">
-                    </div>
-                    <input min="0" max="100" name="number-input" value="82" type="number" id="max-charge" class="nav"
-                        tabindex="3">
-                    <div>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAAXNSR0IB2cksfwAAAAlwSFlzAAAATwAAAE8BY4r91wAAAtBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////A8BHIQAAAPB0Uk5TAAg0c561tqAwBiyGyOX0++jPiCgBQKrq/f/urwKo8/a5QxaH7/e9SEzM+MBKffW/SSDDTjGw+cZQssUqpvrJVBOK/lIDYOPNWKRaB1H8WRFn2dJfFW3bXWza1BRp1mHY12MSZWZiaN1qENPfD1vgbwQO0eJxBQ1W0HQMU+R2zngL5nsJCsvnf0eCROmEQcc/64k87Is67Y03wo/BkjKUL77wlhjxmBm88psaJ7qdHCSfHSK4oR+jpbOnF7ElrK2uq7QtKZmXk6neooGAhYyOlZAbgx5+IXlya7cuZLszNThXVcpPRk1LRdVcOdxuxDZwQc32ZQAABSlJREFUeJzFm/lbVHUUh+8Mm6LMoiMzF4clBBJKQMBBlkGkOywN+6ogSqhM2CCoQQppk4IlJKIkalCmkkKmFmYRpFZCQVLabqW271b/QuhjBcM5+ZOfzs88z/vOuXe45/uZcwXhv0smd3B0cnZxmDT5Fn94m8p1ylQ3hVKpUKmnTf8f8JoZ7lqdeKN0HjNn6OECck8v8Z/y9rlDA+b7zvITx5R/wJ3gHswOFMdV0F13Qw1kc4JFO4OQUORVmOso2ldQWDiwBxHzJgiIhsj5OAN51EQB0RAdDrsKMbGEgGiMW4DqQfzCBNrgHlAPJFMiJSAak5IljEFMCikgKtX3YgzMqYG0QZo6HXMfZGRmMQbZOZge5OblcwYFmB7kLlrMGBTmYAyKljBXQVe8FGMQn7mMMSi5D2NQuryEMchaATJYWUwbJOSXgb6NpkLGwHI/xqC8YBVj8EAe5v+BtSKbNhBXV1ZBDNYkr2UM1j1YDTGoeWg9Y5C4AXNoqq1TMwYPbzRjDFI3MQZuj8ggBrbwJMbg0c1bIAb19ieVfw3m1EMMtoQ2MAZbH7NhDB6PYwxU22ohBrLGqYxB0xM1EAPz9mbGQDvFijHYEckYtOwshxhM3hXNGLQ+mYEx2B3GGLTtKYUYVO/dxxh4PFWEMZC3MwZ+HbkQg6qnQziDZ3wxBvufZQwOHDwEMZBcAxiDzucOYwxijjAGXd3PQwz0R19gDLyOHccYnPDhDF58CRKi6HtOMgaKl09BDDSnnBmD4FfmYgyOOzEG3q/2YAwO95JR2qjBaycwBn39OtrA3/11TJznO5MxCDp9FGNQdCaNMTg7HWNQ+oaSNjDMi8EYZHgyBsYoV4yBNdbIGLz5FsZgTYqBNlA6R2AMbI5BtEHakXMQAcHm4s/0IBYzKwuyAW/mu5CDERDMg7RBQgMmwBg1GLD/ne9mC0B3weio+raCEtBVoASE6nfIFlTCBPp6SYEy1C99uWfo4aARJBDPPJhbMMe10UcSMxgMYLLU8lhmLBiKgETqVu6RrFoCaUDNMPNAVr0LCTFrUxh+03lIhGkbZsYB7TYbgl/vwgwD2hFIfCnjhpGWWZDw0tzNjCKtOyHRZTU3iLS9BwkuqwbpIUD0eB8yikkXyBFAFP0uQkJLqYPhH+iARJbSxS6GfwHyBJT2dNL8zkFIXCkt9KP5XQOQsFKa1kbzvbohUaU00srwj30A4X+opQdAhQskppTOq2h+8PBHEP7HW2m+dwokopQ2uzH82E8g/E8Tab6/JySelDauowfwIHdIOCltWM3wT0OiSemzIZpvOAsJJqVKC8039p+D8PPy6QOQsRcSSuovZdF8pRMkktSXldD8tM+/gPBXFNMHwDSf/RD+l4U0X3cZEofqV2Yz/IArEL5pPX0ATQi5CuEXbGL47Xsh/IpA5gAe9hWEn97AHMCjd0P4X8cx/MhdEP43zcwBvHkHhF8XzfDjtkP4qWEM/9tGRACn/66dCSAavkdstOp/CGH4gaEQ/o8BTACSNBuxT6sPvczw1eGIAFTz00kmgFm1ALJLK3dnApC1dRB+LhcA/JyO2aOdzyzyFv+C2aI1j9AXoLACwxd6yHe9xGUmzA6vIFwll3SKTTYQX/iV2tVavByzv3u9JhEvHOaXYbZ3b1TfwYmfPxPIF6rymuz4ljzM7vDfdSVqPP+3RVi+UG8a94qR5Rpmc3lM+ToMjbn/rmG2hseW5tDS32+Ow4Z9yfDPf72sf/zZb/FSDPVfcrXdFsBf23oeEcsaSUIAAAAASUVORK5CYII="
-                            alt=">" height="12px">
-                    </div>
-                </div>
+                <label for="maxcharge">Max charge</label>
+                <img src="arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
+                <input tabindex="3" type="number" min="1" max="100" value="80" name="maxcharge" id="max-charge"
+                    class="nav">
+                <img src="arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
             </div>
             <div class="mindiv div">
-                <label for="number-input">Min Charge</label>
-                <div class="number-input">
-                    <div><img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAEAQAAAA5p3UDAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCzwAAAAd0SU1FB+cJAxE1OqHpnkYAAAOJSURBVHja7d3NThNRGMbxdyhzASJpGvQ62GBYeAeQIGElN6AJ1AuQLSYsvAL5CBRj990IxHuhW3RnLHMeF7WJH0BsO3POwPv/bdiVeXmeMzNlkjlmqIw0Nydtb0tnZ1K/L/34Mfx5caHw5o3C/HzqY0RFFF6/lq6udKdv36R2W8qy1MeLkijkubS/r7F0Ogqzs6mPHVOSGg3p5GS88Efev099/JjCdOGPPH+eeg5MQCHPFbrd6cKXpC9fUs+CMZWz8kdCkJ48ST0T/lN5K//3DqytxZxhJvUf8b5SyHOzTsey1dVSPzhbWIg5B189JiA1GmYHB2Ylh29mpqKIOQsFGJNCnpsqWPkjWb+fekbcotwbvptcX/Pv4Zqq5IbvH71e6jlxgzjhh6CwuJh6Vvyl+tP+yNu3qWfFX+KsfEk6OpJm+EpeJ/FW/ukpTwJrhvAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwneM8B0jfMcI3zHCd4zwHSN8xwjfMcJ3jPAdI3zHCN8xwndsGP6nT9WHf3Q0fLc/akXh3TtWvlMKz56x8h0b7qNL+C5JrdZwa7SqcNqvNYW1NVZ+vcR9R31W1aaIHz+aNjezLO6OWw9B5E0KpNQD409xC6DLy2o++MULyz584BJQcwrNplQU3AQ6pvD5c3UF4Gaw9qSlpWoLQAlqT2F3t/oScDmoLR4G4VcJjo85EzhGCUAJQAlglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABGCWCUAEYJYJQARglglABmppDncd5oengoZVnqeXGDeGeCnZ3Us+IWcc4EISgsLqaeFbeIU4JeL/WcuEP1l4OiUGg2U8+JO1R/JlhZiTlP5F3D7r9sZjAwW183Ozmp5jc8fRpzHgowgSwrCtPLl2bdbukfHvnrIAWYUDYzGJg2NsovQb+fejaModwbw6KQWq3UM2FMpd0YhvPz1LNgQqWUICwvp54DU5jqchD29lIfP0owPBPs74+X/vExTwQfGOnVK+nq6u7gv36VtrZ4EvhASY8eSVtbw/2SLy+l79+lfl86O5Pabenx49TH+BPOcYDgjWhqQwAAAABJRU5ErkJggg=="
-                            alt="<" height="12px">
-                    </div>
-                    <input min="0" max="100" name="number-input" value="35" type="number" id="min-charge" class="nav"
-                        tabindex="4">
-                    <div>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAAXNSR0IB2cksfwAAAAlwSFlzAAAATwAAAE8BY4r91wAAAtBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////A8BHIQAAAPB0Uk5TAAg0c561tqAwBiyGyOX0++jPiCgBQKrq/f/urwKo8/a5QxaH7/e9SEzM+MBKffW/SSDDTjGw+cZQssUqpvrJVBOK/lIDYOPNWKRaB1H8WRFn2dJfFW3bXWza1BRp1mHY12MSZWZiaN1qENPfD1vgbwQO0eJxBQ1W0HQMU+R2zngL5nsJCsvnf0eCROmEQcc/64k87Is67Y03wo/BkjKUL77wlhjxmBm88psaJ7qdHCSfHSK4oR+jpbOnF7ElrK2uq7QtKZmXk6neooGAhYyOlZAbgx5+IXlya7cuZLszNThXVcpPRk1LRdVcOdxuxDZwQc32ZQAABSlJREFUeJzFm/lbVHUUh+8Mm6LMoiMzF4clBBJKQMBBlkGkOywN+6ogSqhM2CCoQQppk4IlJKIkalCmkkKmFmYRpFZCQVLabqW271b/QuhjBcM5+ZOfzs88z/vOuXe45/uZcwXhv0smd3B0cnZxmDT5Fn94m8p1ylQ3hVKpUKmnTf8f8JoZ7lqdeKN0HjNn6OECck8v8Z/y9rlDA+b7zvITx5R/wJ3gHswOFMdV0F13Qw1kc4JFO4OQUORVmOso2ldQWDiwBxHzJgiIhsj5OAN51EQB0RAdDrsKMbGEgGiMW4DqQfzCBNrgHlAPJFMiJSAak5IljEFMCikgKtX3YgzMqYG0QZo6HXMfZGRmMQbZOZge5OblcwYFmB7kLlrMGBTmYAyKljBXQVe8FGMQn7mMMSi5D2NQuryEMchaATJYWUwbJOSXgb6NpkLGwHI/xqC8YBVj8EAe5v+BtSKbNhBXV1ZBDNYkr2UM1j1YDTGoeWg9Y5C4AXNoqq1TMwYPbzRjDFI3MQZuj8ggBrbwJMbg0c1bIAb19ieVfw3m1EMMtoQ2MAZbH7NhDB6PYwxU22ohBrLGqYxB0xM1EAPz9mbGQDvFijHYEckYtOwshxhM3hXNGLQ+mYEx2B3GGLTtKYUYVO/dxxh4PFWEMZC3MwZ+HbkQg6qnQziDZ3wxBvufZQwOHDwEMZBcAxiDzucOYwxijjAGXd3PQwz0R19gDLyOHccYnPDhDF58CRKi6HtOMgaKl09BDDSnnBmD4FfmYgyOOzEG3q/2YAwO95JR2qjBaycwBn39OtrA3/11TJznO5MxCDp9FGNQdCaNMTg7HWNQ+oaSNjDMi8EYZHgyBsYoV4yBNdbIGLz5FsZgTYqBNlA6R2AMbI5BtEHakXMQAcHm4s/0IBYzKwuyAW/mu5CDERDMg7RBQgMmwBg1GLD/ne9mC0B3weio+raCEtBVoASE6nfIFlTCBPp6SYEy1C99uWfo4aARJBDPPJhbMMe10UcSMxgMYLLU8lhmLBiKgETqVu6RrFoCaUDNMPNAVr0LCTFrUxh+03lIhGkbZsYB7TYbgl/vwgwD2hFIfCnjhpGWWZDw0tzNjCKtOyHRZTU3iLS9BwkuqwbpIUD0eB8yikkXyBFAFP0uQkJLqYPhH+iARJbSxS6GfwHyBJT2dNL8zkFIXCkt9KP5XQOQsFKa1kbzvbohUaU00srwj30A4X+opQdAhQskppTOq2h+8PBHEP7HW2m+dwokopQ2uzH82E8g/E8Tab6/JySelDauowfwIHdIOCltWM3wT0OiSemzIZpvOAsJJqVKC8039p+D8PPy6QOQsRcSSuovZdF8pRMkktSXldD8tM+/gPBXFNMHwDSf/RD+l4U0X3cZEofqV2Yz/IArEL5pPX0ATQi5CuEXbGL47Xsh/IpA5gAe9hWEn97AHMCjd0P4X8cx/MhdEP43zcwBvHkHhF8XzfDjtkP4qWEM/9tGRACn/66dCSAavkdstOp/CGH4gaEQ/o8BTACSNBuxT6sPvczw1eGIAFTz00kmgFm1ALJLK3dnApC1dRB+LhcA/JyO2aOdzyzyFv+C2aI1j9AXoLACwxd6yHe9xGUmzA6vIFwll3SKTTYQX/iV2tVavByzv3u9JhEvHOaXYbZ3b1TfwYmfPxPIF6rymuz4ljzM7vDfdSVqPP+3RVi+UG8a94qR5Rpmc3lM+ToMjbn/rmG2hseW5tDS32+Ow4Z9yfDPf72sf/zZb/FSDPVfcrXdFsBf23oeEcsaSUIAAAAASUVORK5CYII="
-                            alt=">" height="12px">
-                    </div>
-                </div>
+                <label for="mincharge">Min charge</label>
+                <img src="arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
+                <input tabindex="4" type="number" min="1" max="100" value="30" name="mincharge" id="min-charge"
+                    class="nav">
+                <img src="arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
+
             </div>
         </div>
     </div>
-    <!-- <div id="slider">
-        <div>Info</div>
-        <div>Alarm</div>
-        <div>Usage</div>
-        <div class="active">Tips</div>
+    <div id="slider">
+        <div class="active">Info</div>
+        <!-- <div>Alarm</div> -->
+        <!-- <div>Usage</div> -->
+        <!-- <div class="active">Tips</div> -->
         <div>Settings</div>
-    </div> -->
+    </div>
 
 </body>
 

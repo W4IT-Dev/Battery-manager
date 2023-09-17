@@ -9,33 +9,34 @@ document.addEventListener('keydown', (e) => {
     if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
     if (!alarm.paused) alarm.pause()
 })
-getKaiAd({
-    publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-    app: 'batterymanager',
-    test: 1,
-    onerror: err => console.error('error getting ad: ', err),
-    onready: ad => {
-        ad.call('display')
-    }
-})
+// getKaiAd({
+//     publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+//     app: 'batterymanager',
+//     test: 1,
+//     onerror: err => console.error('error getting ad: ', err),
+//     onready: ad => {
+//         ad.call('display')
+//     }
+// })
 
-let divs = document.querySelectorAll('#info .nav, #info * .nav')
+let divs = document.querySelectorAll('.nav')
 for (let i = 0; i < divs.length; i++) {
     let a;
     divs[i].addEventListener('focus', () => {
         if(divs[i].classList.contains('div')) divs[i].classList.add('focus')
-        else divs[i].parentNode.parentNode.classList.add('focus')
+        else divs[i].parentNode.classList.add('focus')
         a = setTimeout(() => {
             document.querySelectorAll('.div')[i].classList.add('showinfo')
-        }, 1000)
+        }, 2000)
     })
     divs[i].addEventListener('blur', () => {
         if(divs[i].classList.contains('div')) divs[i].classList.remove('focus')
-        else divs[i].parentNode.parentNode.classList.remove('focus')
+        else divs[i].parentNode.classList.remove('focus')
         clearTimeout(a);
         document.querySelectorAll('.div')[i].classList.remove('showinfo')
     })
     divs[i].addEventListener('keydown', e => {
+        // e.preventDefault();
         if (e.key == "Enter") document.querySelectorAll('.div')[i].classList.remove('showinfo')
     })
 }

@@ -8,7 +8,7 @@ body {
     height: 294px;
     background: rgb(38, 38, 38);
     background: rgb(38, 38, 38);
-    background: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(30, 30, 30, 1) 75%, rgba(5, 5, 5, 1) 100%);
+    background: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(30, 30, 30, 1) 85%, rgba(5, 5, 5, 1) 100%);
 }
 
 body,
@@ -111,21 +111,42 @@ hr {
     transition: background-color .15s;
 }
 
-#battery #info div.focus {
+#info div span,
+#info div label {
+    flex: 1 1 103px;
+}
+
+#info div img {
+    display: none;
+}
+
+#info div.focus {
     background-color: rgb(38, 38, 38);
 }
 
-#battery #info div.focus input {
+#info div.focus input {
     background-color: rgb(31, 31, 31);
 }
 
-#battery #info div :nth-child(2) {
-    color: #ddd;
+#info div.focus img {
+    display: block;
 }
 
-#battery #info div input {
+#info div :first-child {
+    text-align: left;
+}
+
+#info div :nth-child(2),
+#info div input {
+    color: #ddd;
+    text-align: right;
+}
+
+
+
+#info div input {
     width: 34px;
-    text-align: center;
+    text-align: center !important;
     background-color: rgb(15, 15, 15);
     border: none;
     height: 18px;
@@ -137,11 +158,13 @@ hr {
 
 /*Explantion*/
 #info .div::after {
-    content: 'Hello world';
+    flex-shrink: 1;
+
+    content: '';
     position: absolute;
     top: 100%;
     left: 0;
-    height: 0px;
+    height: 0;
     width: 216px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -152,10 +175,10 @@ hr {
     filter: drop-shadow(0px 20px 15px #000);
 }
 
-#info .maxdiv::after,
-#info .mindiv::after,
-#info .tempdiv::after {
-    top: 0;
+.maxdiv::after,
+.mindiv::after,
+.tempdiv::after {
+    top: 0px;
     border-radius: 0px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -171,8 +194,6 @@ hr {
     padding: 5px;
     box-sizing: border-box;
     transition: height .5s;
-
-
 }
 
 .dischargediv::after {
@@ -195,16 +216,7 @@ hr {
     content: 'Alarm activates if battery drops below this level.' !important;
 }
 
-.number-input {
-    display: flex;
-    align-items: center;
-}
-
-.number-input div {
-    background: none;
-    border: none;
-    color: white;
-}
+/*nav thing on bottom*/
 
 #slider {
     position: absolute;
@@ -223,13 +235,10 @@ hr {
 #slider div {
     font-size: 14px;
     transition: all .3s;
+    margin-right: 5px;
 }
 
 #slider div.active {
     font-size: 16.5px;
     font-weight: 600;
-}
-
-* {
-    outline: 0px solid red;
 }
