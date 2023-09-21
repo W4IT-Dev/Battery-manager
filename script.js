@@ -1,12 +1,14 @@
 document.body.focus();
 let alarm = new Audio("/alarm.mp3");
-
+localStorage.maxCharge ? maxCharge.value = localStorage.maxCharge : localStorage.maxCharge = maxCharge.value
+localStorage.minCharge ? minCharge.value = localStorage.minCharge : localStorage.minCharge = minCharge.value
 document.addEventListener('keydown', (e) => {
     if (e.key.includes('Arrow')) e.preventDefault();
-    if (document.activeElement.id == "max-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
-    if (document.activeElement.id == "max-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
-    if (document.activeElement.id == "min-charge" && e.key == "ArrowLeft") document.activeElement.stepDown()
-    if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp()
+
+    if (document.activeElement.id == "max-charge" && e.key == "ArrowLeft") document.activeElement.stepDown(), localStorage.maxCharge = maxCharge.value;
+    if (document.activeElement.id == "max-charge" && e.key == "ArrowRight") document.activeElement.stepUp(), localStorage.maxCharge = maxCharge.value;
+    if (document.activeElement.id == "min-charge" && e.key == "ArrowLeft") document.activeElement.stepDown(), localStorage.minCharge = minCharge.value;
+    if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp(), localStorage.minCharge = minCharge.value;
     if (!alarm.paused) alarm.pause()
 })
 // getKaiAd({
@@ -23,21 +25,21 @@ let divs = document.querySelectorAll('.nav')
 for (let i = 0; i < divs.length; i++) {
     let a;
     divs[i].addEventListener('focus', () => {
-        if(divs[i].classList.contains('div')) divs[i].classList.add('focus')
+        if (divs[i].classList.contains('div')) divs[i].classList.add('focus')
         else divs[i].parentNode.classList.add('focus')
         a = setTimeout(() => {
             document.querySelectorAll('.div')[i].classList.add('showinfo')
         }, 2000)
     })
     divs[i].addEventListener('blur', () => {
-        if(divs[i].classList.contains('div')) divs[i].classList.remove('focus')
+        if (divs[i].classList.contains('div')) divs[i].classList.remove('focus')
         else divs[i].parentNode.classList.remove('focus')
         clearTimeout(a);
         document.querySelectorAll('.div')[i].classList.remove('showinfo')
     })
     divs[i].addEventListener('keydown', e => {
         // e.preventDefault();
-        if (e.key == "Enter") document.querySelectorAll('.div')[i].classList.remove('showinfo')
+        if (e.key == "Enter") document.querySelectorAll('.div')[i].classList.remove('showinfo');
     })
 }
 
@@ -50,12 +52,16 @@ function nav(move) {
     const next = currentElemIdx + move;
     const targetElement = items[next];
     if (move < 0 && !document.activeElement.classList.contains('nav')) return items[items.length - 1].focus();
-    if (targetElement) { targetElement.focus(); } else document.activeElement.blur();
+    if (targetElement) targetElement.focus();
+    else document.activeElement.blur();
 }
 
 document.addEventListener('keydown', e => {
-    if(e.key.includes('Arrow')) e.preventDefault();
+    if (e.key.includes('Arrow')) e.preventDefault();
     if (e.key == "ArrowUp") nav(-1)
     if (e.key == "ArrowDown") nav(1);
-    if (e.key == "ArrowRight") document.querySelector('.active').classList.remove('active'), document.querySelector('#slider div').classList.add('active')
+    if (e.key == "ArrowRight" && !document.activeElement.tagName === "INPUT") {
+        document.querySelector('.active').classList.remove('active');
+        document.querySelectorAll('#slider div')[1].classList.add('active')
+    }
 })
