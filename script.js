@@ -11,15 +11,15 @@ document.addEventListener('keydown', (e) => {
     if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp(), localStorage.minCharge = minCharge.value;
     if (!alarm.paused) alarm.pause()
 })
-// getKaiAd({
-//     publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-//     app: 'batterymanager',
-//     test: 1,
-//     onerror: err => console.error('error getting ad: ', err),
-//     onready: ad => {
-//         ad.call('display')
-//     }
-// })
+getKaiAd({
+    publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+    app: 'batterymanager',
+    test: 1,
+    onerror: err => console.error('error getting ad: ', err),
+    onready: ad => {
+        ad.call('display')
+    }
+})
 
 let divs = document.querySelectorAll('.nav')
 for (let i = 0; i < divs.length; i++) {
@@ -60,8 +60,40 @@ document.addEventListener('keydown', e => {
     if (e.key.includes('Arrow')) e.preventDefault();
     if (e.key == "ArrowUp") nav(-1)
     if (e.key == "ArrowDown") nav(1);
-    if (e.key == "ArrowRight" && !document.activeElement.tagName === "INPUT") {
-        document.querySelector('.active').classList.remove('active');
-        document.querySelectorAll('#slider div')[1].classList.add('active')
-    }
+    if(e.key =="#") window.open('/about.html')
 })
+
+
+let pushLocalNotification = function (title, text) {
+    window.Notification.requestPermission().then((result) => {
+      const options = {
+        body: text,
+        mozbehavior: {
+          vibrationPattern: [30, 200, 30],
+        },
+      };
+
+      var notification = new window.Notification(title, options);
+
+      notification.onerror = function (err) {
+        console.log(err);
+      };
+      notification.onclick = function (event) {
+        if (window.navigator.mozApps) {
+          var request = window.navigator.mozApps.getSelf();
+          request.onsuccess = function () {
+            if (request.result) {
+              notification.close();
+              request.result.launch();
+            }
+          };
+        } else {
+          window.open(document.location.origin, "_blank");
+        }
+      };
+      notification.onshow = function () {
+        // notification.close();
+      };
+    });
+  };
+    
