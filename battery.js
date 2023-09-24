@@ -37,8 +37,8 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
             try {
                 pushLocalNotification(
                     "Battery reached " + maxCharge.value + "%",
-                    "Your battery is currently at " + battery.level * 100 + "%",
-                );
+                    "Your battery is currently at " + battery.level * 100 + "%"
+                )
             } catch (e) { console.log(e) }
         } else if (battery.level <= minCharge.value / 100 && !battery.charging) {
             alarm.play();
