@@ -1,13 +1,13 @@
 body {
     background-color: rgb(38, 38, 38);
     color: white;
+    height: 294px;
+    width: 240px;
     margin: 0;
     padding: 0;
     text-align: center;
-    width: 240px;
-    height: 294px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%,  rgba(5, 5, 5, .94) 100%);
+    background: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(5, 5, 5, .94) 100%);
+    overflow: hidden;
 }
 
 body,
@@ -20,7 +20,6 @@ body * {
     src: url('ubuntu-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 *:focus {
@@ -38,7 +37,6 @@ hr {
     padding: 4% 0 2% 0;
     background-color: rgb(10, 10, 10);
     border-radius: 10px;
-    transition: height 1s;
     overflow: hidden;
 }
 
@@ -49,7 +47,6 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90px;
 }
 
 #battery #level #container {
@@ -82,24 +79,19 @@ hr {
     border-radius: 4px;
     background-color: white;
     position: absolute;
-    display: inline-block;
     top: 50%;
     left: 100%;
     transform: translateY(-50%);
 }
 
 #progress {
-    position: absolute;
-    top: 2px;
     height: 40px;
-    width: 100px;
-    background-color: white;
+    width: 0px;
     transition: all 1s;
 }
 
-/*INFO*/
 
-#battery #info div {
+#info div {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -107,7 +99,7 @@ hr {
     line-height: 30px;
     padding: 1px 5px;
     white-space: nowrap;
-    transition: background-color .15s;
+    transition: background-color .25s;
 }
 
 #info div span,
@@ -115,34 +107,34 @@ hr {
     flex: 1 1 103px;
 }
 
-#info div img {
+div img {
     display: none;
 }
 
-#info div.focus {
+div.focus {
     background-color: rgb(38, 38, 38);
 }
 
-#info div.focus input {
+div.focus input {
     background-color: rgb(27, 27, 27);
 }
 
-#info div.focus img {
+div.focus img {
     display: block;
 }
 
-#info div :first-child {
+div :first-child {
     text-align: left;
 }
 
-#info div :nth-child(2),
-#info div input {
+div :nth-child(2),
+div input {
     color: #ddd;
     text-align: right;
 }
 
-#info div input {
-    width: 34px;
+div input {
+    width: 3ch;
     text-align: center !important;
     background-color: rgb(18, 18, 18);
     border: none;
@@ -150,66 +142,62 @@ hr {
     font-size: 18px;
     -moz-appearance: textfield;
     appearance: textfield;
-    transition: background-color .15s;
+    transition: background-color .25s;
 }
 
-/*Explantion*/
-#info .div::after {
-    flex-shrink: 1;
+.div::after {
     content: '';
+    white-space: pre-wrap;
     position: absolute;
+    box-sizing: border-box;
     top: 100%;
     left: 0;
     height: 0;
-    width: 216px;
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 1;
     overflow: hidden;
     transition: height .5s;
     background: linear-gradient(0deg, rgba(22, 22, 22, 1) 0%, rgba(17, 17, 17, 1) 10%, rgba(7, 7, 7, 1) 100%);
-
 }
 
 .maxdiv::after,
 .mindiv::after,
 .tempdiv::after {
-    top: 0 !important;
-    border-radius: 0px !important;
-    border-top-left-radius: 5px !important;
-    border-top-right-radius: 5px !important;
+    top: 0;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     transform: translateY(-100%);
     background: linear-gradient(180deg, rgba(22, 22, 22, 1) 0%, rgba(17, 17, 17, 1) 10%, rgba(7, 7, 7, 1) 100%);
 }
 
-#info div.showinfo::after {
+div.showinfo::after {
     height: 70px;
-    white-space: pre-wrap;
     text-align: left;
     padding: 5px;
-    box-sizing: border-box;
-    transition: height .5s;
     outline: 1px solid grey;
 }
 
 .dischargediv::after {
-    content: 'Estimated time until battery is fully depleted.' !important;
+    content: 'Estimated time until battery is fully depleted.';
 }
 
 .chargediv::after {
-    content: 'Estimated time to fully charge your device.' !important;
+    content: 'Estimated time to fully charge your device.';
 }
 
 .tempdiv::after {
-    content: 'Estimated temperature of the battery in Celsius.' !important;
+    content: 'Estimated temperature of the battery in Celsius.';
 }
 
 .maxdiv::after {
-    content: 'Alarm triggers when battery exceeds this level.' !important;
+    content: 'Alarm triggers when battery exceeds this level.';
 }
 
 .mindiv::after {
-    content: 'Alarm activates if battery drops below this level.' !important;
+    content: 'Alarm activates if battery drops below this level.';
 }
 
 /*nav thing on bottom*/

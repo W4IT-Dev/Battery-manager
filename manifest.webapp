@@ -1,7 +1,7 @@
 {
-  "version": "0.0.16.0",
+  "version": "0.0.17.0",
   "name": "batterymanager",
-  "description": "Manage your battery",
+  "description": "Battery insights and custom alerts.",
   "type": "certified",
   "launch_path": "/index.html",
   "icons": {
@@ -15,7 +15,7 @@
   "locales": {
     "en-US": {
       "name": "Battery Manager",
-      "subtitle": "Manage your battery",
+      "subtitle": "Battery insights and custom alerts.",
       "description": "KaiOS Battery Manager is your go-to solution for efficient battery management on your KaiOS smartphone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience"
     }
   },
