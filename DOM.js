@@ -1,7 +1,1 @@
-const progress = document.querySelector('#level #progress');
-const dischargingTime = document.querySelector('#discharge');
-const chargingTime = document.querySelector('#charge');
-const temperature = document.querySelector('#temperature');
-const maxCharge = document.querySelector('#max-charge');
-const minCharge = document.querySelector('#min-charge');
-const charge = document.querySelector('#charge');
+const progress = document.querySelector("#level #progress"), dischargingTime = document.querySelector("#discharge"), chargingTime = document.querySelector("#charge"), temperature = document.querySelector("#temperature"), maxCharge = document.querySelector("#max-charge"), minCharge = document.querySelector("#min-charge"), charge = document.querySelector("#charge");

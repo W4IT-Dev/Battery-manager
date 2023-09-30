@@ -24,7 +24,6 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
         updateDischargingInfo();
     });
 
-    //functions
     function updateChargeInfo() {
         a = document.querySelector('#container');
         battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
@@ -36,16 +35,18 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
             alarm.play();
             try {
                 pushLocalNotification(
-                    "Battery reached " + maxCharge.value + "%",
-                    battery.level * 100 + "% is your current battery level."
+                    "Battery over " + maxCharge.value + "%",
+                    battery.level * 100 + "% is your current battery level.",
+                    "/fullCharge.png"
                 )
             } catch (e) { console.log(e) }
         } else if (battery.level <= minCharge.value / 100 && !battery.charging) {
             alarm.play();
             try {
                 pushLocalNotification(
-                    "Battery reached " + maxCharge.value + "%",
-                    battery.level * 100 + "% is your current battery level."
+                    "Battery below " + minCharge.value + "%",
+                    battery.level * 100 + "% is your current battery level.",
+                    "/lowBattery.png"
                 );
             } catch (e) { console.log(e) }
         }
