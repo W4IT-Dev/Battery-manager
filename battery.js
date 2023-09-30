@@ -37,7 +37,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
                 pushLocalNotification(
                     "Battery over " + maxCharge.value + "%",
                     battery.level * 100 + "% is your current battery level.",
-                    "/fullCharge.png"
+                    "fullCharge.png"
                 )
             } catch (e) { console.log(e) }
         } else if (battery.level <= minCharge.value / 100 && !battery.charging) {
@@ -46,7 +46,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
                 pushLocalNotification(
                     "Battery below " + minCharge.value + "%",
                     battery.level * 100 + "% is your current battery level.",
-                    "/lowBattery.png"
+                    "lowBattery.png"
                 );
             } catch (e) { console.log(e) }
         }
