@@ -8,54 +8,46 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     }
     updateAllBatteryInfo();
     //events
-    battery.addEventListener('chargingchange', function () {
-        updateChargeInfo();
-    });
+    battery.addEventListener('chargingchange', updateChargeInfo);
 
-    battery.addEventListener('levelchange', function () {
-        updateLevelInfo();
-    });
+    battery.addEventListener('levelchange', updateLevelInfo);
 
-    battery.addEventListener('chargingtimechange', function () {
-        updateChargingInfo();
-    });
+    battery.addEventListener('chargingtimechange', updateChargingInfo);
 
-    battery.addEventListener('dischargingtimechange', function () {
-        updateDischargingInfo();
-    });
+    battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
     function updateChargeInfo() {
         a = document.querySelector('#container');
         battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
     }
     function updateLevelInfo() {
-        progress.style.width = battery.level * 100 + "px";
-        document.querySelector('#level p').innerText = parseInt(battery.level * 100) + "%";
-        if (battery.level >= maxCharge.value / 100 && battery.charging) {
+        batteryLevel = parseInt(battery.level * 100)
+        progress.style.width = batteryLevel + "px";
+        document.querySelector('#level p').innerText = batteryLevel + "%";
+        if (batteryLevel >= maxCharge.value && battery.charging) {
             alarm.play();
             try {
                 pushLocalNotification(
                     "Battery over " + maxCharge.value + "%",
-                    battery.level * 100 + "% is your current battery level.",
-                    "fullCharge.png"
+                    batteryLevel + "% is your current battery level.",
+                    requireInteraction = true
                 )
-            } catch (e) { console.log(e) }
-        } else if (battery.level <= minCharge.value / 100 && !battery.charging) {
+            } catch (e) { }
+        } else if (batteryLevel <= minCharge.value && !battery.charging) {
             alarm.play();
             try {
                 pushLocalNotification(
                     "Battery below " + minCharge.value + "%",
-                    battery.level * 100 + "% is your current battery level.",
-                    "lowBattery.png"
+                    batteryLevel + "% is your current battery level.",
+                    requireInteraction = true
                 );
-            } catch (e) { console.log(e) }
+            } catch (e) { }
         }
 
-        if (battery.level <= .10) return progress.style.backgroundColor = "red"
-        if (battery.level <= .20) return progress.style.backgroundColor = "orange"
-        if (battery.level <= .30) return progress.style.backgroundColor = "yellow"
+        if (batteryLevel <= 10) return progress.style.backgroundColor = "red"
+        if (batteryLevel <= 20) return progress.style.backgroundColor = "orange"
+        if (batteryLevel <= 30) return progress.style.backgroundColor = "yellow"
         progress.style.backgroundColor = "green"
-
     }
     function updateChargingInfo() {
         if (battery.chargingTime !== Infinity) {
@@ -71,5 +63,4 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
             dischargingTime.parentNode.classList.add('nav')
         } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
     }
-
 });

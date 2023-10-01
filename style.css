@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(5, 5, 5, .94) 100%);
+    background: linear-gradient(180deg, rgba(40, 40, 40, 1) 0%, rgba(5, 5, 5, .92) 100%);
     overflow: hidden;
 }
 

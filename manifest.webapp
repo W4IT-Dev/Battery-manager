@@ -1,9 +1,13 @@
 {
-  "version": "0.0.19.0",
+  "version": "0.0.19.2",
   "name": "batterymanager",
   "description": "Battery insights and custom alerts.",
   "type": "certified",
   "launch_path": "/index.html",
+  "categories": [
+    "Utilities",
+    "Social"
+  ],
   "icons": {
     "56": "/icon.png",
     "112": "/icon.png"
