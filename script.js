@@ -1,4 +1,4 @@
-let alarm = new Audio("/alarm.mp3");
+let alarm = new Audio("/assets/alarm.mp3");
 localStorage.maxCharge ? maxCharge.value = localStorage.maxCharge : localStorage.maxCharge = maxCharge.value
 localStorage.minCharge ? minCharge.value = localStorage.minCharge : localStorage.minCharge = minCharge.value
 document.addEventListener('keydown', (e) => {
@@ -62,10 +62,11 @@ document.addEventListener('keydown', e => {
 })
 
 
-let pushLocalNotification = function (title, text) {
+let pushLocalNotification = function (title, text, icon) {
   window.Notification.requestPermission().then((result) => {
     const options = {
       body: text,
+      icon: icon,
       mozbehavior: {
         vibrationPattern: [30, 200, 30],
       },

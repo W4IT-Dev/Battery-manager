@@ -1,5 +1,5 @@
 {
-  "version": "0.0.19.2",
+  "version": "0.0.20.0",
   "name": "batterymanager",
   "description": "Battery insights and custom alerts.",
   "type": "certified",
@@ -9,8 +9,8 @@
     "Social"
   ],
   "icons": {
-    "56": "/icon.png",
-    "112": "/icon.png"
+    "56": "/assets/image/icon.png",
+    "112": "/assets/image/icon.png"
   },
   "developer": {
     "name": "W4IT Dev",
