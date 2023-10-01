@@ -25,7 +25,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
         progress.style.width = batteryLevel + "px";
         document.querySelector('#level p').innerText = batteryLevel + "%";
         if (batteryLevel >= maxCharge.value && battery.charging) {
-            alarm.play();
+            if (!silent) alarm.play();
             try {
                 pushLocalNotification(
                     "Battery over " + maxCharge.value + "%",
@@ -34,7 +34,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
                 )
             } catch (e) { }
         } else if (batteryLevel <= minCharge.value && !battery.charging) {
-            alarm.play();
+            if (!silent) alarm.play();
             try {
                 pushLocalNotification(
                     "Battery below " + minCharge.value + "%",

@@ -1,4 +1,5 @@
 let alarm = new Audio("/assets/alarm.mp3");
+let silent = false;
 localStorage.maxCharge ? maxCharge.value = localStorage.maxCharge : localStorage.maxCharge = maxCharge.value
 localStorage.minCharge ? minCharge.value = localStorage.minCharge : localStorage.minCharge = minCharge.value
 document.addEventListener('keydown', (e) => {
@@ -53,12 +54,25 @@ function nav(move) {
   if (targetElement) targetElement.focus();
   else document.activeElement.blur();
 }
-
 document.addEventListener('keydown', e => {
   if (e.key.includes('Arrow')) e.preventDefault();
   if (e.key == "ArrowUp") nav(-1)
   if (e.key == "ArrowDown") nav(1);
   if (e.key == "#") window.open('/about.html')
+  if (e.key == "*") {
+    let text;
+    silent = !silent;
+    silent ? text = 'Silent alarm on' : text = 'Silent alarm off';
+    if(!navigator.mozApps) return false;
+    navigator.mozApps.getSelf().onsuccess = function (e) {
+      var app = e.target.result;
+      app.connect('systoaster').then(function (conns) {
+        conns.forEach(function (conn) {
+          conn.postMessage({ message: text });
+        });
+      });
+    }
+  }
 })
 
 
@@ -69,13 +83,13 @@ let pushLocalNotification = function (title, text, icon) {
       icon: icon,
       mozbehavior: {
         vibrationPattern: [30, 200, 30],
-      },
+      }
     };
 
     var notification = new window.Notification(title, options);
 
     notification.onerror = function (err) {
-      console.log(err);
+      console.warn(err);
     };
     notification.onclick = function (event) {
       if (window.navigator.mozApps) {
