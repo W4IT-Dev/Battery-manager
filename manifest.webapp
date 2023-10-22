@@ -1,12 +1,11 @@
 {
-  "version": "0.0.21.0",
+  "version": "0.0.22.0",
   "name": "batterymanager",
   "description": "Battery insights and custom alerts.",
   "type": "certified",
   "launch_path": "/index.html",
   "categories": [
-    "Utilities",
-    "Social"
+    "Utilities"
   ],
   "icons": {
     "56": "/assets/image/icon.png",
@@ -14,7 +13,7 @@
   },
   "developer": {
     "name": "W4IT Dev",
-    "url": "http://w4it-dev.github.io/website"
+    "url": "https://w4it-dev.github.io/website"
   },
   "locales": {
     "en-US": {
@@ -25,17 +24,14 @@
   },
   "permissions": {
     "serviceworker": {
-      "description": "Needed for assocating service worker"
+      "description": "notifications."
     },
     "desktop-notification": {
-      "description": "Needed for creating system notifications."
+      "description": "notifications."
     },
     "notifications": {},
     "push": {
-      "description": "Required for alarming you about your battery percentage."
-    },
-    "alarms": {
-      "description": "Required to let the app always check your percentage in the background."
+      "description": "notifications."
     }
   },
   "default_locale": "en-US"
