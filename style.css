@@ -193,7 +193,7 @@ div.showinfo::after {
 }
 
 .maxdiv::after {
-    content: 'Alarm actiavtes when battery exceeds this level.';
+    content: 'Alarm activates when battery exceeds this level.';
 }
 
 .mindiv::after {

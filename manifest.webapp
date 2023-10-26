@@ -1,5 +1,5 @@
 {
-  "version": "0.0.22.0",
+  "version": "0.1.1.0",
   "name": "batterymanager",
   "description": "Battery insights and custom alerts.",
   "type": "certified",
@@ -31,6 +31,9 @@
     },
     "notifications": {},
     "push": {
+      "description": "notifications."
+    },
+    "power": {
       "description": "notifications."
     }
   },
