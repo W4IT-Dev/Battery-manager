@@ -9,7 +9,7 @@ View battery information such as health, temperatur charging- and discharging ti
 
 ## Download
 * KaiStore version release next month
-* GitHub repo release soon
+* [Latest release](https://github.com/W4IT-Dev/Battery-manager/releases/tag/v1.0.0)
 <br>
 
 ### Screenshots:
