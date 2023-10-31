@@ -1,1 +1,68 @@
-navigator.getBattery&&navigator.getBattery().then(function(e){function n(){a=document.querySelector("#container"),e.charging?a.classList.add("charging"):a.classList.remove("charging")}function t(){if(batteryLevel=parseInt(100*e.level),progress.style.width=batteryLevel+"px",document.querySelector("#level p").innerText=batteryLevel+"%",batteryLevel>=maxCharge.value&&e.charging){silent||alarm.play();try{pushLocalNotification("Battery over "+maxCharge.value+"%",batteryLevel+"% is your current battery level.","/assets/image/fullCharge.png")}catch(n){}}else if(batteryLevel<=minCharge.value&&!e.charging){silent||alarm.play();try{pushLocalNotification("Battery below "+minCharge.value+"%",batteryLevel+"% is your current battery level.","/assets/image/lowBattery.png")}catch(t){}}return batteryLevel<=10?progress.style.backgroundColor="red":batteryLevel<=20?progress.style.backgroundColor="orange":batteryLevel<=30?progress.style.backgroundColor="yellow":void(progress.style.backgroundColor="green")}function r(){e.chargingTime!==1/0?(charge.parentNode.style.display="flex",charge.innerText=parseInt(e.chargingTime/60)+" min",charge.parentNode.classList.add("nav")):(charge.parentNode.style.display="none",charge.parentNode.classList.remove("nav"))}function i(){e.dischargingTime!==1/0?(dischargingTime.parentNode.style.display="flex",dischargingTime.innerText=parseInt(e.dischargingTime/60)+" min",dischargingTime.parentNode.classList.add("nav")):(dischargingTime.parentNode.style.display="none",dischargingTime.parentNode.classList.remove("nav"))}n(),t(),r(),i(),temperature.innerText=e.temperature+"\xb0",e.addEventListener("chargingchange",n),e.addEventListener("levelchange",t),e.addEventListener("chargingtimechange",r),e.addEventListener("dischargingtimechange",i)});
+alarm.play();
+if (navigator.getBattery) navigator.getBattery().then(function (battery) {
+    function updateAllBatteryInfo() {
+        updateChargeInfo();
+        updateLevelInfo();
+        updateChargingInfo();
+        updateDischargingInfo();
+        temperature.innerText = battery.temperature + '°';
+    }
+    updateAllBatteryInfo();
+    //events
+    battery.addEventListener('chargingchange', updateChargeInfo);
+
+    battery.addEventListener('levelchange', updateLevelInfo);
+
+    battery.addEventListener('chargingtimechange', updateChargingInfo);
+
+    battery.addEventListener('dischargingtimechange', updateDischargingInfo);
+
+    function updateChargeInfo() {
+        a = document.querySelector('#container');
+        battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
+    }
+    function updateLevelInfo() {
+        batteryLevel = parseInt(battery.level * 100)
+        progress.style.width = batteryLevel + "px";
+        document.querySelector('#level p').innerText = batteryLevel + "%";
+        if (batteryLevel >= maxCharge.value && battery.charging) {
+            if (!silent) alarm.play();
+            try {
+                pushLocalNotification(
+                    "Battery over " + maxCharge.value + "%",
+                    batteryLevel + "% is your current battery level.",
+                    "/assets/image/fullCharge.png"
+                )
+            } catch (e) { }
+        } else if (batteryLevel <= minCharge.value && !battery.charging) {
+            if (!silent) alarm.play();
+            try {
+                pushLocalNotification(
+                    "Battery below " + minCharge.value + "%",
+                    batteryLevel + "% is your current battery level.",
+                    "/assets/image/lowBattery.png"
+
+                );
+            } catch (e) { }
+        }
+
+        if (batteryLevel <= 10) return progress.style.backgroundColor = "red"
+        if (batteryLevel <= 20) return progress.style.backgroundColor = "orange"
+        if (batteryLevel <= 30) return progress.style.backgroundColor = "yellow"
+        progress.style.backgroundColor = "green"
+    }
+    function updateChargingInfo() {
+        if (battery.chargingTime !== Infinity) {
+            charge.parentNode.style.display = "flex"
+            charge.innerText = parseInt(battery.chargingTime / 60) + " min"
+            charge.parentNode.classList.add('nav')
+        } else charge.parentNode.style.display = "none", charge.parentNode.classList.remove('nav')
+    }
+    function updateDischargingInfo() {
+        if (battery.dischargingTime !== Infinity) {
+            dischargingTime.parentNode.style.display = "flex"
+            dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " min"
+            dischargingTime.parentNode.classList.add('nav')
+        } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
+    }
+});
