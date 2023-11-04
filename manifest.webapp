@@ -32,9 +32,6 @@
     "notifications": {},
     "push": {
       "description": "notifications."
-    },
-    "requestsync-manager": {
-      "description": "notifications."
     }
   },
   "default_locale": "en-US"
