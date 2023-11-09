@@ -1,1 +1,108 @@
-let alarm=new Audio("/assets/alarm.mp3"),silent=!1;localStorage.maxCharge?maxCharge.value=localStorage.maxCharge:localStorage.maxCharge=maxCharge.value,localStorage.minCharge?minCharge.value=localStorage.minCharge:localStorage.minCharge=minCharge.value,document.addEventListener("keydown",(e=>{e.key.includes("Arrow")&&e.preventDefault(),"max-charge"==document.activeElement.id&&"ArrowLeft"==e.key&&(document.activeElement.stepDown(),localStorage.maxCharge=maxCharge.value),"max-charge"==document.activeElement.id&&"ArrowRight"==e.key&&(document.activeElement.stepUp(),localStorage.maxCharge=maxCharge.value),"min-charge"==document.activeElement.id&&"ArrowLeft"==e.key&&(document.activeElement.stepDown(),localStorage.minCharge=minCharge.value),"min-charge"==document.activeElement.id&&"ArrowRight"==e.key&&(document.activeElement.stepUp(),localStorage.minCharge=minCharge.value),alarm.paused||alarm.pause()})),getKaiAd({publisher:"fe2d9134-74be-48d8-83b9-96f6d803efef",app:"batterymanager",onerror:e=>console.error("error getting ad: ",e),onready:e=>{e.call("display")}});let timeout,navElems=document.querySelectorAll(".nav"),divs=document.querySelectorAll(".div");for(let e=0;e<navElems.length;e++)navElems[e].addEventListener("focus",(()=>{divs[e].classList.add("focus"),timeout=setTimeout((()=>{divs[e].classList.contains("focus")&&divs[e].classList.add("showinfo")}),1500)})),navElems[e].addEventListener("blur",(()=>{divs[e].classList.remove("focus"),divs[e].classList.remove("showinfo"),clearTimeout(timeout)})),document.addEventListener("keydown",(t=>{"Enter"==t.key&&divs[e].classList.remove("showinfo")}));function nav(e){let t=document.activeElement;const a=document.querySelectorAll(".nav");const n=a[[...a].indexOf(t)+e];if(-1==e&&!document.activeElement.classList.contains("nav"))return a[a.length-1].focus();n?n.focus():document.activeElement.blur()}document.addEventListener("keydown",(e=>{if(e.key.includes("Arrow")&&e.preventDefault(),"ArrowUp"==e.key&&nav(-1),"ArrowDown"==e.key&&nav(1),"#"==e.key&&window.open("/about.html"),"*"==e.key){let e;if(silent=!silent,e=silent?"Silent alarm on":"Silent alarm off",!navigator.mozApps)return!1;navigator.mozApps.getSelf().onsuccess=function(t){t.target.result.connect("systoaster").then((function(t){t.forEach((function(t){t.postMessage({message:e})}))}))}}}));let pushLocalNotification=function(e,t,a){window.Notification.requestPermission().then((n=>{const o={body:t,icon:a,tag:"charge",mozbehavior:{vibrationPattern:[30,200,30]}};var i=new window.Notification(e,o);i.onerror=e=>console.warn(e),i.onclick=function(e){if(window.navigator.mozApps){var t=window.navigator.mozApps.getSelf();t.onsuccess=function(){t.result&&(i.close(),t.result.launch())}}else window.open(document.location.origin,"_blank")},document.addEventListener("visibilitychange",(()=>{"visible"==document.visibilityState&&i.close()}))}))};
+let alarm = new Audio("/assets/alarm.mp3");
+let silent = false;
+localStorage.maxCharge ? maxCharge.value = localStorage.maxCharge : localStorage.maxCharge = maxCharge.value
+localStorage.minCharge ? minCharge.value = localStorage.minCharge : localStorage.minCharge = minCharge.value
+document.addEventListener('keydown', (e) => {
+  if (e.key.includes('Arrow')) e.preventDefault();
+  if (document.activeElement.id == "max-charge" && e.key == "ArrowLeft") document.activeElement.stepDown(), localStorage.maxCharge = maxCharge.value;
+  if (document.activeElement.id == "max-charge" && e.key == "ArrowRight") document.activeElement.stepUp(), localStorage.maxCharge = maxCharge.value;
+  if (document.activeElement.id == "min-charge" && e.key == "ArrowLeft") document.activeElement.stepDown(), localStorage.minCharge = minCharge.value;
+  if (document.activeElement.id == "min-charge" && e.key == "ArrowRight") document.activeElement.stepUp(), localStorage.minCharge = minCharge.value;
+  if (!alarm.paused) alarm.pause()
+})
+
+getKaiAd({
+  publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+  app: 'batterymanager',
+  onerror: err => console.error('error getting ad: ', err),
+  onready: ad => {
+    ad.call('display')
+  }
+})
+
+let navElems = document.querySelectorAll('.nav');
+let divs = document.querySelectorAll('.div');
+let timeout;
+
+for (let i = 0; i < navElems.length; i++) {
+  navElems[i].addEventListener('focus', () => {
+    divs[i].classList.add('focus');
+    timeout = setTimeout(() => {
+      if (divs[i].classList.contains('focus')) divs[i].classList.add('showinfo')
+    }, 1500)
+  });
+
+  navElems[i].addEventListener('blur', () => {
+    divs[i].classList.remove('focus')
+    divs[i].classList.remove('showinfo')
+    clearTimeout(timeout)
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key == "Enter") divs[i].classList.remove('showinfo')
+  });
+}
+
+function nav(move) {
+  let currentIndex = document.activeElement;
+  const items = document.querySelectorAll('.nav');
+  let currentElemIdx = [...items].indexOf(currentIndex);
+  const next = currentElemIdx + move;
+  const targetElement = items[next];
+  if (move == -1 && !document.activeElement.classList.contains('nav')) return items[items.length - 1].focus();
+  targetElement ? targetElement.focus() : document.activeElement.blur();
+}
+document.addEventListener('keydown', e => {
+  if (e.key.includes('Arrow')) e.preventDefault();
+  if (e.key == "ArrowUp") nav(-1)
+  if (e.key == "ArrowDown") nav(1);
+  if (e.key == "#") window.open('/about.html')
+  if (e.key == "*") {
+    let text;
+    silent = !silent;
+    silent ? text = 'Silent alarm on' : text = 'Silent alarm off';
+    if (!navigator.mozApps) return false;
+    navigator.mozApps.getSelf().onsuccess = function (e) {
+      var app = e.target.result;
+      app.connect('systoaster').then(function (conns) {
+        conns.forEach(function (conn) {
+          conn.postMessage({ message: text });
+        });
+      });
+    }
+  }
+})
+
+
+let pushLocalNotification = function (title, text, icon) {
+  window.Notification.requestPermission().then((result) => {
+    const options = {
+      body: text,
+      icon: icon,
+      tag: "charge",
+      mozbehavior: {
+        vibrationPattern: [30, 200, 30]
+      }
+    };
+
+    var notification = new window.Notification(title, options);
+
+    notification.onerror = (e) => console.warn(e)
+    notification.onclick = function (event) {
+      if (window.navigator.mozApps) {
+        var request = window.navigator.mozApps.getSelf();
+        request.onsuccess = function () {
+          if (request.result) {
+            notification.close();
+            request.result.launch();
+          }
+        };
+      } else {
+        window.open(document.location.origin, "_blank");
+      }
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState == "visible") notification.close();
+    })
+  });
+};
