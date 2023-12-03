@@ -17,6 +17,7 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
     function updateChargeInfo() {
+        alarm.pause();
         a = document.querySelector('#container');
         battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
     }
