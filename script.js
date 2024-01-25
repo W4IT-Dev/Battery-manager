@@ -106,3 +106,17 @@ let pushLocalNotification = function (title, text, icon) {
     })
   });
 };
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState == "visible") {
+    getKaiAd({
+      publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+      app: 'batterymanager',
+      onerror: err => console.error('error getting ad: ', err),
+      onready: ad => {
+        ad.call('display')
+      }
+    })
+    alarm.pause();
+  }
+})
