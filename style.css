@@ -205,3 +205,7 @@ body.rtl #info div label {
 body.rtl #info div span {
     text-align: left;
 }
+
+body.rtl .div::after {
+    text-align: right;
+}
