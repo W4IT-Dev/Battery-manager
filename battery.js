@@ -17,9 +17,8 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
     function updateChargeInfo() {
-        alarm.pause();
         a = document.querySelector('#container');
-        battery.charging ? a.classList.add('charging') : a.classList.remove('charging');
+        battery.charging ? a.classList.add('charging') : (a.classList.remove('charging'), alarm.pause());
     }
     function updateLevelInfo() {
         batteryLevel = parseInt(battery.level * 100)
@@ -53,14 +52,14 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     function updateChargingInfo() {
         if (battery.chargingTime !== Infinity) {
             charge.parentNode.style.display = "flex"
-            charge.innerText = parseInt(battery.chargingTime / 60) + " min"
+            charge.innerText = parseInt(battery.chargingTime / 60) + " " + translate('min');
             charge.parentNode.classList.add('nav')
         } else charge.parentNode.style.display = "none", charge.parentNode.classList.remove('nav')
     }
     function updateDischargingInfo() {
         if (battery.dischargingTime !== Infinity) {
             dischargingTime.parentNode.style.display = "flex"
-            dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " min"
+            dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " " + translate('min')
             dischargingTime.parentNode.classList.add('nav')
         } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
     }

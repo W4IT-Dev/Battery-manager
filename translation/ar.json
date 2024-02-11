@@ -1,0 +1,14 @@
+{
+    "app_name": "مدير البطارية",
+    "discharge_time": "وقت التفريغ",
+    "charge_time": "وقت الشحن",
+    "temperature": "درجة الحرارة",
+    "max_charge": "الحد الأقصى للشحن",
+    "min_charge": "الحد الأدنى للشحن",
+    "discharge_time_explanation": "الوقت المقدر حتى نفاد البطارية بالكامل.",
+    "charge_time_explanation": "الوقت المقدر لشحن جهازك بالكامل.",
+    "temperature_explanation": "درجة الحرارة المقدرة للبطارية بالدرجة المئوية.",
+    "max_charge_explanation": "يتم تنشيط الإنذار عندما تتجاوز البطارية هذا المستوى.",
+    "min_charge_explanation": "يتم تنشيط الإنذار إذا انخفضت البطارية عن هذا المستوى.",
+    "min": "دقيقة"
+}

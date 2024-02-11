@@ -73,7 +73,6 @@ document.addEventListener('keydown', e => {
   }
 })
 
-
 let pushLocalNotification = function (title, text, icon) {
   window.Notification.requestPermission().then((result) => {
     const options = {

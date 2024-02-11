@@ -3,9 +3,12 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="/translation/translate.js" defer></script>
+    
     <script src="DOM.js" defer></script>
     <script src="script.js" defer></script>
     <script src="battery.js" defer></script>
+    
     <script src="kaiads.v5.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <meta name="theme-color" content="rgb(45, 45, 45)">
@@ -21,43 +24,36 @@
         </div>
         <hr>
         <div id="info">
-            <div tabindex="0" class="nav dischargediv div">
-                <span>Discharge time:</span>
+            <div tabindex="0" class=" dischargediv div nav" data-translate="discharge_time_explanation"
+                data-explanation="Estimated time until battery is fully depleted.">
+                <span data-translate="discharge_time">Discharge time:</span>
                 <span id="discharge">unknown min</span>
             </div>
-            <div tabindex="1" class="nav chargediv div">
-                <span>Charge time:</span>
+            <div tabindex="1" class=" chargediv div nav" data-translate="charge_time_explanation" data-explanation="Estimated time to fully charge your device.">
+                <span data-translate="charge_time">Charge time:</span>
                 <span id="charge">unknown min</span>
             </div>
-            <div tabindex="2" class="nav tempdiv div">
-                <span>Temperature:</span>
+            <div tabindex="2" class=" tempdiv div nav" data-translate="temperature_explanation"
+                data-explanation="Estimated temperature of the battery in Celsius.">
+                <span data-translate="temperature">Temperature:</span>
                 <span id="temperature">unknown</span>
             </div>
-            <div class="maxdiv div">
-                <label for="maxcharge">Max charge</label>
+            <div class="maxdiv div" data-translate="max_charge_explanation" data-explanation="Alarm activates when battery exceeds this level.">
+                <label for="maxcharge" data-translate="max_charge">Max charge</label>
                 <img src="/assets/image/arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
                 <input tabindex="3" type="number" min="1" max="100" value="80" name="maxcharge" id="max-charge"
                     class="nav">
                 <img src="/assets/image/arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
             </div>
-            <div class="mindiv div">
-                <label for="mincharge">Min charge</label>
+            <div class="mindiv div" data-translate="min_charge_explanation" data-explanation="Alarm activates if battery drops below this level.">
+                <label for="mincharge" data-translate="min_charge">Min charge</label>
                 <img src="/assets/image/arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
                 <input tabindex="4" type="number" min="1" max="100" value="30" name="mincharge" id="min-charge"
                     class="nav">
                 <img src="/assets/image/arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
             </div>
         </div>
-    </div>
 </body>
-<!--
-<div id="slider">
-    <div class="active">Info</div>
-     <div>Alarm</div> 
-    <div>Usage</div> 
-    <div class="active">Tips</div>
-    <div>Settings</div>
--->
-</div>
+
 
 </html>

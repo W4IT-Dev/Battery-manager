@@ -113,7 +113,7 @@ div img {
 }
 
 div.focus {
-    background-color: rgb(38, 38, 38);
+    background-color: rgb(46, 46, 46);
 }
 
 div.focus input {
@@ -137,7 +137,7 @@ div input {
 div input {
     width: 3ch;
     text-align: center !important;
-    background-color: rgb(18, 18, 18);
+    background-color: rgb(25, 25, 25);
     border: none;
     height: 18px;
     font-size: 18px;
@@ -154,11 +154,11 @@ div input {
     top: 100%;
     left: 0;
     height: 0;
+    width: 216px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 1;
     overflow: hidden;
-    transition: height .5s;
     background: linear-gradient(0deg, rgba(45, 45, 45, 1) 0%, rgba(17, 17, 17, 1) 30%, rgba(7, 7, 7, 1) 100%);
 }
 
@@ -174,55 +174,34 @@ div input {
 }
 
 div.showinfo::after {
-    height: 70px;
+    height: auto;
     text-align: left;
     padding: 5px;
     outline: 1px solid grey;
 }
 
-.dischargediv::after {
-    content: 'Estimated time until battery is fully depleted.';
+.div::after {
+    content: attr(data-explanation);
 }
 
-.chargediv::after {
-    content: 'Estimated time to fully charge your device.';
+body.rtl {
+    direction: rtl;
 }
 
-.tempdiv::after {
-    content: 'Estimated temperature of the battery in Celsius.';
+body.rtl #container.charging::before {
+    transform: rotateY(180deg);
 }
 
-.maxdiv::after {
-    content: 'Alarm activates when battery exceeds this level.';
+body.rtl #container::after {
+    left: unset;
+    right: 100%;
 }
 
-.mindiv::after {
-    content: 'Alarm activates if battery drops below this level.';
+body.rtl #info div span[data-translate],
+body.rtl #info div label {
+    text-align: right;
 }
 
-/*nav thing on bottom*/
-/* 
-#slider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
-    padding-bottom: 6px;
-    background: linear-gradient(180deg, rgba(15, 15, 15, .5) 0%, rgba(10, 10, 10, .7) 30%, rgba(5, 5, 5, .9) 100%);
+body.rtl #info div span {
+    text-align: left;
 }
-
-#slider div {
-    font-size: 14px;
-    transition: all .3s;
-    margin-right: 5px;
-}
-
-#slider div.active {
-    font-size: 16.5px;
-    font-weight: 600;
-} */

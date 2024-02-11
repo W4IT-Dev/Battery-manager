@@ -1,0 +1,14 @@
+{
+    "app_name": "Batterie Manager",
+    "discharge_time": "Entladungszeit:",
+    "charge_time": "Ladezeit:",
+    "temperature": "Temperatur:",
+    "max_charge": "Max. Ladung:",
+    "min_charge": "Min. Ladung:",
+    "discharge_time_explanation": "Geschätzte Zeit, bis der Akku vollständig entladen ist.",
+    "charge_time_explanation": "Geschätzte Zeit bis zum vollständigen Aufladen Ihres Geräts.",
+    "temperature_explanation": "Geschätzte Temperatur der Batterie in Celsius.",
+    "max_charge_explanation": "Der Alarm wird aktiviert, wenn die Batterie diesen Wert überschreitet.",
+    "min_charge_explanation": "Der Alarm wird aktiviert, wenn die Batterie unter diesen Wert fällt.",
+    "min": "min"
+}
