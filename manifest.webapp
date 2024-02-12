@@ -23,37 +23,37 @@
     },
     "de-DE": {
       "name": "Battery Manager",
-      "subtitle": "Batterie Einblicke und anpassbare Warnungen.",
+      "subtitle": "Batterie Informationen und anpassbare Warnungen.",
       "description": "Battery Manager ist die ideale Lösung für ein effizientes Akkumanagement auf Ihrem KaiOS Featurephone. Behalten Sie den Überblick über wichtige Akkustatistiken wie Entlade- und Ladezeiten, Temperatur und Änderungen des Ladezustands in Echtzeit. Stellen Sie personalisierte Warnungen für bestimmte Batteriestände ein, sowohl für hohe als auch für niedrige, um sicherzustellen, dass Ihnen nie die Energie ausgeht, wenn Sie sie am meisten brauchen. Laden Sie KaiOS Battery Manager jetzt herunter und übernehmen Sie die Kontrolle über die Akkulaufzeit Ihres Geräts für ein sorgenfreies mobiles Erlebnis"
     },
     "es-ES": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "Información sobre la batería y alertas personalizadas",
       "description": "Battery Manager es tu solución para una gestión eficiente de la batería en tu featurephone KaiOS. Realiza un seguimiento de las estadísticas vitales de la batería, como los tiempos de descarga y carga, la temperatura y los cambios de nivel en tiempo real. Configura alertas personalizadas para niveles de batería específicos, tanto altos como bajos, para asegurarte de que nunca te quedas sin energía cuando más la necesitas. Descarga ahora KaiOS Battery Manager y controla la duración de la batería de tu dispositivo para disfrutar de una experiencia móvil sin preocupaciones."
     },
     "fr-FR": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "Informations sur la batterie et alertes personnalisées",
       "description": "Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant KaiOS Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci."
     },
     "it-IT": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "Informazioni sulla batteria e avvisi personalizzati",
       "description": "Battery Manager è la soluzione ideale per una gestione efficiente della batteria sul featurephone KaiOS. Tiene traccia delle statistiche vitali della batteria, come i tempi di scaricamento e di carica, la temperatura e le variazioni di livello in tempo reale. Impostate avvisi personalizzati per specifici livelli di batteria, sia alti che bassi, per assicurarvi di non rimanere mai senza energia quando ne avete più bisogno. Scaricate subito KaiOS Battery Manager e controllate la durata della batteria del vostro dispositivo per un'esperienza mobile senza preoccupazioni."
     },
     "ru-RU": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "Информация о батарее и индивидуальные оповещения",
       "description": "Battery Manager - это удобное решение для эффективного управления батареей на функциональном телефоне KaiOS. Следите за такими важными показателями батареи, как время разряда и заряда, температура и изменения уровня заряда в режиме реального времени. Настройте персональные оповещения для определенных уровней заряда, как высокого, так и низкого, чтобы не остаться без энергии в самый нужный момент. Загрузите KaiOS Battery Manager прямо сейчас и возьмите на себя ответственность за время автономной работы вашего устройства, чтобы не беспокоиться о мобильной связи."
     },
     "zh-CN": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "电池信息和定制警报",
       "description": "电池管理器是您高效管理 KaiOS 功能手机电池的最佳解决方案。跟踪重要的电池统计数据，如放电和充电时间、温度和实时电量变化。针对特定的电池电量水平（包括高电量和低电量）设置个性化警报，确保您在最需要的时候不会耗尽电量。立即下载 KaiOS 电池管理器，掌控您设备的电池寿命，享受无忧的移动体验"
     },
     "ar-SA": {
       "name": "Battery Manager",
-      "subtitle": "Battery insights and custom alerts.",
+      "subtitle": "معلومات البطارية والتنبيهات المخصصة",
       "description": "مدير البطارية هو الحل الأمثل لإدارة البطارية بكفاءة على هاتف KaiOS المميز الخاص بك. تتبع إحصائيات البطارية الحيوية مثل أوقات التفريغ والشحن، ودرجة الحرارة، والتغيرات في الوقت الفعلي. قم بتعيين تنبيهات مخصصة لمستويات بطارية محددة، عالية ومنخفضة على حد سواء، لضمان عدم نفاد الطاقة عندما تكون في أمس الحاجة إليها. قم بتنزيل برنامج KaiOS Battery Manager الآن وتولى مسؤولية عمر بطارية جهازك للحصول على تجربة هاتف محمول خالية من القلق"
     }
   },
