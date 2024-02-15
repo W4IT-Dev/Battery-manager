@@ -10,5 +10,8 @@
     "temperature_explanation": "Température estimée de la batterie en Celsius.",
     "max_charge_explanation": "L'alarme s'active lorsque la batterie dépasse ce niveau.",
     "min_charge_explanation": "L'alarme s'active si la pile descend en dessous de ce niveau.",
-    "min": "min"
+    "silent_alarm": "Alarme silencieuse",
+    "min": "min",
+    "enabled": "activée",
+    "disabled": "désactivé"
 }

@@ -3,12 +3,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
     <script src="/translation/translate.js" defer></script>
-    
+
     <script src="DOM.js" defer></script>
     <script src="script.js" defer></script>
     <script src="battery.js" defer></script>
-    
+
     <script src="kaiads.v5.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <meta name="theme-color" content="rgb(45, 45, 45)">
@@ -29,7 +30,8 @@
                 <span data-translate="discharge_time">Discharge time:</span>
                 <span id="discharge">unknown min</span>
             </div>
-            <div tabindex="1" class=" chargediv div nav" data-translate="charge_time_explanation" data-explanation="Estimated time to fully charge your device.">
+            <div tabindex="1" class=" chargediv div nav" data-translate="charge_time_explanation"
+                data-explanation="Estimated time to fully charge your device.">
                 <span data-translate="charge_time">Charge time:</span>
                 <span id="charge">unknown min</span>
             </div>
@@ -38,21 +40,25 @@
                 <span data-translate="temperature">Temperature:</span>
                 <span id="temperature">unknown</span>
             </div>
-            <div class="maxdiv div" data-translate="max_charge_explanation" data-explanation="Alarm activates when battery exceeds this level.">
+            <div class="maxdiv div" data-translate="max_charge_explanation"
+                data-explanation="Alarm activates when battery exceeds this level.">
                 <label for="maxcharge" data-translate="max_charge">Max charge</label>
-                <img src="/assets/image/arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowLeft.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
                 <input tabindex="3" type="number" min="1" max="100" value="80" name="maxcharge" id="max-charge"
                     class="nav">
-                <img src="/assets/image/arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowRight.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
             </div>
-            <div class="mindiv div" data-translate="min_charge_explanation" data-explanation="Alarm activates if battery drops below this level.">
+            <div class="mindiv div" data-translate="min_charge_explanation"
+                data-explanation="Alarm activates if battery drops below this level.">
                 <label for="mincharge" data-translate="min_charge">Min charge</label>
-                <img src="/assets/image/arrowLeft.png" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowLeft.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
                 <input tabindex="4" type="number" min="1" max="100" value="30" name="mincharge" id="min-charge"
                     class="nav">
-                <img src="/assets/image/arrowRight.png" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowRight.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
             </div>
         </div>
+    </div>
+    <img id="keystrokes" src="/assets/image/keystrokes.png" alt="">
 </body>
 
 

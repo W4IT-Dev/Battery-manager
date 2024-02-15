@@ -67,6 +67,9 @@
     "notifications": {},
     "push": {
       "description": "notifications."
+    },
+    "volumemanager": {
+      description: "volume."
     }
   },
   "default_locale": "en-US"

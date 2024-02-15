@@ -10,5 +10,8 @@
     "temperature_explanation": "电池的估计温度（摄氏度）。",
     "max_charge_explanation": "当电池电量超过此值时，警报会启动。",
     "min_charge_explanation": "如果电池电量下降到该值以下，则警报启动。",
-    "min": "分钟"
+    "silent_alarm": "无声警报",
+    "min": "分钟",
+    "enabled": "启用",
+    "disabled": "禁用"
 }

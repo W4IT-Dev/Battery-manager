@@ -10,5 +10,8 @@
     "temperature_explanation": "Geschätzte Temperatur der Batterie in Celsius.",
     "max_charge_explanation": "Der Alarm wird aktiviert, wenn die Batterie diesen Wert überschreitet.",
     "min_charge_explanation": "Der Alarm wird aktiviert, wenn die Batterie unter diesen Wert fällt.",
-    "min": "min"
+    "silent_alarm": "Stiller Alarm",
+    "min": "min",
+    "enabled": "aktiviert",
+    "disabled": "deaktiviert"
 }
