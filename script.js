@@ -9,7 +9,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key.includes('Arrow')) e.preventDefault();
   if (!alarm.paused) alarm.pause();
 
-  if (navigator.volumeManager) {
+  if (navigator.volumeManager && e.key === "1" || e.key === "3") {
     if (e.key === "1") {
       navigator.volumeManager.requestDown();
     } else if (e.key === "3") {
