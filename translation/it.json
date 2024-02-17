@@ -1,1 +1,20 @@
-{"app_name":"Gestione della batteria","discharge_time":"Tempo di scarica:","charge_time":"Tempo di carica:","temperature":"Temperatura:","max_charge":"Carica massima:","min_charge":"Carica minima:","discharge_time_explanation":"Tempo stimato di esaurimento della batteria.","charge_time_explanation":"Tempo stimato per la ricarica completa del dispositivo.","temperature_explanation":"Temperatura stimata della batteria in gradi Celsius.","max_charge_explanation":"L'allarme si attiva quando la batteria supera questo livello.","min_charge_explanation":"L'allarme si attiva se la batteria scende al di sotto di questo livello.","silent_alarm":"Allarme silenzioso","min":"min","enabled":"abilitato","disabled":"disabilitato"}
+{
+    "app_name": "Gestione della batteria",
+    "discharge_time": "Tempo di scarica:",
+    "charge_time": "Tempo di carica:",
+    "temperature": "Temperatura:",
+    "max_charge": "Carica massima:",
+    "min_charge": "Carica minima:",
+    "discharge_time_explanation": "Tempo stimato di esaurimento della batteria.",
+    "charge_time_explanation": "Tempo stimato per la ricarica completa del dispositivo.",
+    "temperature_explanation": "Temperatura stimata della batteria in gradi Celsius.",
+    "max_charge_explanation": "L'allarme si attiva quando la batteria supera questo livello.",
+    "min_charge_explanation": "L'allarme si attiva se la batteria scende al di sotto di questo livello.",
+    "battery_over": "Batteria oltre il ",
+    "battery_below": "Batteria inferiore al ",
+    "is_current_level": "% è il livello attuale della batteria.",
+    "silent_alarm": "Allarme silenzioso",
+    "min": "min",
+    "enabled": "abilitato",
+    "disabled": "disabilitato"
+}

@@ -11,7 +11,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key.includes('Arrow')) e.preventDefault();
   if (!alarm.paused) alarm.pause();
 
-  if (navigator.volumeManager && e.key === "1" || e.key === "3") {
+  if (navigator.volumeManager && e.key === "1" || e.key === "3" && document.activeElement.nodeName !== "INPUT") {
     if (e.key === "1") {
       navigator.volumeManager.requestDown();
     } else {
@@ -29,12 +29,12 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// getKaiAd({
-//   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-//   app: 'batterymanager',
-//   onerror: err => console.error('error getting ad: ', err),
-//   onready: ad => ad.call('display')
-// });
+getKaiAd({
+  publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+  app: 'batterymanager',
+  onerror: err => console.error('error getting ad: ', err),
+  onready: ad => ad.call('display')
+});
 
 const navElems = document.querySelectorAll('.nav');
 const divs = document.querySelectorAll('.div');
@@ -80,7 +80,7 @@ document.addEventListener('keydown', e => {
       app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
     }
   }
-  if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) setMode(), console.log('mode');
+  if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) setMode();
 });
 
 const pushLocalNotification = function (title, text, icon) {
@@ -106,12 +106,12 @@ const pushLocalNotification = function (title, text, icon) {
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === "visible") {
-    // getKaiAd({
-    //   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-    //   app: 'batterymanager',
-    //   onerror: err => console.error('error getting ad: ', err),
-    //   onready: ad => ad.call('display')
-    // });
+    getKaiAd({
+      publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+      app: 'batterymanager',
+      onerror: err => console.error('error getting ad: ', err),
+      onready: ad => ad.call('display')
+    });
     alarm.pause();
   }
 });

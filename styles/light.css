@@ -3,7 +3,7 @@ body.light {
     color: black;
     background: linear-gradient(180deg,
             rgba(235, 235, 235, 1) 0%,
-            rgba(215, 215, 215, 1) 100%);
+            rgba(210, 210, 210, 1) 100%);
 }
 
 body.light #battery {
@@ -38,9 +38,9 @@ body.light div input {
 
 body.light .div::after {
     background: linear-gradient(0deg,
-            rgba(200, 200, 200, 1) 0%,
+            rgba(240, 240, 240, 1) 0%,
             rgba(230, 230, 230, 1) 30%,
-            rgba(240, 240, 240, 1) 100%);
+            rgba(200, 200, 200, 1) 100%);
 }
 
 body.light .maxdiv::after,
@@ -48,7 +48,7 @@ body.light .mindiv::after,
 body.light .tempdiv::after {
     transform: translateY(-100%);
     background: linear-gradient(180deg,
-            rgba(200, 200, 200, 1) 0%,
+            rgba(240, 240, 240, 1) 0%,
             rgba(230, 230, 230, 1) 30%,
-            rgba(240, 240, 240, 1) 100%);
+            rgba(200, 200, 200, 1) 100%);
 }
