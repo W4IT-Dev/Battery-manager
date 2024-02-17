@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "batterymanager",
   "description": "Battery insights and custom alerts.",
   "type": "certified",
@@ -69,7 +69,7 @@
       "description": "notifications."
     },
     "volumemanager": {
-      description: "volume."
+      "description": "volume."
     }
   },
   "default_locale": "en-US"
