@@ -1,17 +1,1 @@
-{
-    "app_name": "Battery Manager",
-    "discharge_time": "Discharge time:",
-    "charge_time": "Charge time:",
-    "temperature": "Temperature:",
-    "max_charge": "Max charge:",
-    "min_charge": "Min charge:",
-    "discharge_time_explanation": "Estimated time until battery is fully depleted.",
-    "charge_time_explanation": "Estimated time to fully charge your device.",
-    "temperature_explanation": "Estimated temperature of the battery in Celsius.",
-    "max_charge_explanation": "Alarm activates when battery exceeds this level.",
-    "min_charge_explanation": "Alarm activates if battery drops below this level.",
-    "silent_alarm": "Silent alarm",
-    "min": "min",
-    "enabled": "enabled",
-    "disabled": "disabled"
-}
+{"app_name":"Battery Manager","discharge_time":"Discharge time:","charge_time":"Charge time:","temperature":"Temperature:","max_charge":"Max charge:","min_charge":"Min charge:","discharge_time_explanation":"Estimated time until battery is fully depleted.","charge_time_explanation":"Estimated time to fully charge your device.","temperature_explanation":"Estimated temperature of the battery in Celsius.","max_charge_explanation":"Alarm activates when battery exceeds this level.","min_charge_explanation":"Alarm activates if battery drops below this level.","silent_alarm":"Silent alarm","min":"min","enabled":"enabled","disabled":"disabled"}

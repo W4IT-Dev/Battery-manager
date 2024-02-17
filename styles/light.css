@@ -1,0 +1,54 @@
+body.light {
+    background-color: rgb(235, 235, 235);
+    color: black;
+    background: linear-gradient(180deg,
+            rgba(235, 235, 235, 1) 0%,
+            rgba(215, 215, 215, 1) 100%);
+}
+
+body.light #battery {
+    background-color: rgb(205, 205, 205);
+}
+
+body.light #battery #level #container {
+    border-color: black;
+}
+
+body.light #container::after {
+    background-color: black;
+}
+
+body.light div.focus {
+    background-color: rgb(240, 240, 240);
+}
+
+body.light div input {
+    background-color: rgb(230, 230, 230);
+}
+
+body.light div.focus input {
+    background-color: rgb(215, 215, 215);
+}
+
+body.light .div :nth-child(2),
+body.light div input {
+    color: #111;
+    text-align: right;
+}
+
+body.light .div::after {
+    background: linear-gradient(0deg,
+            rgba(200, 200, 200, 1) 0%,
+            rgba(230, 230, 230, 1) 30%,
+            rgba(240, 240, 240, 1) 100%);
+}
+
+body.light .maxdiv::after,
+body.light .mindiv::after,
+body.light .tempdiv::after {
+    transform: translateY(-100%);
+    background: linear-gradient(180deg,
+            rgba(200, 200, 200, 1) 0%,
+            rgba(230, 230, 230, 1) 30%,
+            rgba(240, 240, 240, 1) 100%);
+}

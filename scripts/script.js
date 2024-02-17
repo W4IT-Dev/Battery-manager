@@ -2,8 +2,10 @@ const alarm = new Audio("/assets/alarm.mp3");
 alarm.mozAudioChannelType = 'alarm';
 let silent = false;
 let HUDvisible = false;
-localStorage.maxCharge = localStorage.maxCharge || maxCharge.value;
-localStorage.minCharge = localStorage.minCharge || minCharge.value;
+
+maxCharge.value = localStorage.maxCharge || 80
+minCharge.value = localStorage.minCharge || 30
+
 
 document.addEventListener('keydown', (e) => {
   if (e.key.includes('Arrow')) e.preventDefault();
@@ -19,20 +21,20 @@ document.addEventListener('keydown', (e) => {
     setTimeout(() => HUDvisible = false, 2000);
   }
 
-  if (HUDvisible || !["max-charge", "min-charge"].includes(document.activeElement.id)) return;
-  const { value } = document.activeElement;
+  if (HUDvisible || !["maxCharge", "minCharge"].includes(document.activeElement.id)) return;
+  const input = document.activeElement;
   if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-    document.activeElement.stepDown(e.key === "ArrowLeft" ? 1 : -1);
-    localStorage[document.activeElement.id] = value;
+    input.stepDown(e.key === "ArrowLeft" ? 1 : -1);
+    localStorage[input.id] = input.value;
   }
 });
 
-getKaiAd({
-  publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-  app: 'batterymanager',
-  onerror: err => console.error('error getting ad: ', err),
-  onready: ad => ad.call('display')
-});
+// getKaiAd({
+//   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+//   app: 'batterymanager',
+//   onerror: err => console.error('error getting ad: ', err),
+//   onready: ad => ad.call('display')
+// });
 
 const navElems = document.querySelectorAll('.nav');
 const divs = document.querySelectorAll('.div');
@@ -65,18 +67,20 @@ function nav(move) {
 }
 
 document.addEventListener('keydown', e => {
-  if(HUDvisible) return
+  if (HUDvisible) return
   if (["ArrowUp", "ArrowDown"].includes(e.key)) nav(e.key === "ArrowUp" ? -1 : 1);
-  if (e.key === "#" || e.key === "*") window.open(e.key === "#" ? '/about.html' : document.location.origin);
+  if (e.key === "#") window.open('/about.html');
   if (e.key === "*") {
     silent = !silent;
     const text = `${translate('silent_alarm')} ${translate(silent ? 'enabled' : 'disabled')}`;
-    if (!navigator.mozApps) return false;
+    keystrokes.src = `/assets/image/keystrokes_${silent}_${localStorage.mode}.png`;
+    if (!navigator.mozApps) return false, console.log(text);
     navigator.mozApps.getSelf().onsuccess = (e) => {
       const app = e.target.result;
       app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
     }
   }
+  if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) setMode(), console.log('mode');
 });
 
 const pushLocalNotification = function (title, text, icon) {
@@ -102,12 +106,27 @@ const pushLocalNotification = function (title, text, icon) {
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === "visible") {
-    getKaiAd({
-      publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-      app: 'batterymanager',
-      onerror: err => console.error('error getting ad: ', err),
-      onready: ad => ad.call('display')
-    });
+    // getKaiAd({
+    //   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+    //   app: 'batterymanager',
+    //   onerror: err => console.error('error getting ad: ', err),
+    //   onready: ad => ad.call('display')
+    // });
     alarm.pause();
   }
 });
+
+
+function setMode(startUp) {
+  if (localStorage.mode && !startUp) localStorage.mode = localStorage.mode === "light" ? "dark" : "light"
+  else if (!localStorage.mode) localStorage.mode = "dark"
+  document.body.classList.toggle('light', localStorage.mode === "light")
+  keystrokes.src = `/assets/image/keystrokes_${silent}_${localStorage.mode}.png`;
+  document.querySelector('meta[name="theme-color"]').setAttribute('content',  localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
+  [...arrowRights].forEach(element => {
+    element.src = `/assets/image/arrowRight_${localStorage.mode || dark}.png`
+  });
+  [...arrowLefts].forEach(element => {
+    element.src = `/assets/image/arrowLeft_${localStorage.mode || dark}.png`
+  });
+}

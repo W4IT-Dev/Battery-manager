@@ -11,13 +11,11 @@ const loadLanguageFile = language => new Promise((resolve, reject) => {
             if (xhr.status === 200) {
                 try {
                     translations = JSON.parse(xhr.responseText);
-                    const arrowRights = document.querySelectorAll('.arrowRight')
-                    const arrowLefts = document.querySelectorAll('.arrowLeft')
-                    const isArabic = language === 'ar';
-                    console.log(isArabic)
 
-                    const arrowRightSrc = isArabic ? '/assets/image/arrowLeft.png' : '/assets/image/arrowRight.png';
-                    const arrowLeftSrc = isArabic ? '/assets/image/arrowRight.png' : '/assets/image/arrowLeft.png';
+                    const isArabic = language === 'ar';
+
+                    const arrowRightSrc = isArabic ? `/assets/image/arrowLeft_${localStorage.mode}.png` : `/assets/image/arrowRight_${localStorage.mode}.png`;
+                    const arrowLeftSrc = isArabic ? `/assets/image/arrowRight_${localStorage.mode}.png` : `/assets/image/arrowLeft_${localStorage.mode}.png`;
 
                     document.body.classList.toggle('rtl', isArabic);
 
@@ -56,7 +54,6 @@ const updateUIWithTranslations = () => {
             element.dataset.explanation = translate(key)
         } else element.innerText = translate(key);
     });
-
 };
 
 const isLanguageSupported = language => supportedLanguages.includes(language);

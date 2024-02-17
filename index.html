@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <script src="/translation/translate.js" defer></script>
 
-    <script src="DOM.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="battery.js" defer></script>
+    <script src="/scripts/DOM.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/battery.js" defer></script>
 
     <script src="kaiads.v5.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/light.css">
     <meta name="theme-color" content="rgb(45, 45, 45)">
 </head>
 
-<body>
+<body onload="setMode(true);">
     <div id="battery">
         <div id="level">
             <div id="container">
@@ -43,22 +44,22 @@
             <div class="maxdiv div" data-translate="max_charge_explanation"
                 data-explanation="Alarm activates when battery exceeds this level.">
                 <label for="maxcharge" data-translate="max_charge">Max charge</label>
-                <img src="/assets/image/arrowLeft.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
-                <input tabindex="3" type="number" min="1" max="100" value="80" name="maxcharge" id="max-charge"
+                <img src="/assets/image/arrowLeft_dark.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
+                <input tabindex="3" type="number" min="1" max="100" value="80" name="maxcharge" id="maxCharge"
                     class="nav">
-                <img src="/assets/image/arrowRight.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowRight_dark.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
             </div>
             <div class="mindiv div" data-translate="min_charge_explanation"
                 data-explanation="Alarm activates if battery drops below this level.">
                 <label for="mincharge" data-translate="min_charge">Min charge</label>
-                <img src="/assets/image/arrowLeft.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
-                <input tabindex="4" type="number" min="1" max="100" value="30" name="mincharge" id="min-charge"
+                <img src="/assets/image/arrowLeft_dark.png" class="arrowLeft" alt="<" height="13px" style="margin: 0 2px;">
+                <input tabindex="4" type="number" min="1" max="100" value="30" name="mincharge" id="minCharge"
                     class="nav">
-                <img src="/assets/image/arrowRight.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
+                <img src="/assets/image/arrowRight_dark.png" class="arrowRight" alt="<" height="13px" style="margin: 0 2px;">
             </div>
         </div>
     </div>
-    <img id="keystrokes" src="/assets/image/keystrokes.png" alt="">
+    <img id="keystrokes" src="/assets/image/keystrokes_false_dark.png" alt="">
 </body>
 
 
