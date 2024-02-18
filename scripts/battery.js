@@ -27,18 +27,22 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
         if (batteryLevel >= maxCharge.value && battery.charging) {
             if (!silent) alarm.play();
             try {
+                const title = `${translate('battery_over')} ${maxCharge.value}%`;
+                const body = batteryLevel + translate('is_current_level')
                 pushLocalNotification(
-                    "Battery over " + maxCharge.value + "%",
-                    batteryLevel + "% is your current battery level.",
+                    title,
+                    body,
                     "/assets/image/fullCharge.png"
                 )
             } catch (e) { }
         } else if (batteryLevel <= minCharge.value && !battery.charging) {
             if (!silent) alarm.play();
             try {
+                const title = `${translate('battery_below')} ${minCharge.value}%`;
+                const body = batteryLevel + translate('is_current_level')
                 pushLocalNotification(
-                    "Battery below " + minCharge.value + "%",
-                    batteryLevel + "% is your current battery level.",
+                    title,
+                    body,
                     "/assets/image/lowBattery.png"
                 );
             } catch (e) { }

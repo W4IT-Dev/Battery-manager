@@ -6,7 +6,6 @@ let HUDvisible = false;
 maxCharge.value = localStorage.maxCharge || 80
 minCharge.value = localStorage.minCharge || 30
 
-
 document.addEventListener('keydown', (e) => {
   if (e.key.includes('Arrow')) e.preventDefault();
   if (!alarm.paused) alarm.pause();
@@ -116,10 +115,10 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-
 function setMode(startUp) {
   if (localStorage.mode && !startUp) localStorage.mode = localStorage.mode === "light" ? "dark" : "light"
   else if (!localStorage.mode) localStorage.mode = "dark"
+  console.log()
   document.body.classList.toggle('light', localStorage.mode === "light")
   keystrokes.src = `/assets/image/keystrokes_${silent}_${localStorage.mode}.png`;
   document.querySelector('meta[name="theme-color"]').setAttribute('content',  localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
