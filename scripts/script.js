@@ -72,7 +72,7 @@ document.addEventListener('keydown', e => {
   if (e.key === "*") {
     silent = !silent;
     const text = `${translate('silent_alarm')} ${translate(silent ? 'enabled' : 'disabled')}`;
-    keystrokes.src = `/assets/image/keystrokes_${silent}_${localStorage.mode}.png`;
+    keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
     if (!navigator.mozApps) return false, console.log(text);
     navigator.mozApps.getSelf().onsuccess = (e) => {
       const app = e.target.result;
@@ -116,16 +116,19 @@ document.addEventListener('visibilitychange', () => {
 });
 
 function setMode(startUp) {
-  if (localStorage.mode && !startUp) localStorage.mode = localStorage.mode === "light" ? "dark" : "light"
-  else if (!localStorage.mode) localStorage.mode = "dark"
-  console.log()
-  document.body.classList.toggle('light', localStorage.mode === "light")
-  keystrokes.src = `/assets/image/keystrokes_${silent}_${localStorage.mode}.png`;
+  if (localStorage.mode !== undefined && localStorage.mode !== "" && !startUp) {
+    localStorage.mode = localStorage.mode === "light" ? "dark" : "light";
+  } else if (localStorage.mode === undefined || localStorage.mode === "") {
+    localStorage.mode = "dark";
+  }
+
+  document.body.classList.toggle('light', localStorage.mode === "light");
+  keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
   document.querySelector('meta[name="theme-color"]').setAttribute('content',  localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
   [...arrowRights].forEach(element => {
-    element.src = `/assets/image/arrowRight_${localStorage.mode || dark}.png`
+    element.src = `/assets/image/arrowRight_${localStorage.mode || "dark"}.png`;
   });
   [...arrowLefts].forEach(element => {
-    element.src = `/assets/image/arrowLeft_${localStorage.mode || dark}.png`
+    element.src = `/assets/image/arrowLeft_${localStorage.mode || "dark"}.png`;
   });
 }
