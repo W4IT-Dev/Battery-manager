@@ -79,7 +79,7 @@ document.addEventListener('keydown', e => {
       app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
     }
   }
-  if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) setMode();
+  if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) toggleMode();
 });
 
 const pushLocalNotification = function (title, text, icon) {
@@ -115,13 +115,8 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-function setMode(startUp) {
-  if (localStorage.mode !== undefined && localStorage.mode !== "" && !startUp) {
-    localStorage.mode = localStorage.mode === "light" ? "dark" : "light";
-  } else if (localStorage.mode === undefined || localStorage.mode === "") {
-    localStorage.mode = "dark";
-  }
-
+function setMode() {
+  if(!localStorage.mode) localStorage.mode ="dark"
   document.body.classList.toggle('light', localStorage.mode === "light");
   keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
   document.querySelector('meta[name="theme-color"]').setAttribute('content',  localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
@@ -131,4 +126,13 @@ function setMode(startUp) {
   [...arrowLefts].forEach(element => {
     element.src = `/assets/image/arrowLeft_${localStorage.mode || "dark"}.png`;
   });
+}
+
+function toggleMode(){
+  if(localStorage.mode) {
+    localStorage.mode = localStorage.mode === "light" ? "dark" : "light";
+  } else {
+    localStorage.mode = "light"
+  }
+  setMode();
 }

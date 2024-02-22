@@ -1,4 +1,6 @@
 if (navigator.getBattery) navigator.getBattery().then(function (battery) {
+    let minTranslation = translate("min")
+
     function updateAllBatteryInfo() {
         updateChargeInfo();
         updateLevelInfo();
@@ -56,14 +58,14 @@ if (navigator.getBattery) navigator.getBattery().then(function (battery) {
     function updateChargingInfo() {
         if (battery.chargingTime !== Infinity) {
             charge.parentNode.style.display = "flex"
-            charge.innerText = parseInt(battery.chargingTime / 60) + " " + translate('min');
+            charge.innerText = parseInt(battery.chargingTime / 60) + " " + minTranslation;
             charge.parentNode.classList.add('nav')
         } else charge.parentNode.style.display = "none", charge.parentNode.classList.remove('nav')
     }
     function updateDischargingInfo() {
         if (battery.dischargingTime !== Infinity) {
             dischargingTime.parentNode.style.display = "flex"
-            dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " " + translate('min')
+            dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " " +minTranslation
             dischargingTime.parentNode.classList.add('nav')
         } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
     }
