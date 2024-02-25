@@ -1,4 +1,3 @@
-
 # Battery Manager
 Battery Manager for [KaiOS](https://www.kaiostech.com).
 <br>

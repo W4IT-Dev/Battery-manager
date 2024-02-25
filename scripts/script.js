@@ -116,10 +116,11 @@ document.addEventListener('visibilitychange', () => {
 });
 
 function setMode() {
-  if(!localStorage.mode) localStorage.mode ="dark"
-  document.body.classList.toggle('light', localStorage.mode === "light");
+  if (!localStorage.mode) localStorage.mode = "dark"
+  // document.body.classList.toggle('light', localStorage.mode === "light");
+  localStorage.mode === "light" ? document.body.classList.add('light') : document.body.classList.remove('light');
   keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
-  document.querySelector('meta[name="theme-color"]').setAttribute('content',  localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
   [...arrowRights].forEach(element => {
     element.src = `/assets/image/arrowRight_${localStorage.mode || "dark"}.png`;
   });
@@ -128,11 +129,8 @@ function setMode() {
   });
 }
 
-function toggleMode(){
-  if(localStorage.mode) {
-    localStorage.mode = localStorage.mode === "light" ? "dark" : "light";
-  } else {
-    localStorage.mode = "light"
-  }
+function toggleMode() {
+  if (localStorage.mode) localStorage.mode = localStorage.mode === "light" ? "dark" : "light";
+  else localStorage.mode = "light"
   setMode();
 }
