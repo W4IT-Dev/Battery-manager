@@ -3,7 +3,7 @@ Battery Manager for [KaiOS](https://www.kaiostech.com).
 <br>
 
 ## Description
-View battery information such as health, temperatur charging- and discharging time and more and set an alarm if your battey level goes above a customizable percentage.
+Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience.
 <br>
 
 ## Download
@@ -13,7 +13,9 @@ View battery information such as health, temperatur charging- and discharging ti
 
 ### Screenshots:
 <br>
-<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/58fdb7ae-ddda-4583-abea-9a7e09a6ec48">
-<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/6daffed9-187f-47b9-9423-92c7735a5e3d">
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/a0dcd477-4247-4e04-bc99-ebddd7dde0b1">
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/05bae195-aa6c-4f3f-aecc-7afb55dae4a7">
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/b4973abb-d7b1-40d5-a8ca-1cb3a0459762">
+<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/173cdcbc-7fa4-493d-bb79-d7ab8bb21f8b">
 
-(temperature works on kaios devices)
+*Picture 1-3; Old version - Picture 4; new version*
