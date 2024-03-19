@@ -1,12 +1,17 @@
 body.light {
-    background-color: rgb(235, 235, 235);
+    background-color: #ebebeb;
     color: black;
     background: linear-gradient(180deg,
             rgba(235, 235, 235, 1) 0%,
             rgba(210, 210, 210, 1) 100%);
 }
 
+body.light * {
+    color: black;
+}
+
 body.light #battery {
+    color: black;
     background-color: rgb(205, 205, 205);
 }
 
