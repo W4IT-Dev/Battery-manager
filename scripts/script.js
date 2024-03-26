@@ -1,7 +1,6 @@
 const alarm = new Audio("/assets/alarm.mp3");
-alarm.mozAudioChannelType = 'alarm';
+navigator.b2g.audioChannelManager.volumeControlChannel = 'alarm'
 let silent = false;
-let HUDvisible = false;
 
 maxCharge.value = localStorage.maxCharge || 80
 minCharge.value = localStorage.minCharge || 30
@@ -11,16 +10,15 @@ document.addEventListener('keydown', (e) => {
   if (!alarm.paused) alarm.pause();
 
   if (navigator.volumeManager && e.key === "1" || e.key === "3" && document.activeElement.nodeName !== "INPUT") {
-    if (e.key === "1") {
-      navigator.volumeManager.requestDown();
-    } else {
-      navigator.volumeManager.requestUp();
-    }
-    HUDvisible = true;
-    setTimeout(() => HUDvisible = false, 2000);
+    let activity = new WebActivity("configure", {
+      target: "device",
+      section: "volume"
+    });
+    activity.start();
+
   }
 
-  if (HUDvisible || !["maxCharge", "minCharge"].includes(document.activeElement.id)) return;
+  if (!["maxCharge", "minCharge"].includes(document.activeElement.id)) return;
   const input = document.activeElement;
   if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
     input.stepDown(e.key === "ArrowLeft" ? 1 : -1);
@@ -66,14 +64,13 @@ function nav(move) {
 }
 
 document.addEventListener('keydown', e => {
-  if (HUDvisible) return
   if (["ArrowUp", "ArrowDown"].includes(e.key)) nav(e.key === "ArrowUp" ? -1 : 1);
   if (e.key === "#") window.open('/about.html');
   if (e.key === "*") {
     silent = !silent;
     const text = `${translate('silent_alarm')} ${translate(silent ? 'enabled' : 'disabled')}`;
     keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
-    if (!navigator.mozApps) return false, console.log(text);
+    if (!navigator.mozApps) return false, console.log(text), alert(text);
     navigator.mozApps.getSelf().onsuccess = (e) => {
       const app = e.target.result;
       app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));

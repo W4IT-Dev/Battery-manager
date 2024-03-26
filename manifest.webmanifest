@@ -1,0 +1,48 @@
+{
+    "id": "batterymanager",
+    "name": "Battery Manager",
+    "description": "Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience.",
+    "display": "standalone",
+    "lang": "en-US",
+    "background_color": "#2d2d2d",
+    "orientation": "portrait-primary",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "/assets/image/icon.png",
+            "type": "image/png",
+            "sizes": "56x56"
+        },
+        {
+            "src": "/assets/image/icon.png",
+            "type": "image/png",
+            "sizes": "112x112"
+        }
+    ],
+    "b2g_features": {
+        "display": "Battery Manager",
+        "version": "0.1.0",
+        "subtitle": "Battery insights and custom alerts.",
+        "type": "certified",
+        "categories": [
+            "utilities"
+        ],
+        "developer": {
+            "name": "W4IT-Dev",
+            "url": "https://github.com/W4IT-Dev/Battery-manager/tree/KaiOS-3"
+        },
+        "permissions": {
+            "desktop-notification": {
+                "description": "notifications."
+            },
+            "notifications": {},
+            "push": {
+                "description": "notifications."
+            },
+            "volumemanager": {
+                "description": "volume."
+            }
+        },
+        "cursor": false
+    }
+}
