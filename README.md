@@ -1,5 +1,5 @@
-# Battery Manager
-Battery Manager for [KaiOS](https://www.kaiostech.com).
+# Battery Manager KaiOS 3
+Battery Manager for [KaiOS 3](https://www.kaiostech.com).
 <br>
 
 ## Description
@@ -7,8 +7,7 @@ Battery Manager is your go-to solution for efficient battery management on your 
 <br>
 
 ## Download
-* [KaiStore](https://www.kaiostech.com/store/apps/?bundle_id=kaios.app.batterymanager)
-* [Latest release in this GitHub repo](https://github.com/W4IT-Dev/Battery-manager/releases/tag/v1.0.0)
+none *yet* -- Send me your IMEI so I can add you a tester in the KaiStore
 <br>
 
 ### Screenshots:
