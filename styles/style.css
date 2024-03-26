@@ -102,6 +102,10 @@ hr {
 	transition: all 1s;
 }
 
+#battery #info {
+	margin-bottom: 5px;
+}
+
 #info div {
 	color: white;
 	position: relative;
