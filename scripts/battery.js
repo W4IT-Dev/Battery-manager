@@ -7,6 +7,7 @@ function batteryStats() {
             updateLevelInfo();
             updateChargingInfo();
             updateDischargingInfo();
+            temperature.innerText = battery.temperature + '°'
             setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2);
         }
         updateAllBatteryInfo();
