@@ -42,6 +42,7 @@ body.light div input {
 }
 
 body.light .div::after {
+    color: black;
     background: linear-gradient(0deg,
             rgba(240, 240, 240, 1) 0%,
             rgba(230, 230, 230, 1) 30%,

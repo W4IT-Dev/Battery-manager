@@ -122,10 +122,10 @@ function setMode() {
   keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
   document.querySelector('meta[name="theme-color"]').setAttribute('content', localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
   [...arrowRights].forEach(element => {
-    element.src = `/assets/image/arrowRight_${localStorage.mode || "dark"}.png`;
+    element.src = `/assets/image/arrowRight_${document.body.classList.contains('light') ? "light": "dark"}.png`;
   });
   [...arrowLefts].forEach(element => {
-    element.src = `/assets/image/arrowLeft_${localStorage.mode || "dark"}.png`;
+    element.src = `/assets/image/arrowLeft_${document.body.classList.contains('light') ? "light": "dark"}.png`;
   });
 }
 
