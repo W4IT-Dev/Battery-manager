@@ -77,6 +77,7 @@ function batteryStats() {
         if (document.visibilityState == "hidden") {
             clearInterval(temperatureUpdateInterval)
         } else {
+            temperature.innerText = battery.temperature + '°'
             battery.charging ? setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2) : setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
         }
     })
