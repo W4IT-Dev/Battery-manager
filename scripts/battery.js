@@ -72,7 +72,7 @@ function batteryStats() {
                 dischargingTime.parentNode.classList.add('nav')
             } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
         }
-    });
+    
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState == "hidden") {
             clearInterval(temperatureUpdateInterval)
@@ -81,4 +81,5 @@ function batteryStats() {
             battery.charging ? setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2) : setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
         }
     })
+        });
 }
