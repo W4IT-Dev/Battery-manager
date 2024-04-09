@@ -1,0 +1,20 @@
+{
+    "app_name": "Menedżer baterii",
+    "battery_below": "Bateria poniżej",
+    "battery_over": "Bateria powyżej",
+    "charge_time": "Czas ładowania:",
+    "charge_time_explanation": "Szacowany czas, aby w pełni naładować baterię",
+    "disabled": "wyłączony",
+    "discharge_time": "Czas rozładowania:",
+    "discharge_time_explanation": "Szacowany czas do pełnego rozładowania baterii",
+    "enabled": "włączony",
+    "is_current_level": "% to twój aktualny poziom baterii.",
+    "max_charge": "Maksimum:",
+    "max_charge_explanation": "Alarm będzie aktywowany, jeśli bateria przekroczy ten poziom.",
+    "min": "min",
+    "min_charge": "Minimum:",
+    "min_charge_explanation": "Alarm będzie aktywowany, jeśli bateria będzie poniżej tego poziomu",
+    "silent_alarm": "Cichy alarm",
+    "temperature": "Temperatura:",
+    "temperature_explanation": "Szacowana temperatura baterii (w stopniach Celsjusza)"
+  }

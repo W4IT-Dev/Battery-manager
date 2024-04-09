@@ -1,1 +1,20 @@
-{"app_name":"Batterie Manager","discharge_time":"Entladungszeit:","charge_time":"Ladezeit:","temperature":"Temperatur:","max_charge":"Max. Ladung:","min_charge":"Min. Ladung:","discharge_time_explanation":"Geschätzte Zeit, bis der Akku vollständig entladen ist.","charge_time_explanation":"Geschätzte Zeit bis zum vollständigen Aufladen Ihres Geräts.","temperature_explanation":"Geschätzte Temperatur der Batterie in Celsius.","max_charge_explanation":"Der Alarm wird aktiviert, wenn der Akkustand diesen Wert überschreitet.","min_charge_explanation":"Der Alarm wird aktiviert, wenn der Akkustand unter diesen Wert fällt.","battery_over":"Akku über","battery_below":"Akku unter","is_current_level":"% ist Dein aktueller Akkustand.","silent_alarm":"Stiller Alarm","min":"min","enabled":"aktiviert","disabled":"deaktiviert"}
+{
+    "app_name": "Batterie Manager",
+    "battery_below": "Akkustand unter",
+    "battery_over": "Akkustand über",
+    "charge_time": "Ladezeit:",
+    "charge_time_explanation": "Geschätzte Zeit bis der Akku vollständig geladen ist.",
+    "disabled": "deaktiviert",
+    "discharge_time": "Entladezeit:",
+    "discharge_time_explanation": "Geschätzte Zeit bis der Akku vollständig entladen ist.",
+    "enabled": "aktiviert",
+    "is_current_level": "% ist Dein aktueller Akkustand",
+    "max_charge": "Max. Ladung",
+    "max_charge_explanation": "Der Alarm wird aktiviert, wenn der Akkustand diesen Wert überschreitet",
+    "min": "min",
+    "min_charge": "Min. Ladung",
+    "min_charge_explanation": "Der Alarm wird aktiviert, wenn der Akkustand diesen Wert unterschreitet",
+    "silent_alarm": "Stiller Alarm",
+    "temperature": "Temperatur:",
+    "temperature_explanation": "Geschätzte Temperatur des Akkus in Celsius"
+  }

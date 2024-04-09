@@ -116,16 +116,17 @@ document.addEventListener('visibilitychange', () => {
 });
 
 function setMode() {
+  let rtl = document.body.classList.contains('rtl')
   if (!localStorage.mode) localStorage.mode = "dark"
   // document.body.classList.toggle('light', localStorage.mode === "light");
   localStorage.mode === "light" ? document.body.classList.add('light') : document.body.classList.remove('light');
-  keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
+  keystrokes.src = `/assets/image/keystrokes${rtl ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
   document.querySelector('meta[name="theme-color"]').setAttribute('content', localStorage.mode === "dark" ? 'rgb(45, 45, 45)' : 'rgb(235, 235, 235)');
   [...arrowRights].forEach(element => {
-    element.src = `/assets/image/arrowRight_${document.body.classList.contains('light') ? "light": "dark"}.png`;
+    element.src = `/assets/image/${rtl ? 'arrowLeft' : 'arrowRight'}_${document.body.classList.contains('light') ? "light" : "dark"}.png`;
   });
   [...arrowLefts].forEach(element => {
-    element.src = `/assets/image/arrowLeft_${document.body.classList.contains('light') ? "light": "dark"}.png`;
+    element.src = `/assets/image/${rtl ? 'arrowRight' : 'arrowLeft'}_${document.body.classList.contains('light') ? "light" : "dark"}.png`;
   });
 }
 

@@ -1,0 +1,20 @@
+{
+    "app_name": "Meneja wa Betri",
+    "battery_below": "Betri chini ya",
+    "battery_over": "Betri zaidi ya",
+    "charge_time": "charge_time",
+    "charge_time_explanation": "Muda unaokadiriwa wa kuchaji betri kabisa",
+    "disabled": "imelemazwa",
+    "discharge_time": "discharge_time",
+    "discharge_time_explanation": "Muda unaokadiriwa hadi betri ikamilifu kumalizika",
+    "enabled": "imeamilishwa",
+    "is_current_level": "% ni kiwango chako cha sasa cha betri.",
+    "max_charge": "Kiasi Kikubwa cha Kuchaji:",
+    "max_charge_explanation": "Kengele itaamilishwa wakati betri inazidi kiwango hiki",
+    "min": "dak.",
+    "min_charge": "Kiasi Kidogo cha Kuchaji:",
+    "min_charge_explanation": "Kengele itaamilishwa wakati betri inapungua chini ya kiwango hiki.",
+    "silent_alarm": "Kengele Kimya",
+    "temperature": "Joto:",
+    "temperature_explanation": "Joto lililokadiriwa la betri kwa Celsius"
+  }

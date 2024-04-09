@@ -1,0 +1,20 @@
+{
+    "app_name": "بیٹری منیجر",
+    "battery_below": "بیٹری کمتر",
+    "battery_over": "بیٹری زیادہ",
+    "charge_time": "چارج وقت",
+    "charge_time_explanation": "بیٹری مکمل چارج ہونے کا تخمینی وقت",
+    "disabled": "غیر فعال",
+    "discharge_time": "ڈسچارج وقت",
+    "discharge_time_explanation": "بیٹری کمپلیٹ ڈسچارج ہونے کا تخمینی وقت",
+    "enabled": "فعال",
+    "is_current_level": "% آپ کا موجودہ بیٹری سطح ہے",
+    "max_charge": "زیادہ سے زیادہ چارج",
+    "max_charge_explanation": "الارم جب بیٹری اس سطح سے زیادہ ہو تو چالو ہوتا ہے",
+    "min": "کم",
+    "min_charge": "کم سے کم چارج",
+    "min_charge_explanation": "الارم جب بیٹری اس سطح سے کم ہو تو چالو ہوتا ہے",
+    "silent_alarm": "خاموش الارم",
+    "temperature": "درجہ حرارت",
+    "temperature_explanation": "سینٹی گریڈ میں بیٹری کا تخمینی درجہ حرارت"
+  }

@@ -1,1 +1,20 @@
-{"app_name":"Gestor de baterías","discharge_time":"Tiempo de descarga:","charge_time":"Tiempo de carga:","temperature":"Temperatura:","max_charge":"Carga máx:","min_charge":"Carga mín:","discharge_time_explanation":"Tiempo estimado hasta el agotamiento total de la batería.","charge_time_explanation":"Tiempo estimado para cargar completamente tu dispositivo.","temperature_explanation":"Temperatura estimada de la batería en grados Celsius.","max_charge_explanation":"La alarma se activa cuando la batería supera este nivel.","min_charge_explanation":"La alarma se activa si la batería cae por debajo de este nivel.","battery_over":"Batería agotada","battery_below":"Batería abajo","is_current_level":"% es tu nivel de batería actual","silent_alarm":"Alarma silenciosa","min":"min","enabled":"activado","disabled":"desactivado"}
+{
+    "app_name": "Gestor de baterías",
+    "battery_below": "Batería debajo del",
+    "battery_over": "Batería encima del",
+    "charge_time": "Tiempo de carga",
+    "charge_time_explanation": "Tiempo estimado hasta que la batería esté completamente cargada.",
+    "disabled": "desactivada",
+    "discharge_time": "Tiempo de descarga:",
+    "discharge_time_explanation": "Tiempo estimado hasta que la batería esté completamente descargada.",
+    "enabled": "activada",
+    "is_current_level": "% es tu nivel de batería actual.",
+    "max_charge": "Máx. carga:",
+    "max_charge_explanation": "La alarma se activa cuando el nivel de batería supera este valor",
+    "min": "min",
+    "min_charge": "Mín. carga:",
+    "min_charge_explanation": "La alarma se activa cuando el nivel de batería cae por debajo de este valor",
+    "silent_alarm": "Alarma silenciosa",
+    "temperature": "Temperatura:",
+    "temperature_explanation": "Temperatura estimada de la batería en grados Celsius"
+  }

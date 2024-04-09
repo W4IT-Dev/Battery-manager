@@ -1,1 +1,20 @@
-{"app_name":"Battery Manager","discharge_time":"Discharge time:","charge_time":"Charge time:","temperature":"Temperature:","max_charge":"Max charge:","min_charge":"Min charge:","discharge_time_explanation":"Estimated time until battery is fully depleted.","charge_time_explanation":"Estimated time to fully charge your device.","temperature_explanation":"Estimated temperature of the battery in Celsius.","max_charge_explanation":"Alarm activates when battery exceeds this level.","min_charge_explanation":"Alarm activates if battery drops below this level.","battery_over":"Battery over","battery_below":"Battery below","is_current_level":"% is your current battery level.","silent_alarm":"Silent alarm","min":"min","enabled":"enabled","disabled":"disabled"}
+{
+    "app_name": "Battery Manager",
+    "battery_below": "Battery below",
+    "battery_over": "Battery over",
+    "charge_time": "Charge time:",
+    "charge_time_explanation": "Estimated time to fully charge the battery",
+    "disabled": "disabled",
+    "discharge_time": "Discharge time:",
+    "discharge_time_explanation": "Estimated time until the battery is fully depleted",
+    "enabled": "enabled",
+    "is_current_level": "% is your current battery level.",
+    "max_charge": "Max charge:",
+    "max_charge_explanation": "Alarm activates when the battery exceeds this level",
+    "min": "min",
+    "min_charge": "Min charge:",
+    "min_charge_explanation": "Alarm activates when the battery drops below this level.",
+    "silent_alarm": "Silent alarm",
+    "temperature": "Temperature:",
+    "temperature_explanation": "Estimated temperature of the battery in Celsius"
+  }

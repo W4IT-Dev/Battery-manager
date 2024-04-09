@@ -1,1 +1,20 @@
-{"app_name":"مدير البطارية","discharge_time":"وقت التفريغ","charge_time":"وقت الشحن","temperature":"درجة الحرارة","max_charge":"الحد الأقصى للشحن","min_charge":"الحد الأدنى للشحن","discharge_time_explanation":"الوقت المقدر حتى نفاد البطارية بالكامل.","charge_time_explanation":"الوقت المقدر لشحن جهازك بالكامل.","temperature_explanation":"درجة الحرارة المقدرة للبطارية بالدرجة المئوية.","max_charge_explanation":"يتم تنشيط الإنذار عندما تتجاوز البطارية هذا المستوى.","min_charge_explanation":"يتم تنشيط الإنذار إذا انخفضت البطارية عن هذا المستوى.","battery_over":"البطارية أعلى من ","battery_below":"البطارية ادنى من ","is_current_level":"% هو مستوى شحن البطارية الحالي لديك.","silent_alarm":"إنذار صامت","min":"دقيقة","enabled":"ممكّن","disabled":"معطل"}
+{
+    "app_name": "مدير البطارية",
+    "battery_below": "Battery below",
+    "battery_over": "Battery over",
+    "charge_time": "وقت الشحن:",
+    "charge_time_explanation": "الوقت المقدر لشحن البطارية بالكامل",
+    "disabled": "معطل",
+    "discharge_time": "وقت التفريغ:",
+    "discharge_time_explanation": "الوقت المقدر حتى نفاد البطارية بالكامل",
+    "enabled": "ممكّنة",
+    "is_current_level": "% هو مستوى البطارية الحالي.",
+    "max_charge": "الحد الأقصى للشحن",
+    "max_charge_explanation": "يتم تنشيط الإنذار عندما تتجاوز البطارية هذا المستوى",
+    "min": "دقيقة",
+    "min_charge": "الحد الأدنى للشحن:",
+    "min_charge_explanation": "ينشط المنبه عندما تنخفض البطارية عن هذا المستوى.",
+    "silent_alarm": "إنذار صامت",
+    "temperature": "درجة الحرارة:",
+    "temperature_explanation": "درجة الحرارة المقدرة للبطارية بالدرجة المئوية"
+  }
