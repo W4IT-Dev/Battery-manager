@@ -1,5 +1,5 @@
 body.light {
-    background-color: #ebebeb;
+    background: rgb(235, 235, 235);
     color: black;
     background: linear-gradient(180deg,
             rgba(235, 235, 235, 1) 0%,

@@ -16,14 +16,14 @@ function batteryStats() {
         battery.addEventListener('chargingchange', updateChargeInfo);
 
         battery.addEventListener('levelchange', updateLevelInfo);
-
+        
         battery.addEventListener('chargingtimechange', updateChargingInfo);
 
         battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
         function updateChargeInfo() {
             a = document.querySelector('#container');
-            battery.charging ? (a.classList.add('charging'), setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2)) : (a.classList.remove('charging'), alarm.pause(), setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5));
+            battery.charging ? (a.classList.add('charging'), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2)) : (a.classList.remove('charging'), alarm.pause(), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5));
         }
         function updateLevelInfo() {
             batteryLevel = parseInt(battery.level * 100)
@@ -78,7 +78,7 @@ function batteryStats() {
                 clearInterval(temperatureUpdateInterval)
             } else {
                 temperature.innerText = battery.temperature + '°'
-                battery.charging ? setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2) : setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
+                battery.charging ? temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2) : temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
             }
         })
     });
