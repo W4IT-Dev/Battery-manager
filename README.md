@@ -44,4 +44,4 @@ Battery Manager is your go-to solution for efficient battery management on your 
 
 ![SCREENSHOT_IMAGE_1](https://github.com/W4IT-Dev/Battery-manager/assets/110252354/102b4268-cf3f-4dc4-945b-6280bc76749c)
 ![SCREENSHOT_IMAGE_2](https://github.com/W4IT-Dev/Battery-manager/assets/110252354/9117798e-773e-43f9-97ce-fc2d8e5123b4) ![SCREENSHOT_IMAGE_3](https://github.com/W4IT-Dev/Battery-manager/assets/110252354/57c11b03-8f75-458a-a1b2-3b7d46a2032f)
-<img src="https://github.com/W4IT-Dev/Battery-manager/assets/110252354/173cdcbc-7fa4-493d-bb79-d7ab8bb21f8b">
+![SCREENSHOT_IMAGE_4](https://github.com/W4IT-Dev/Battery-manager/assets/110252354/252d6c90-d962-4eda-9564-4b8968820099)
