@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding: 0;
+    margin: 20px;
+}
+
+body.rtl {
+    direction: rtl;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 20px;
+}

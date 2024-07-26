@@ -1,0 +1,21 @@
+{
+    "app_name": "Pil Yöneticisi",
+    "battery_below": "Pil aşağıda",
+    "battery_over": "Pil bitti",
+    "charge_time": "Doldurma süresi:",
+    "charge_time_explanation": "Pilin tam olarak şarj edilmesi için tahmini süre",
+    "devre dışı": "devre dışı bırakıldı",
+    "discharge_time": "Deşarj süresi:",
+    "discharge_time_explanation": "Pilin tamamen boşalmasına kadar geçen tahmini süre",
+    "enabled": "etkinleştirildi",
+    "is_current_level": "% - mevcut pil seviyesi.",
+    "max_charge": "Maks. Şarj",
+    "max_charge_explanation": "Santigrat derece cinsinden tahmini pil sıcaklığı",
+    "min": "min.",
+    "min_charge": "Min. şarj",
+    "min_charge_explanation": "Pil şarjı bu seviyenin altına düştüğünde bir alarm tetiklenir.",
+    "silent_alarm": "sessiz alarm",
+    "temperature": "Sıcaklık:",
+    "temperature_explanation": "Santigrat derece cinsinden tahmini pil sıcaklığı",
+    "html": ""
+}

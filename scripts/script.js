@@ -2,6 +2,7 @@ const alarm = new Audio("/assets/alarm.mp3");
 alarm.mozAudioChannelType = 'alarm';
 let silent = false;
 let HUDvisible = false;
+let adShowing = false;
 
 maxCharge.value = localStorage.maxCharge || 80
 minCharge.value = localStorage.minCharge || 30
@@ -32,7 +33,15 @@ getKaiAd({
   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
   app: 'batterymanager',
   onerror: err => console.error('error getting ad: ', err),
-  onready: ad => ad.call('display')
+  onready: ad => {
+    ad.on('click', () => adShowing = false)
+
+    ad.on('close', () => adShowing = false)
+
+    ad.on('display', () => adShowing = true)
+
+    ad.call('display');
+  }
 });
 
 const navElems = document.querySelectorAll('.nav');
@@ -73,14 +82,18 @@ document.addEventListener('keydown', e => {
     silent = !silent;
     const text = `${translate('silent_alarm')} ${translate(silent ? 'enabled' : 'disabled')}`;
     keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
-    if (!navigator.mozApps) return false, console.log(text);
-    navigator.mozApps.getSelf().onsuccess = (e) => {
-      const app = e.target.result;
-      app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
-    }
+    toastMessage(text)
   }
   if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) toggleMode();
 });
+
+function toastMessage(text) {
+  if (!navigator.mozApps) return false, console.log(text);
+  navigator.mozApps.getSelf().onsuccess = (e) => {
+    const app = e.target.result;
+    app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
+  }
+}
 
 const pushLocalNotification = function (title, text, icon) {
   window.Notification.requestPermission().then(result => {
@@ -105,12 +118,22 @@ const pushLocalNotification = function (title, text, icon) {
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === "visible") {
-    getKaiAd({
-      publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
-      app: 'batterymanager',
-      onerror: err => console.error('error getting ad: ', err),
-      onready: ad => ad.call('display')
-    });
+    if (!adShowing) {
+      getKaiAd({
+        publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
+        app: 'batterymanager',
+        onerror: err => console.error('error getting ad: ', err),
+        onready: ad => {
+          ad.on('click', () => adShowing = false)
+
+          ad.on('close', () => adShowing = false)
+
+          ad.on('display', () => adShowing = true)
+
+          ad.call('display');
+        }
+      });
+    }
     alarm.pause();
   }
 });

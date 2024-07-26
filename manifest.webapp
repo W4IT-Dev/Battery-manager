@@ -1,5 +1,5 @@
 {
-    "version": "1.4.2",
+    "version": "1.5.0",
     "name": "Battery Manager",
     "description": "Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience.",
     "type": "certified",
@@ -13,53 +13,53 @@
     },
     "developer": {
         "name": "W4IT Dev",
-        "url": "https://github.com/W4IT-Dev/battery-manager"
+        "url": "https://github.com/W4IT-Dev/Battery-Manager"
     },
     "locales": {
         "en-US": {
             "name": "Battery Manager",
-            "subtitle": "Battery insights and custom alerts.",
-            "description": "Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience"
+            "subtitle": "Battery insights and custom alerts",
+            "description": "Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download Battery Manager now and take charge of your device's battery life for a worry-free mobile experience."
         },
         "de-DE": {
             "name": "Battery Manager",
-            "subtitle": "Batterie Infos und anpassbare Warnungen.",
-            "description": "Battery Manager ist die ideale Lösung für ein effizientes Akkumanagement auf Ihrem KaiOS Featurephone. Behalten Sie den Überblick über wichtige Akkustatistiken wie Entlade- und Ladezeiten, Temperatur und Änderungen des Ladezustands in Echtzeit. Stellen Sie personalisierte Warnungen für bestimmte Batteriestände ein, sowohl für hohe als auch für niedrige, um sicherzustellen, dass Ihnen nie die Energie ausgeht, wenn Sie sie am meisten brauchen. Laden Sie KaiOS Battery Manager jetzt herunter und übernehmen Sie die Kontrolle über die Akkulaufzeit Ihres Geräts für ein sorgenfreies mobiles Erlebnis"
+            "subtitle": "Batterie Infos und anpassbare Warnungen",
+            "description": "Battery Manager ist die ideale Lösung für ein effizientes Akkumanagement auf Deinem KaiOS Featurephone. Behalte den Überblick über wichtige Akkustatistiken wie Entlade- und Ladezeiten, Temperatur und Änderungen des Ladezustands in Echtzeit. Stelle personalisierte Warnungen für bestimmte Batteriestände ein, sowohl für hohe als auch für niedrige, um sicherzustellen, dass Dir nie die Energie ausgeht, wenn Du sie am meisten brauchen. Lade Battery Manager jetzt herunter und übernehmen Sie die Kontrolle über die Akkulaufzeit Ihres Geräts für ein sorgenfreies mobiles Erlebnis."
         },
         "es-ES": {
             "name": "Battery Manager",
             "subtitle": "Información sobre la batería y alertas personalizadas",
-            "description": "Battery Manager es tu solución para una gestión eficiente de la batería en tu featurephone KaiOS. Realiza un seguimiento de las estadísticas vitales de la batería, como los tiempos de descarga y carga, la temperatura y los cambios de nivel en tiempo real. Configura alertas personalizadas para niveles de batería específicos, tanto altos como bajos, para asegurarte de que nunca te quedas sin energía cuando más la necesitas. Descarga ahora KaiOS Battery Manager y controla la duración de la batería de tu dispositivo para disfrutar de una experiencia móvil sin preocupaciones."
+            "description": "Battery Manager es tu solución para una gestión eficiente de la batería en tu featurephone KaiOS. Realiza un seguimiento de las estadísticas vitales de la batería, como los tiempos de descarga y carga, la temperatura y los cambios de nivel en tiempo real. Configura alertas personalizadas para niveles de batería específicos, tanto altos como bajos, para asegurarte de que nunca te quedas sin energía cuando más la necesitas. Descarga ahora Battery Manager y controla la duración de la batería de tu dispositivo para disfrutar de una experiencia móvil sin preocupaciones."
         },
         "es-US": {
             "name": "Battery Manager",
             "subtitle": "Información sobre la batería y alertas personalizadas",
-            "description": "Battery Manager es tu solución para una gestión eficiente de la batería en tu featurephone KaiOS. Realiza un seguimiento de las estadísticas vitales de la batería, como los tiempos de descarga y carga, la temperatura y los cambios de nivel en tiempo real. Configura alertas personalizadas para niveles de batería específicos, tanto altos como bajos, para asegurarte de que nunca te quedas sin energía cuando más la necesitas. Descarga ahora KaiOS Battery Manager y controla la duración de la batería de tu dispositivo para disfrutar de una experiencia móvil sin preocupaciones."
+            "description": "Battery Manager es tu solución para una gestión eficiente de la batería en tu featurephone KaiOS. Realiza un seguimiento de las estadísticas vitales de la batería, como los tiempos de descarga y carga, la temperatura y los cambios de nivel en tiempo real. Configura alertas personalizadas para niveles de batería específicos, tanto altos como bajos, para asegurarte de que nunca te quedas sin energía cuando más la necesitas. Descarga ahora Battery Manager y controla la duración de la batería de tu dispositivo para disfrutar de una experiencia móvil sin preocupaciones."
         },
         "fr-FR": {
             "name": "Battery Manager",
             "subtitle": "Informations sur la batterie et alertes personnalisées",
-            "description": "Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant KaiOS Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci."
+            "description": "Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci."
         },
         "fr-CA": {
             "name": "Battery Manager",
             "subtitle": "Informations sur la batterie et alertes personnalisées",
-            "description": "Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant KaiOS Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci."
+            "description": "Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci."
         },
         "it-IT": {
             "name": "Battery Manager",
             "subtitle": "Informazioni sulla batteria e avvisi personalizzati",
-            "description": "Battery Manager è la soluzione ideale per una gestione efficiente della batteria sul featurephone KaiOS. Tiene traccia delle statistiche vitali della batteria, come i tempi di scaricamento e di carica, la temperatura e le variazioni di livello in tempo reale. Impostate avvisi personalizzati per specifici livelli di batteria, sia alti che bassi, per assicurarvi di non rimanere mai senza energia quando ne avete più bisogno. Scaricate subito KaiOS Battery Manager e controllate la durata della batteria del vostro dispositivo per un'esperienza mobile senza preoccupazioni."
+            "description": "Battery Manager è la soluzione ideale per una gestione efficiente della batteria sul featurephone KaiOS. Tiene traccia delle statistiche vitali della batteria, come i tempi di scaricamento e di carica, la temperatura e le variazioni di livello in tempo reale. Impostate avvisi personalizzati per specifici livelli di batteria, sia alti che bassi, per assicurarvi di non rimanere mai senza energia quando ne avete più bisogno. Scaricate subito Battery Manager e controllate la durata della batteria del vostro dispositivo per un'esperienza mobile senza preoccupazioni."
         },
         "pl-PL": {
             "name": "Battery Manager",
-            "subtitle": "Dane o baterii i własne alerty.",
-            "description": "Battery Manager to gotowe rozwiązanie do wydajnego zarządzania baterią w telefonie KaiOS. Pilnuj ważnych statystyk baterii, takich jak czas rozładowania i ładowania, temperatury oraz zmian poziomu w czasie rzeczywistym. Ustaw własne alerty dla określonych poziomów baterii, wysokich i niskich, aby mieć pewność, że nie zabraknie tobie baterii, gdy jej najbardziej potrzebujesz. Pobierz teraz KaiOS Battery Manager i zadbaj o żywotność baterii swojego urządzenia, aby mieć bezproblemowe użytkowanie"
+            "subtitle": "Dane o baterii i własne alerty",
+            "description": "Battery Manager to gotowe rozwiązanie do wydajnego zarządzania baterią w telefonie KaiOS. Pilnuj ważnych statystyk baterii, takich jak czas rozładowania i ładowania, temperatury oraz zmian poziomu w czasie rzeczywistym. Ustaw własne alerty dla określonych poziomów baterii, wysokich i niskich, aby mieć pewność, że nie zabraknie tobie baterii, gdy jej najbardziej potrzebujesz. Pobierz teraz Battery Manager i zadbaj o żywotność baterii swojego urządzenia, aby mieć bezproblemowe użytkowanie."
         },
         "ru-RU": {
-            "name": "Менеджер по аккумуляторам",
+            "name": "Управляющий батареей",
             "subtitle": "Информация о батарее и индивидуальные оповещения",
-            "description": "Менеджер по аккумуляторам - это удобное решение для эффективного управления батареей на функциональном телефоне KaiOS. Следите за такими важными показателями батареи, как время разряда и заряда, температура и изменения уровня заряда в режиме реального времени. Настройте персональные оповещения для определенных уровней заряда, как высокого, так и низкого, чтобы не остаться без энергии в самый нужный момент. Загрузите KaiOS Battery Manager прямо сейчас и возьмите на себя ответственность за время автономной работы вашего устройства, чтобы не беспокоиться о мобильной связи."
+            "description": "Управляющий батареей - это удобное решение для эффективного управления батареей на функциональном телефоне KaiOS. Следите за такими важными показателями батареи, как время разряда и заряда, температура и изменения уровня заряда в режиме реального времени. Настройте персональные оповещения для определенных уровней заряда, как высокого, так и низкого, чтобы не остаться без энергии в самый нужный момент. Загрузите KaiOS Battery Manager прямо сейчас и возьмите на себя ответственность за время автономной работы вашего устройства, чтобы не беспокоиться о мобильной связи."
         },
         "zh-CN": {
             "name": "电池管理器",
@@ -83,8 +83,8 @@
         },
         "sw-ZA": {
             "name": "Battery Manager",
-            "subtitle": "Taarifa za betri na kengele maalum.",
-            "description": "Kidhibiti cha Betri ndio suluhisho lako bora kwa usimamizi bora wa betri kwenye simu yako ya kipengele cha KaiOS. Fuatilia takwimu muhimu za betri kama vile muda wa kutokwa na wakati wa chaji, halijoto na mabadiliko ya wakati halisi ya kiwango cha betri. Weka arifa za kibinafsi za viwango mahususi vya betri, ya juu na ya chini, ili kuhakikisha hauishiwi na nishati unapoihitaji zaidi. Pakua Kidhibiti cha Betri cha KaiOS sasa na udhibiti maisha ya betri ya kifaa chako kwa matumizi ya simu bila wasiwasi"
+            "subtitle": "Taarifa za betri na kengele maalum",
+            "description": "Kidhibiti cha Betri ndio suluhisho lako bora kwa usimamizi bora wa betri kwenye simu yako ya kipengele cha KaiOS. Fuatilia takwimu muhimu za betri kama vile muda wa kutokwa na wakati wa chaji, halijoto na mabadiliko ya wakati halisi ya kiwango cha betri. Weka arifa za kibinafsi za viwango mahususi vya betri, ya juu na ya chini, ili kuhakikisha hauishiwi na nishati unapoihitaji zaidi. Pakua Kidhibiti cha Betri cha KaiOS sasa na udhibiti maisha ya betri ya kifaa chako kwa matumizi ya simu bila wasiwasi."
         },
         "ur-PK": {
             "name": "بیٹری مینیجر",
@@ -94,17 +94,17 @@
     },
     "permissions": {
         "serviceworker": {
-            "description": "notifications."
+            "description": "Required for notifications."
         },
         "desktop-notification": {
-            "description": "notifications."
+            "description": "Required for notifications."
         },
         "notifications": {},
         "push": {
-            "description": "notifications."
+            "description": "Required for notifications."
         },
         "volumemanager": {
-            "description": "volume."
+            "description": "Required to control volume."
         }
     },
     "default_locale": "en-US"

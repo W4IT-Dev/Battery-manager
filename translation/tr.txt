@@ -1,0 +1,42 @@
+html:
+
+Uygulama hakkında
+Pil Yöneticisi v1.5.0
+Pil bilgileri ve özelleştirilmiş uyarılar
+
+Bu uygulama ne işe yarıyor?
+Pil Yöneticisi, KaiOS özellikli telefonunuzdaki pili verimli bir şekilde yönetmek için kullanışlı bir çözümdür. Şarj ve deşarj süreleri, sıcaklık ve şarj seviyesi değişiklikleri gibi önemli pil ölçümlerini gerçek zamanlı olarak izleyin. Hem yüksek hem de düşük olmak üzere belirli pil seviyeleri için kişiselleştirilmiş uyarılar ayarlayın, böylece en çok ihtiyaç duyduğunuz anda gücünüzün bitmesini önleyin. Şimdi Pil Yöneticisini indirin ve mobil bağlantınız konusunda endişelenmeden cihazınızın pil ömründen sorumlu olun.
+
+Anahtarlar:
+1 - Sesi kısma
+
+3 - Sesi artırın
+
+0 - Aydınlatma modu değiştirme
+
+* - Sessiz sinyali aç/kapa (yalnızca bildirim)
+
+# - Bu sayfayı göster
+
+Lisans
+Bu kod GNU Genel Kamu Lisansı v3.0 kapsamında lisanslanmıştır.
+
+Kodu burada görüntüle
+
+Krediler
+Vecteezy'de bulunan simge.
+Çevirmenler:
+Arapça: Mykle
+
+Fransızca: swye
+
+Polonya: nükleer
+
+Urduca: san
+
+İtalyanca: Giososa
+
+Çince (basitleştirilmiş): luudvick
+
+Bağlantı kurmak için
+Bu uygulamada herhangi bir sorunla karşılaşırsanız benimle e-posta yoluyla iletişime geçebilirsiniz.

@@ -1,1 +1,21 @@
-{"app_name":"電池管理器","discharge_time":"放電時間:","charge_time":"充電時間:","temperature":"溫度:","max_charge":"最大充電量:","min_charge":"最小充電:","discharge_time_explanation":"電池完全耗盡的預計時間。","charge_time_explanation":"設備充滿電的預計時間。","temperature_explanation":"電池的估計溫度（攝氏度）。","max_charge_explanation":"當電池電量超過此值時，警報會啟動。","min_charge_explanation":"如果電池電量下降到該值以下，則警報啟動。","battery_over":"電池電量超過","battery_below":"電池電量低於","is_current_level":"% 是您目前的電池電量。","silent_alarm":"無聲警報","min":"分分鐘","enabled":"啟用","disabled":"停用"}
+{
+    "app_name": "電池管理器",
+    "discharge_time": "放電時間:",
+    "charge_time": "充電時間:",
+    "temperature": "溫度:",
+    "max_charge": "最大充電量:",
+    "min_charge": "最小充電:",
+    "discharge_time_explanation": "電池完全耗盡的預計時間。",
+    "charge_time_explanation": "設備充滿電的預計時間。",
+    "temperature_explanation": "電池的估計溫度（攝氏度）。",
+    "max_charge_explanation": "當電池電量超過此值時，警報會啟動。",
+    "min_charge_explanation": "如果電池電量下降到該值以下，則警報啟動。",
+    "battery_over": "電池電量超過",
+    "battery_below": "電池電量低於",
+    "is_current_level": "% 是您目前的電池電量。",
+    "silent_alarm": "無聲警報",
+    "min": "分分鐘",
+    "enabled": "啟用",
+    "disabled": "停用",
+    "html": "<h1>關於</h1><h2>電池管理器 v1.5.0</h2><p>電池資訊、自定義提醒<h2>這個應用程式有什麼功能？</h2><p>電池管理器 是您高效管理KaiOS功能手機電池的最佳解决辦法，使重要電池統計數據被記錄下來，如：放電及充電时间、温度和實時電量變化。可為特定電量（高，低兼容）自定提醒，確保您在最需要的时候不會耗盡電量。立即下載 電池管理器，掌控您設備的電池壽命，享受無憂的移動體驗<h2>鍵位：</h2><p>1 - 聲量-<p>3 - 聲量+<p>0 - 切換淺色模式<p>* - 切換靜音提醒 (僅通知)<p># - 顯示此頁<h2>授權</h2><p>本代碼採用 GNU General Public License v3.0 授權條款.<p>按<a href=https://github.com/W4IT-Dev/Battery-Manager>此</a>查看原始碼<h2>特別嘉許</h2>圖標來源於 <a href=https://www.vecteezy.com/png/9394734-battery-charge-png-transparent>vecteezy</a><h3>翻譯人員:</h3><p>阿拉伯文: Mykle<p>法文: swye<p>波蘭文: nuclear<p>烏爾都語: san<h2>聯絡方式</h2><h3>如果您在此應用程式中發現任何問題，請透過 <a href='mailto:w4it.dev.business@gmail.com?Subject=Battery%20Manager%20v1.5.0%20Issue%20report'>電子郵件</a> 與我聯繫。</h3>"
+}

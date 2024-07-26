@@ -8,20 +8,29 @@ function batteryStats() {
             updateLevelInfo();
             updateChargingInfo();
             updateDischargingInfo();
-            temperature.innerText = battery.temperature + '°'
-            temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
+            updateTemperatureInfo();
+            temperatureUpdateInterval = setInterval(() => { updateTemperatureInfo(); }, 60000 * 5);
         }
         updateAllBatteryInfo();
         //events
         battery.addEventListener('chargingchange', updateChargeInfo);
 
         battery.addEventListener('levelchange', updateLevelInfo);
-        
+
         battery.addEventListener('chargingtimechange', updateChargingInfo);
 
         battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
         function updateChargeInfo() {
+            if(navigator.usb) {
+                if(navigator.usb.deviceAttached && !battery.charging){
+                    let a = translate('not_charging');
+                    let b = translate('usb_attached_but_not_charging');
+                    pushLocalNotification(a,b)
+                    // "/assets/image/notCharging.png"
+                }
+                    
+            }
             a = document.querySelector('#container');
             battery.charging ? (a.classList.add('charging'), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2)) : (a.classList.remove('charging'), alarm.pause(), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5));
         }
@@ -72,14 +81,22 @@ function batteryStats() {
                 dischargingTime.parentNode.classList.add('nav')
             } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
         }
+        function updateTemperatureInfo() {
+            if (battery.temperature !== undefined) temperature.parentNode.style.display = "flex", temperature.innerText = battery.temperature + '°'
+            else toastMessage('Unable to get battery temperature.'), temperature.parentNode.style.display = "none";
+        }
 
         document.addEventListener('visibilitychange', () => {
             if (document.visibilityState == "hidden") {
                 clearInterval(temperatureUpdateInterval)
             } else {
-                temperature.innerText = battery.temperature + '°'
-                battery.charging ? temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2) : temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5);
+                updateTemperatureInfo();
+                battery.charging ? temperatureUpdateInterval = setInterval(() => { updateTemperatureInfo(); }, 60000 * 2) : temperatureUpdateInterval = setInterval(() => { updateTemperatureInfo(); }, 60000 * 5);
             }
+        })
+
+        temperature.parentNode.addEventListener('focus', ()=>{
+            updateTemperatureInfo();
         })
     });
 }
