@@ -12,6 +12,19 @@ body {
 	position: relative;
 }
 
+body.secretBackground {
+	background: rgb(0, 14, 36);
+	background: radial-gradient(circle, rgba(0, 14, 36, 1) 0%, rgba(45, 1, 46, 1) 4%, rgba(3, 58, 9, 1) 9%, rgba(70, 39, 4, 1) 14%, rgba(75, 5, 10, 1) 16%, rgba(7, 97, 73, 1) 25%, rgba(111, 16, 8, 1) 31%, rgba(108, 121, 9, 1) 35%, rgba(8, 136, 93, 1) 42%, rgba(150, 7, 28, 1) 49%, rgba(149, 6, 165, 1) 56%, rgba(87, 5, 177, 1) 62%, rgba(4, 189, 49, 1) 68%, rgba(201, 151, 3, 1) 74%, rgba(2, 51, 214, 1) 80%, rgba(180, 224, 2, 1) 85%, rgba(230, 65, 2, 1) 88%, rgba(243, 1, 191, 1) 94%, rgba(0, 212, 255, 1) 100%) !important;
+}
+
+body.secretBackground #battery {
+	background: rgba(5, 5, 5, 0.7) !important;
+}
+
+body.light.secretBackground #battery {
+	background: rgba(205, 205, 205, 0.6) !important;
+}
+
 body,
 body * {
 	font-family: "Ubuntu";

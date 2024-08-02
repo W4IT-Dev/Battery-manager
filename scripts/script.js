@@ -73,7 +73,7 @@ function nav(move) {
   if (move === -1 && !currentIndex.classList.contains('nav')) return items[items.length - 1].focus();
   targetElement ? targetElement.focus() : currentIndex.blur();
 }
-
+let toggleSecretBackground = 0;
 document.addEventListener('keydown', e => {
   if (HUDvisible) return
   if (["ArrowUp", "ArrowDown"].includes(e.key)) nav(e.key === "ArrowUp" ? -1 : 1);
@@ -85,6 +85,13 @@ document.addEventListener('keydown', e => {
     toastMessage(text)
   }
   if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) toggleMode();
+  let b;
+  if (e.key == "0") {
+    clearTimeout(b)
+    toggleSecretBackground++
+    if (toggleSecretBackground >= 3) document.body.classList.add('secretBackground'), toggleSecretBackground = 0;
+    b = setTimeout(() => { toggleSecretBackground = 0 }, 340)
+  }
 });
 
 function toastMessage(text) {
@@ -139,6 +146,7 @@ document.addEventListener('visibilitychange', () => {
 });
 
 function setMode() {
+  document.body.classList.remove('secretBackground')
   let rtl = document.body.classList.contains('rtl')
   if (!localStorage.mode) localStorage.mode = "dark"
   // document.body.classList.toggle('light', localStorage.mode === "light");

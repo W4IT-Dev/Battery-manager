@@ -9,27 +9,26 @@ function batteryStats() {
             updateChargingInfo();
             updateDischargingInfo();
             updateTemperatureInfo();
+            updateHealth();
             temperatureUpdateInterval = setInterval(() => { updateTemperatureInfo(); }, 60000 * 5);
         }
         updateAllBatteryInfo();
         //events
         battery.addEventListener('chargingchange', updateChargeInfo);
-
         battery.addEventListener('levelchange', updateLevelInfo);
-
         battery.addEventListener('chargingtimechange', updateChargingInfo);
-
         battery.addEventListener('dischargingtimechange', updateDischargingInfo);
+        battery.addEventListener('healthchange', updateHealth);
 
         function updateChargeInfo() {
-            if(navigator.usb) {
-                if(navigator.usb.deviceAttached && !battery.charging){
+            if (navigator.usb) {
+                if (navigator.usb.deviceAttached && !battery.charging) {
                     let a = translate('not_charging');
                     let b = translate('usb_attached_but_not_charging');
-                    pushLocalNotification(a,b)
+                    pushLocalNotification(a, b)
                     // "/assets/image/notCharging.png"
                 }
-                    
+
             }
             a = document.querySelector('#container');
             battery.charging ? (a.classList.add('charging'), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2)) : (a.classList.remove('charging'), alarm.pause(), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5));
@@ -82,8 +81,18 @@ function batteryStats() {
             } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
         }
         function updateTemperatureInfo() {
-            if (battery.temperature !== undefined) temperature.parentNode.style.display = "flex", temperature.innerText = battery.temperature + '°'
-            else toastMessage('Unable to get battery temperature.'), temperature.parentNode.style.display = "none";
+            let a = temperature.parentNode
+            if (battery.temperature !== undefined) a.style.display = "flex", a.classList.add('nav'), temperature.innerText = battery.temperature + '°'
+            else toastMessage('Unable to get battery temperature.'), a.style.display = "none", a.classList.remove('nav')
+
+        }
+
+        function updateHealth() {
+            // let health = navigator.battery.health ? navigator.battery.health : false;
+            let health = "Overheat";
+            if (!health) return console.log('Unable to get battery health.')
+            let a = (health === "Overheat")
+            if (health === "Overheat" || health === "Cold") pushLocalNotification(a ? translate('overheatAlert') : translate('coldAlert'), `${battery.temperature} ${translate('currentTemperature')}`)
         }
 
         document.addEventListener('visibilitychange', () => {
@@ -95,7 +104,7 @@ function batteryStats() {
             }
         })
 
-        temperature.parentNode.addEventListener('focus', ()=>{
+        temperature.parentNode.addEventListener('focus', () => {
             updateTemperatureInfo();
         })
     });
