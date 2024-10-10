@@ -18,17 +18,24 @@ Battery Manager is your go-to solution for efficient battery management on your 
 * Maximum charge
 * Minimum charge
 
+#### Warning when the phone's
+* overheating
+* too cold
+
 #### Supported languages
 * English
 * عربي
 * Deutsch
 * Español
+* Ελληνική
 * Français
 * Italiano
 * Polski
+* Português
 * Русский
 * 中文（简体）
 * 中文（繁體）
+* עברית
 ##### Working on
 * Türkçe
 * Kiswahili

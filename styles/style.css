@@ -27,7 +27,7 @@ body.light.secretBackground #battery {
 
 body,
 body * {
-	font-family: "Ubuntu";
+	font-family: "Ubuntu", Arial;
 }
 
 @font-face {

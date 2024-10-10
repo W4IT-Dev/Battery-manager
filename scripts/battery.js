@@ -42,58 +42,55 @@ function batteryStats() {
                 try {
                     const title = `${translate('battery_over')} ${maxCharge.value}%`;
                     const body = batteryLevel + translate('is_current_level')
-                    pushLocalNotification(
-                        title,
-                        body,
-                        "/assets/image/fullCharge.png"
-                    )
-                } catch (e) { }
+                    pushLocalNotification(title, body, "charge", "/assets/image/fullCharge.png");
+                } catch (e) { toastMessage(title), console.error(e); }
             } else if (batteryLevel <= minCharge.value && !battery.charging) {
                 if (!silent) alarm.play();
                 try {
                     const title = `${translate('battery_below')} ${minCharge.value}%`;
                     const body = batteryLevel + translate('is_current_level')
-                    pushLocalNotification(
-                        title,
-                        body,
-                        "/assets/image/lowBattery.png"
-                    );
-                } catch (e) { }
+                    pushLocalNotification(title, body, "charge", "/assets/image/lowBattery.png");
+                } catch (e) { toastMessage(title), console.error(e) }
             }
 
-            if (batteryLevel <= 10) return progress.style.backgroundColor = "red"
-            if (batteryLevel <= 20) return progress.style.backgroundColor = "orange"
-            if (batteryLevel <= 30) return progress.style.backgroundColor = "yellow"
+            if (batteryLevel <= 10) return progress.style.backgroundColor = "red";
+            if (batteryLevel <= 20) return progress.style.backgroundColor = "orange";
+            if (batteryLevel <= 30) return progress.style.backgroundColor = "yellow";
             progress.style.backgroundColor = "green"
         }
         function updateChargingInfo() {
+            let wrapper = charge.parentNode;
             if (battery.chargingTime !== Infinity) {
-                charge.parentNode.style.display = "flex"
+                wrapper.style.display = "flex"
                 charge.innerText = parseInt(battery.chargingTime / 60) + " " + minTranslation;
-                charge.parentNode.classList.add('nav')
-            } else charge.parentNode.style.display = "none", charge.parentNode.classList.remove('nav')
+                wrapper.classList.add('nav')
+            } else wrapper.style.display = "none", wrapper.classList.remove('nav')
         }
         function updateDischargingInfo() {
+            let wrapper = dischargingTime.parentNode;
             if (battery.dischargingTime !== Infinity) {
-                dischargingTime.parentNode.style.display = "flex"
+                wrapper.style.display = "flex"
                 dischargingTime.innerText = parseInt(battery.dischargingTime / 60) + " " + minTranslation
-                dischargingTime.parentNode.classList.add('nav')
-            } else dischargingTime.parentNode.style.display = "none", dischargingTime.parentNode.classList.remove('nav')
+                wrapper.classList.add('nav')
+            } else wrapper.style.display = "none", wrapper.classList.remove('nav')
+
         }
         function updateTemperatureInfo() {
-            let a = temperature.parentNode
-            if (battery.temperature !== undefined) a.style.display = "flex", a.classList.add('nav'), temperature.innerText = battery.temperature + '°'
-            else toastMessage('Unable to get battery temperature.'), a.style.display = "none", a.classList.remove('nav')
-
+            let wrapper = temperature.parentNode
+            if (battery.temperature !== undefined) wrapper.style.display = "flex", wrapper.classList.add('nav'), temperature.innerText = battery.temperature + '°'
+            else toastMessage('Unable to get battery temperature.'), wrapper.style.display = "none", wrapper.classList.remove('nav')
         }
-
         function updateHealth() {
-            // let health = navigator.battery.health ? navigator.battery.health : false;
-            let health = "Overheat";
-            if (!health) return console.log('Unable to get battery health.')
+            let health = battery.health ? battery.health : false;
+            if (!health) return toastMessage('Unable to get battery health.');
             let a = (health === "Overheat")
-            if (health === "Overheat" || health === "Cold") pushLocalNotification(a ? translate('overheatAlert') : translate('coldAlert'), `${battery.temperature} ${translate('currentTemperature')}`)
+            if (health === "Overheat" || health === "Cold") {
+                let title = a ? translate('overheatAlert') : translate('coldAlert');
+                let body = battery.temperature + translate('currentTemperature')
+                try { pushLocalNotification(title, body) } catch (e) { toastMessage(title), console.error(e) }
+            }
         }
+
 
         document.addEventListener('visibilitychange', () => {
             if (document.visibilityState == "hidden") {

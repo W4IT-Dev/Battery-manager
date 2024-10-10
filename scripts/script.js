@@ -95,19 +95,19 @@ document.addEventListener('keydown', e => {
 });
 
 function toastMessage(text) {
-  if (!navigator.mozApps) return false, console.log(text);
+  if (!navigator.mozApps) return false, console.log(`%c${text}`, "background: #444; color: white;" );
   navigator.mozApps.getSelf().onsuccess = (e) => {
     const app = e.target.result;
     app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));
   }
 }
 
-const pushLocalNotification = function (title, text, icon) {
+const pushLocalNotification = function (title, text, tag, icon) {
   window.Notification.requestPermission().then(result => {
     const options = {
       body: text,
-      icon,
-      tag: "charge",
+      icon: icon || "/assets/image/icons/icon_112.png",
+      tag,
       mozbehavior: { vibrationPattern: [30, 200, 30] }
     };
 
