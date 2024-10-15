@@ -87,7 +87,7 @@ function batteryStats() {
             if (health === "Overheat" || health === "Cold") {
                 let title = a ? translate('overheatAlert') : translate('coldAlert');
                 let body = battery.temperature + translate('currentTemperature')
-                try { pushLocalNotification(title, body) } catch (e) { toastMessage(title), console.error(e) }
+                try { pushLocalNotification(title, body) } catch (e) { toastMessage(title || "temp alert"), console.error(e) }
             }
         }
 

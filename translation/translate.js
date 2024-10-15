@@ -1,7 +1,7 @@
 const supportedLanguages = ["ar", "de", "en", "el", "es", "fr", "he", "it", "pl", "pt", "ru", "sw", "tr", "ur", "zh-CN", "zh-HK"];
 let translations = {
 };
-const userLanguage = navigator.language || navigator.userLanguage;
+const userLanguage = "zh-TW" ||navigator.language || navigator.userLanguage;
 let languageCode = userLanguage.split("-")[0];
 userLanguage.includes("zh") && (languageCode = userLanguage.includes("TW") ? "zh-HK" : userLanguage);
 const loadLanguageFile = a => new Promise((e, t) => {
@@ -12,7 +12,6 @@ const loadLanguageFile = a => new Promise((e, t) => {
                 translations = JSON.parse(s.responseText);
                 let r = ("ar" === a || "ur" === a || "he" === a);
                 document.body.classList.toggle("rtl", r);
-                console.log(r)
                 if (document.title === "About") return e()
                 n = r ? `/assets/image/arrowLeft_${document.body.classList.contains('light') ? 'light' : 'dark'}.png` : `/assets/image/arrowRight_${document.body.classList.contains('light') ? 'light' : 'dark'}.png`,
                     g = r ? `/assets/image/arrowRight_${document.body.classList.contains('light') ? 'light' : 'dark'}.png` : `/assets/image/arrowLeft_${document.body.classList.contains('light') ? 'light' : 'dark'}.png`;
@@ -23,13 +22,6 @@ const loadLanguageFile = a => new Promise((e, t) => {
                     a.src = g, a.classList.toggle("arrowLeft", !r), a.classList.toggle("arrowRight", r)
                 })
                 e()
-                if (localStorage.betaTranslations && localStorage.betaTranslations === languageCode) {
-                } else {
-                    if (languageCode == "sw" || languageCode == "ur") {
-                        alert(translate('beta_translations'));
-                        localStorage.betaTranslations = languageCode
-                    }
-                }
             } catch (l) {
                 t(`Error parsing language file: ${l} `), batteryStats();
             } else t(`Error loading language file: ${s.statusText} `), batteryStats();
