@@ -95,7 +95,7 @@ document.addEventListener('keydown', e => {
 });
 
 function toastMessage(text) {
-  if (!navigator.mozApps) return false, console.log(`%c${text}`, "background: #444; color: white;" );
+  if (!navigator.mozApps) return false, console.log(`%c${text}`, "background: #444; color: white;");
   navigator.mozApps.getSelf().onsuccess = (e) => {
     const app = e.target.result;
     app.connect('systoaster').then(conns => conns.forEach(conn => conn.postMessage({ message: text })));

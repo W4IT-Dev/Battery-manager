@@ -1,7 +1,6 @@
-const supportedLanguages = ["ar", "de", "en", "el", "es", "fr", "he", "it", "pl", "pt", "ru", "sw", "tr", "ur", "zh-CN", "zh-HK"];
-let translations = {
-};
-const userLanguage = "zh-TW" ||navigator.language || navigator.userLanguage;
+const supportedLanguages = ["ar", "de", "el", "en", "es", "fr", "he", "it", "pl", "pt", "ru", "sw", "tr", "ur", "zh-CN", "zh-HK"]
+let translations = {};
+const userLanguage = navigator.language || navigator.userLanguage;
 let languageCode = userLanguage.split("-")[0];
 userLanguage.includes("zh") && (languageCode = userLanguage.includes("TW") ? "zh-HK" : userLanguage);
 const loadLanguageFile = a => new Promise((e, t) => {
@@ -28,18 +27,16 @@ const loadLanguageFile = a => new Promise((e, t) => {
         }
     }, s.send()
 }),
-    translate = a => translations[a] || a,
-    updateUIWithTranslations = () => {
-        Array.from(document.querySelectorAll("[data-translate]")).forEach(a => {
-            let e = a.getAttribute("data-translate");
-            if (e.includes("html")) a.outerHTML = translate(e)
-            e.includes("explanation") ? a.dataset.explanation = translate(e) : a.innerText = translate(e)
-        })
-    },
+    translate = a => translations[a]
+updateUIWithTranslations = () => {
+    Array.from(document.querySelectorAll("[data-translate]")).forEach(a => {
+        let e = a.getAttribute("data-translate");
+        if (e.includes("html")) a.outerHTML = translate(e)
+        e.includes("explanation") ? a.dataset.explanation = translate(e) : a.innerText = translate(e)
+    })
+},
     isLanguageSupported = a => supportedLanguages.includes(a),
     loadAndTranslate = a => {
         isLanguageSupported(a) ? loadLanguageFile(a).then(() => { updateUIWithTranslations(), document.title === "About" ? false : batteryStats() }).catch(a => console.error(a)) : (console.error(`Unsupported language: ${a} `))
-
-
     };
 loadAndTranslate(languageCode)

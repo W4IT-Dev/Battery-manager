@@ -21,15 +21,6 @@ function batteryStats() {
         battery.addEventListener('healthchange', updateHealth);
 
         function updateChargeInfo() {
-            if (navigator.usb) {
-                if (navigator.usb.deviceAttached && !battery.charging) {
-                    let a = translate('not_charging');
-                    let b = translate('usb_attached_but_not_charging');
-                    pushLocalNotification(a, b)
-                    // "/assets/image/notCharging.png"
-                }
-
-            }
             a = document.querySelector('#container');
             battery.charging ? (a.classList.add('charging'), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 2)) : (a.classList.remove('charging'), alarm.pause(), temperatureUpdateInterval = setInterval(() => { temperature.innerText = battery.temperature + '°' }, 60000 * 5));
         }
@@ -40,15 +31,15 @@ function batteryStats() {
             if (batteryLevel >= maxCharge.value && battery.charging) {
                 if (!silent) alarm.play();
                 try {
-                    const title = `${translate('battery_over')} ${maxCharge.value}%`;
-                    const body = batteryLevel + translate('is_current_level')
+                    const title = `${translate('battery_over')} ${maxCharge.value}% `;
+                    const body = (languageCode == "el" ? "Το " : "") + batteryLevel + translate('is_current_level')
                     pushLocalNotification(title, body, "charge", "/assets/image/fullCharge.png");
                 } catch (e) { toastMessage(title), console.error(e); }
             } else if (batteryLevel <= minCharge.value && !battery.charging) {
                 if (!silent) alarm.play();
                 try {
-                    const title = `${translate('battery_below')} ${minCharge.value}%`;
-                    const body = batteryLevel + translate('is_current_level')
+                    const title = ` ${translate('battery_below')} ${minCharge.value}% `;
+                    const body = (languageCode == "el" ? "Το " : "") + batteryLevel + translate('is_current_level')
                     pushLocalNotification(title, body, "charge", "/assets/image/lowBattery.png");
                 } catch (e) { toastMessage(title), console.error(e) }
             }
@@ -82,12 +73,17 @@ function batteryStats() {
         }
         function updateHealth() {
             let health = battery.health ? battery.health : false;
+            console.log(health)
             if (!health) return toastMessage('Unable to get battery health.');
-            let a = (health === "Overheat")
-            if (health === "Overheat" || health === "Cold") {
+            if (health == "Overheat" || health == "Cold") {
                 let title = a ? translate('overheatAlert') : translate('coldAlert');
-                let body = battery.temperature + translate('currentTemperature')
-                try { pushLocalNotification(title, body) } catch (e) { toastMessage(title || "temp alert"), console.error(e) }
+                let body = (languageCode == "el" ? "Το " : "") + battery.temperature + translate('currentTemperature')
+                if (languageCode == "tr") {
+                    let trTranslation = translate('currentTemperature').split('x', 2)
+                    body = trTranslation[0] + battery.temperature + trTranslation[1]
+                }
+                let icon = a ? "/assets/image/overheat.png" : "/assets/image/lowTemp.png"
+                try { pushLocalNotification(title, body, "temp", icon) } catch (e) { toastMessage(title || "temp alert"), console.error(e) }
             }
         }
 

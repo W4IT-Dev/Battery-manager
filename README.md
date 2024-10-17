@@ -26,20 +26,20 @@ Battery Manager is your go-to solution for efficient battery management on your 
 * English
 * عربي
 * Deutsch
-* Español
 * Ελληνική
+* Español
 * Français
+* עברית
 * Italiano
 * Polski
 * Português
 * Русский
-* 中文（简体）
-* 中文（繁體）
-* עברית
-##### Working on
-* Türkçe
 * Kiswahili
 * اردو
+* 中文（简体）
+* 中文（繁體）
+##### Working on
+* Türkçe
 <br>
 
 ## Download

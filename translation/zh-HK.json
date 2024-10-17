@@ -7,7 +7,7 @@
   "charge_time": "充電時間：",
   "charge_time_explanation": "設備充滿電的預計時間。",
   "coldAlert": "手機過冷！",
-  "currentTemperature ": "度是目前手機的溫度",
+  "currentTemperature": "度是目前手機的溫度",
   "disabled": "已停用",
   "discharge_time": "放電時間：",
   "discharge_time_explanation": "電池完全耗盡的預計時間。",
