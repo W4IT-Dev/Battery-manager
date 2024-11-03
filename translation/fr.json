@@ -17,12 +17,13 @@
   "max_charge_explanation": "L'alarme s'active lorsque la batterie dépasse ce niveau.",
   "min": "min",
   "min_charge": "Charge minimale:",
-  "min_charge_explanation": "L'alarme se déclenche lorsque la pile descend en dessous de ce niveau.",
+  "min_charge_explanation": "L'alarme s'active lorsque la pile descend en dessous de ce niveau.",
   "not_charging": "Le téléphone ne se recharge pas !",
   "overheatAlert": "Ton téléphone surchauffe !",
   "silent_alarm": "Alarme silencieuse",
   "temperature": "Température:",
   "temperature_explanation": "Température estimée de la batterie en Celsius.",
+  "translator": "Swye",
   "usb_attached_but_not_charging": "Le câble est branché mais ne charge pas.",
   "html": "<h1>À props</h1><h2>Battery Manager v1.5.0</h2><p>Informations sur la batterie et alertes personnalisées.<h2>Que fait l'application ?</h2><p>Battery Manager est la solution idéale pour une gestion efficace de la batterie sur votre featurephone KaiOS. Gardez une trace des statistiques vitales de la batterie comme les temps de décharge et de charge, la température et les changements de niveau en temps réel. Définissez des alertes personnalisées pour des niveaux de batterie spécifiques, à la fois élevés et faibles, pour vous assurer de ne jamais manquer d'énergie lorsque vous en avez le plus besoin. Téléchargez dès maintenant Battery Manager et prenez en charge la durée de vie de la batterie de votre appareil pour une expérience mobile sans souci.<h2>Frappes de touches:</h2><p>1 - Diminution du volume<p>3 - Augmentation du volume<p>0 - Basculer le mode lumière<p>* - Alarme silencieuse (uniquement notification)<p># - Afficher cette page<h2>Licence</h2><p>Ce code est sous licence GNU General Public License v3.0<p>Voir le code <a href=https://github.com/W4IT-Dev/Battery-Manager>ici</a><h2>Générique</h2>Icône trouvée sur <a href=https://www.vecteezy.com/png/9394734-battery-charge-png-transparent>vecteezy</a><h3>Traducteurs:</h3><p>L'arabe: Mykle<p>Grecque: al1210<p>Français: swye<p>Hébreu: Røbkeß<p>Italien: Giososa<p>Polonais: nuclear<p>Portugais: Metanoide<p>Russie: deferred_impact, desargues<p>Swahili: Indra<p>Turc: Eren<p>Urdu: san<p>Chinois: Joe :)<h2>Contact</h2><h3>Si vous rencontrez des problèmes avec cette application, vous pouvez me contacter par <a href='mailto:w4it.dev.business@gmail.com?Subject=Battery%20Manager%20v1.5.0%20Issue%20report'>email</a></h3>"
 }

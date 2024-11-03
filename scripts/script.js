@@ -4,34 +4,16 @@ let silent = false;
 let HUDvisible = false;
 let adShowing = false;
 
+// set max/minCharge values
 maxCharge.value = localStorage.maxCharge || 80
 minCharge.value = localStorage.minCharge || 30
 
-document.addEventListener('keydown', (e) => {
-  if (e.key.includes('Arrow')) e.preventDefault();
-  if (!alarm.paused) alarm.pause();
 
-  if (navigator.volumeManager && e.key === "1" || e.key === "3" && document.activeElement.nodeName !== "INPUT") {
-    if (e.key === "1") {
-      navigator.volumeManager.requestDown();
-    } else {
-      navigator.volumeManager.requestUp();
-    }
-    HUDvisible = true;
-    setTimeout(() => HUDvisible = false, 2000);
-  }
-
-  if (HUDvisible || !["maxCharge", "minCharge"].includes(document.activeElement.id)) return;
-  const input = document.activeElement;
-  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-    input.stepDown(e.key === "ArrowLeft" ? 1 : -1);
-    localStorage[input.id] = input.value;
-  }
-});
-
+// KaiAd
 getKaiAd({
   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
   app: 'batterymanager',
+  test: 1,
   onerror: err => console.error('error getting ad: ', err),
   onready: ad => {
     ad.on('click', () => adShowing = false)
@@ -44,6 +26,31 @@ getKaiAd({
   }
 });
 
+// === KEYDOWN (sounds) ===
+document.addEventListener('keydown', (e) => {
+  if (e.key.includes('Arrow')) e.preventDefault();
+  if (!alarm.paused) alarm.pause();
+
+  if (navigator.volumeManager && (e.key === "1" || e.key === "3") && document.activeElement.nodeName !== "INPUT") {
+    if (e.key === "1") {
+      navigator.volumeManager.requestDown();
+    } else {
+      navigator.volumeManager.requestUp();
+    }
+    HUDvisible = true;
+    setTimeout(() => HUDvisible = false, 2000);
+  }
+
+  if (HUDvisible || !["maxCharge", "minCharge"].includes(document.activeElement.id)) return;
+  const input = document.activeElement;
+  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+    // input.stepDown(e.key === "ArrowLeft" ? 1 : -1);
+    // localStorage[input.id] = input.value;
+  }
+});
+
+
+// === FOCUS ===
 const navElems = document.querySelectorAll('.nav');
 const divs = document.querySelectorAll('.div');
 
@@ -64,6 +71,80 @@ for (let i = 0; i < navElems.length; i++) {
   });
 }
 
+// === INPUTS ===
+let inputs = document.querySelectorAll('input');
+
+for (let i = 0; i < inputs.length; i++) {
+  const elem = inputs[i];
+
+  // Event listener for keydown event
+  elem.addEventListener('keydown', (event) => {
+    handleKey(event, elem);
+  });
+
+  // Event listener for ArrowLeft and ArrowRight
+  elem.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      changeValue(elem, -1); // Decrease value by 1
+      event.preventDefault();
+    } else if (event.key === 'ArrowRight') {
+      changeValue(elem, 1); // Increase value by 1
+      event.preventDefault();
+    }
+  });
+
+  function handleKey(event, elem) {
+    const key = event.key;
+
+    // Ensure the key pressed is a number between 0 and 9
+    if (!isNaN(key) && key >= '0' && key <= '9') {
+      let value = parseInt(elem.value) || 0;
+
+      if (value < 10) {
+        // If the value is less than 10, append the new key
+        elem.value = value.toString() + key; // Concatenate the new digit
+      } else {
+        // If value is 10 and key is 0, set value to 100
+        if (value === 10 && key === '0') {
+          elem.value = '100'; // Set to 100 if pressing 0 while value is 10
+        } else {
+          // Replace the entire value with the new key
+          elem.value = key;
+        }
+      }
+
+      // Ensure the new value is within bounds of min/max
+      validate(elem);
+      event.preventDefault(); // Prevent default behavior of number key input
+    }
+  }
+
+  function changeValue(elem, change) {
+    let value = parseInt(elem.value) || 0;
+    let newValue = value + change;
+
+    // Ensure the new value is within bounds of min/max
+    if (newValue < elem.min) {
+      newValue = elem.min;
+    } else if (newValue > elem.max) {
+      newValue = elem.max;
+    }
+
+    // Update the input value
+    elem.value = newValue;
+  }
+
+  function validate(elem) {
+    let v = parseInt(elem.value);
+
+    // Check for NaN and enforce min/max limits
+    if (isNaN(v) || v < elem.min) {
+      elem.value = elem.min;
+    } else if (v > elem.max) {
+      elem.value = elem.max;
+    }
+  }
+}
 function nav(move) {
   const currentIndex = document.activeElement;
   const items = document.querySelectorAll('.nav');
@@ -73,15 +154,18 @@ function nav(move) {
   if (move === -1 && !currentIndex.classList.contains('nav')) return items[items.length - 1].focus();
   targetElement ? targetElement.focus() : currentIndex.blur();
 }
+
+// === KEYDOWN (tutti) ===
 let toggleSecretBackground = 0;
 document.addEventListener('keydown', e => {
   if (HUDvisible) return
   if (["ArrowUp", "ArrowDown"].includes(e.key)) nav(e.key === "ArrowUp" ? -1 : 1);
   if (e.key === "#") window.open('/about.html');
   if (e.key === "*") {
+    let rtl = languageCode === "ar" || languageCode === "ur" || languageCode === "he"
     silent = !silent;
     const text = `${translate('silent_alarm')} ${translate(silent ? 'enabled' : 'disabled')}`;
-    keystrokes.src = `/assets/image/keystrokes${languageCode === "ar" ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
+    keystrokes.src = `/assets/image/keystrokes${rtl ? '_ar' : ''}_${silent}_${localStorage.mode}.png`;
     toastMessage(text)
   }
   if (e.key == "0" && !["maxCharge", "minCharge"].includes(document.activeElement.id)) toggleMode();
@@ -89,11 +173,12 @@ document.addEventListener('keydown', e => {
   if (e.key == "0") {
     clearTimeout(b)
     toggleSecretBackground++
-    if (toggleSecretBackground >= 3) document.body.classList.add('secretBackground'), toggleSecretBackground = 0;
+    if (toggleSecretBackground >= 5) document.body.classList.add('secretBackground'), toggleSecretBackground = 0;
     b = setTimeout(() => { toggleSecretBackground = 0 }, 340)
   }
 });
 
+// === TOAST ===
 function toastMessage(text) {
   if (!navigator.mozApps) return false, console.log(`%c${text}`, "background: #444; color: white;");
   navigator.mozApps.getSelf().onsuccess = (e) => {
@@ -102,6 +187,7 @@ function toastMessage(text) {
   }
 }
 
+// === NOTIFICATION ===
 const pushLocalNotification = function (title, text, tag, icon) {
   window.Notification.requestPermission().then(result => {
     const options = {
@@ -123,12 +209,14 @@ const pushLocalNotification = function (title, text, tag, icon) {
   });
 };
 
+// === KaiAd visibilitychange ===
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === "visible") {
     if (!adShowing) {
       getKaiAd({
         publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
         app: 'batterymanager',
+        test: 1,
         onerror: err => console.error('error getting ad: ', err),
         onready: ad => {
           ad.on('click', () => adShowing = false)
@@ -145,9 +233,10 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// === dark/light mode ===
 function setMode() {
   document.body.classList.remove('secretBackground')
-  let rtl = document.body.classList.contains('rtl')
+  let rtl = languageCode === "ar" || languageCode === "ur" || languageCode === "he"
   if (!localStorage.mode) localStorage.mode = "dark"
   // document.body.classList.toggle('light', localStorage.mode === "light");
   localStorage.mode === "light" ? document.body.classList.add('light') : document.body.classList.remove('light');

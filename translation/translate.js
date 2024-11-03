@@ -11,6 +11,7 @@ const loadLanguageFile = a => new Promise((e, t) => {
                 translations = JSON.parse(s.responseText);
                 let r = ("ar" === a || "ur" === a || "he" === a);
                 document.body.classList.toggle("rtl", r);
+                document.documentElement.dir = r ? "rtl" : "ltr"
                 if (document.title === "About") return e()
                 n = r ? `/assets/image/arrowLeft_${document.body.classList.contains('light') ? 'light' : 'dark'}.png` : `/assets/image/arrowRight_${document.body.classList.contains('light') ? 'light' : 'dark'}.png`,
                     g = r ? `/assets/image/arrowRight_${document.body.classList.contains('light') ? 'light' : 'dark'}.png` : `/assets/image/arrowLeft_${document.body.classList.contains('light') ? 'light' : 'dark'}.png`;
