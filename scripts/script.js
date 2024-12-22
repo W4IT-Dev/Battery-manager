@@ -13,7 +13,6 @@ minCharge.value = localStorage.minCharge || 30
 getKaiAd({
   publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
   app: 'batterymanager',
-  test: 1,
   onerror: err => console.error('error getting ad: ', err),
   onready: ad => {
     ad.on('click', () => adShowing = false)
@@ -174,7 +173,7 @@ document.addEventListener('keydown', e => {
     clearTimeout(b)
     toggleSecretBackground++
     if (toggleSecretBackground >= 5) document.body.classList.add('secretBackground'), toggleSecretBackground = 0;
-    b = setTimeout(() => { toggleSecretBackground = 0 }, 340)
+    b = setTimeout(() => { toggleSecretBackground = 0 }, 540)
   }
 });
 
@@ -216,7 +215,6 @@ document.addEventListener('visibilitychange', () => {
       getKaiAd({
         publisher: 'fe2d9134-74be-48d8-83b9-96f6d803efef',
         app: 'batterymanager',
-        test: 1,
         onerror: err => console.error('error getting ad: ', err),
         onready: ad => {
           ad.on('click', () => adShowing = false)
