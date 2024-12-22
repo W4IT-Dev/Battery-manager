@@ -2,7 +2,7 @@
 Battery Manager for [KaiOS](https://www.kaiostech.com).
 <br>
 
-[![https://img.shields.io/badge/v1.4.2-Maintained-green?style=for-the-badge](https://img.shields.io/badge/v1.4.2-Maintained-green?style=for-the-badge&link=)](/)
+[![https://img.shields.io/badge/v1.5.0-Maintained-green?style=for-the-badge](https://img.shields.io/badge/v1.5.0-Maintained-green?style=for-the-badge&link=)](/)
 
 ## Description
 Battery Manager is your go-to solution for efficient battery management on your KaiOS featurephone. Keep track of vital battery stats like discharge and charge times, temperature, and real-time level changes. Set personalized alerts for specific battery levels, both high and low, to ensure you never run out of power when you need it most. Download KaiOS Battery Manager now and take charge of your device's battery life for a worry-free mobile experience.
