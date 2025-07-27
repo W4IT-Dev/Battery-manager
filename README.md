@@ -21,6 +21,7 @@ Battery Manager is your go-to solution for efficient battery management on your 
 #### Warning when the phone's
 * overheating
 * too cold
+<br>
 
 #### Supported languages
 * English
@@ -39,7 +40,8 @@ Battery Manager is your go-to solution for efficient battery management on your 
 * اردو
 * 中文（简体）
 * 中文（繁體）
-##### Working on
+  
+*more in the future, contact me if you'd like to edit and/or add a language*
 <br>
 
 ## Download
